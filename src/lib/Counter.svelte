@@ -22,7 +22,9 @@
 
   const change = () => {
     if (whetherMidterm) {
+      percent = whetherMidterm ? 30 : 50
       projectsFull = 100 - percent * 2
+      projects = projectsFull
     } else {
       percent = whetherMidterm ? 30 : 50
       projectsFull = 100 - percent
@@ -77,7 +79,10 @@
   </Select>
 </div>
 
-<h1 style="margin-bottom: 50px">기말고사 계산기</h1>
+<h1>기말고사 계산기</h1>
+<p style="margin-bottom: 50px; color: grey;">
+  개발자 이현승 <a href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/Counter.svelte" rel="noreferrer" target="_blank">@HyunseungLee-Travis</a>
+</p>
 
 <div style="margin-bottom: 20px">
   <TextInput
