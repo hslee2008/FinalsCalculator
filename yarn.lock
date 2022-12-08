@@ -24,6 +24,13 @@
     svelte-hmr "^0.15.1"
     vitefu "^0.2.2"
 
+carbon-components-svelte@^0.70.12:
+  version "0.70.12"
+  resolved "https://registry.yarnpkg.com/carbon-components-svelte/-/carbon-components-svelte-0.70.12.tgz#64e14937354b247118b72a8b2f284b86fe8ae9bf"
+  integrity sha512-CSVXWr53kSP/6ITaLxcCd/7rZStM3Mgl1tXedlwgvkViqDgCexWzSsK1u2RoSptmqL5IggUehabcETD6tm5EFg==
+  dependencies:
+    flatpickr "4.6.9"
+
 debug@^4.3.4:
   version "4.3.4"
   resolved "https://registry.yarnpkg.com/debug/-/debug-4.3.4.tgz#1319f6579357f2338d3337d2cdd4914bb5dcc865"
@@ -164,6 +171,11 @@ esbuild@^0.15.9:
     esbuild-windows-64 "0.15.18"
     esbuild-windows-arm64 "0.15.18"
 
+flatpickr@4.6.9:
+  version "4.6.9"
+  resolved "https://registry.yarnpkg.com/flatpickr/-/flatpickr-4.6.9.tgz#9a13383e8a6814bda5d232eae3fcdccb97dc1499"
+  integrity sha512-F0azNNi8foVWKSF+8X+ZJzz8r9sE1G4hl06RyceIaLvyltKvDl6vqk9Lm/6AUUCi5HWaIjiUbk7UpeE/fOXOpw==
+
 fsevents@~2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
@@ -264,6 +276,11 @@ svelte-hmr@^0.15.1:
   version "0.15.1"
   resolved "https://registry.yarnpkg.com/svelte-hmr/-/svelte-hmr-0.15.1.tgz#d11d878a0bbb12ec1cba030f580cd2049f4ec86b"
   integrity sha512-BiKB4RZ8YSwRKCNVdNxK/GfY+r4Kjgp9jCLEy0DuqAKfmQtpL38cQK3afdpjw4sqSs4PLi3jIPJIFp259NkZtA==
+
+svelte-mui@^0.5.7:
+  version "0.5.7"
+  resolved "https://registry.yarnpkg.com/svelte-mui/-/svelte-mui-0.5.7.tgz#4fcea852c8d630ee80e0deb3790de5720546e891"
+  integrity sha512-I2he6DzecjQVhUyHIR5gSnRPFynk7bX6iYZ90SSKMmFyDZ+HnqMfefE9OAkrQzmb8TSQ+inOM+GF83Y4KBsvUg==
 
 svelte@^3.52.0:
   version "3.54.0"
