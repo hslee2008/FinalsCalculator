@@ -1,11 +1,9 @@
 <script>
-  import Counter from './lib/Counter.svelte'
+  import AtLeast from './lib/AtLeast.svelte'
 </script>
 
 <main>
-
-
   <div class="card">
-    <Counter />
+    <AtLeast />
   </div>
 </main>
