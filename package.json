@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "@beyonk/svelte-google-analytics": "^2.6.4",
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
     "carbon-components-svelte": "^0.70.12",
     "svelte": "^3.52.0",

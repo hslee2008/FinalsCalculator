@@ -46,3 +46,7 @@ h1 {
   padding: 2rem;
   text-align: center;
 }
+
+p {
+  font-size: 13px !important;
+}

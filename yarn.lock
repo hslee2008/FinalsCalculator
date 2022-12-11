@@ -2,6 +2,18 @@
 # yarn lockfile v1
 
 
+"@beyonk/async-script-loader@^2.2.2":
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/@beyonk/async-script-loader/-/async-script-loader-2.3.0.tgz#60868bff547f2122488f58b3b31b6bcde9a13dce"
+  integrity sha512-/vbDM5j8OHmtnWLx87sef0T/jGWVvZV6ILm3QFLpfRwSg0KmhQoAZnOT4XSaUL/EjOC9eMzgX5qtS2jztKzY2A==
+
+"@beyonk/svelte-google-analytics@^2.6.4":
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/@beyonk/svelte-google-analytics/-/svelte-google-analytics-2.6.4.tgz#b4458d14cd749d9169b9251a24f2e8260c3bcd7c"
+  integrity sha512-m2P1fs36qObCLtIZ9edLC62RHLrGVknaKuE4uEBQk5+Jfy1apa7DOIT0Jq1PvScyrndV62FvyjUUrWwrXjYbmw==
+  dependencies:
+    "@beyonk/async-script-loader" "^2.2.2"
+
 "@esbuild/android-arm@0.15.18":
   version "0.15.18"
   resolved "https://registry.yarnpkg.com/@esbuild/android-arm/-/android-arm-0.15.18.tgz#266d40b8fdcf87962df8af05b76219bc786b4f80"
@@ -25,9 +37,9 @@
     vitefu "^0.2.2"
 
 carbon-components-svelte@^0.70.12:
-  version "0.70.12"
-  resolved "https://registry.yarnpkg.com/carbon-components-svelte/-/carbon-components-svelte-0.70.12.tgz#64e14937354b247118b72a8b2f284b86fe8ae9bf"
-  integrity sha512-CSVXWr53kSP/6ITaLxcCd/7rZStM3Mgl1tXedlwgvkViqDgCexWzSsK1u2RoSptmqL5IggUehabcETD6tm5EFg==
+  version "0.70.13"
+  resolved "https://registry.yarnpkg.com/carbon-components-svelte/-/carbon-components-svelte-0.70.13.tgz#f6f125418c8ab451c7df11f6d2bdff9974bd36c9"
+  integrity sha512-p6wX8004BM6DrrLH1JJWbkR/VybU0gra+jDWlSW1V2aO8XmAz81evnDLZuTrvbHNkEXPiaC+athSjNsBOf0SjA==
   dependencies:
     flatpickr "4.6.9"
 
@@ -300,6 +312,6 @@ vite@^3.2.3:
     fsevents "~2.3.2"
 
 vitefu@^0.2.2:
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-0.2.2.tgz#d03215f351a1fd65f6c277d546f2d30956b970f9"
-  integrity sha512-8CKEIWPm4B4DUDN+h+hVJa9pyNi7rzc5MYmbxhs1wcMakueGFNWB5/DL30USm9qU3xUPnL4/rrLEAwwFiD1tag==
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/vitefu/-/vitefu-0.2.3.tgz#512107a04d43e967e8b8de093121616f9518b2ee"
+  integrity sha512-75l7TTuU8isAhz1QFtNKjDkqjxvndfMC1AfIMjJ0ZQ59ZD0Ow9QOIsJJX16Wv9PS8f+zMzp6fHy5cCbKG/yVUQ==
