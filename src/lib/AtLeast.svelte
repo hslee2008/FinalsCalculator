@@ -86,7 +86,7 @@
 
 <h1>기말고사 계산기</h1>
 <p style="margin-bottom: 50px; color: grey;">
-  개발자 이현승 <a href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/AtLeast.svelte" rel="noreferrer" target="_blank">@HyunseungLee-Travis</a> & 조천제
+  개발자 <a href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/AtLeast.svelte" rel="noreferrer" target="_blank">@이현승</a>
 </p>
 
 <div style="margin-bottom: 20px">
@@ -121,66 +121,64 @@
 >
 
 <Dialog bind:dialog>
-  <Carousel bind:this={carousel}>
-    <div style="margin-bottom: 5px">
-      {#if final_A > 100}
-        <h1>A는 불가능</h1>
-      {:else}
-        <h1>최소 A</h1>
-        <p>기말고사에서 {final_A}점 맞아야 합니다.</p>
-      {/if}
-    </div>
-    <div style="margin-bottom: 5px">
-      {#if final_B > 100}
-        <h1>B는 불가능</h1>
-      {:else}
-        <h1>최소 B</h1>
-        <p>기말고사에서 {final_B}점 맞아야 합니다.</p>
-      {/if}
-    </div>
-    <div style="margin-bottom: 5px">
-      {#if final_C > 100}
-        <h1>C는 불가능</h1>
-      {:else}
-        <h1>최소 C</h1>
-        {#if final_C < 0}
-          <p>C는 이미 확정!</p>
+  <div style="margin: 50px !important">
+    <Carousel bind:this={carousel} dots={false}>
+      <div style="margin-bottom: 5px">
+        {#if final_A > 100}
+          <h1>A는 불가능</h1>
         {:else}
-          <p>기말고사에서 {final_C}점 맞아야 합니다.</p>
+          <h1>최소 A</h1>
+          <p>기말고사에서 {final_A}점 맞아야 합니다.</p>
         {/if}
-      {/if}
-    </div>
-    <div style="margin-bottom: 5px">
-      <h1>최소 D</h1>
-      {#if final_D < 0}
-        <p>D는 이미 확정!</p>
-      {:else}
-        <p>기말고사에서 {final_D}점 맞아야 합니다.</p>
-      {/if}
-    </div>
-    <div style="margin-bottom: 5px">
-      <h1>최소 E</h1>
-      {#if final_E < 0}
-        <p>E는 이미 확정!</p>
-      {:else}
-        <p>기말고사에서 {final_E}점 맞아야 합니다.</p>
-      {/if}
-    </div>
-    <div style="margin-bottom: 5px">
-      <h1>최소 F</h1>
-      {#if final_F < 0}
-        <p>F는 이미 확정!</p>
-      {:else}
-        <p>기말고사에서 {final_F}점 맞아야 합니다.</p>
-      {/if}
-    </div>
-  </Carousel>
+      </div>
+      <div style="margin-bottom: 5px">
+        {#if final_B > 100}
+          <h1>B는 불가능</h1>
+        {:else}
+          <h1>최소 B</h1>
+          <p>기말고사에서 {final_B}점 맞아야 합니다.</p>
+        {/if}
+      </div>
+      <div style="margin-bottom: 5px">
+        {#if final_C > 100}
+          <h1>C는 불가능</h1>
+        {:else}
+          <h1>최소 C</h1>
+          {#if final_C < 0}
+            <p>C는 이미 확정!</p>
+          {:else}
+            <p>기말고사에서 {final_C}점 맞아야 합니다.</p>
+          {/if}
+        {/if}
+      </div>
+      <div style="margin-bottom: 5px">
+        <h1>최소 D</h1>
+        {#if final_D < 0}
+          <p>D는 이미 확정!</p>
+        {:else}
+          <p>기말고사에서 {final_D}점 맞아야 합니다.</p>
+        {/if}
+      </div>
+      <div style="margin-bottom: 5px">
+        <h1>최소 E</h1>
+        {#if final_E < 0}
+          <p>E는 이미 확정!</p>
+        {:else}
+          <p>기말고사에서 {final_E}점 맞아야 합니다.</p>
+        {/if}
+      </div>
+      <div style="margin-bottom: 15px">
+        <h1>최소 F</h1>
+        {#if final_F < 0}
+          <p>F는 이미 확정!</p>
+        {:else}
+          <p>기말고사에서 {final_F}점 맞아야 합니다.</p>
+        {/if}
+      </div>
+    </Carousel>
+  </div>
 
-  <p style="margin-top: 100px; margin-bottom: 10px;">
-    실질적으로는 89.5, 79.5 등도 A, B입니다.
-  </p>
-
-  <div  >
+  <div>
     <Button outlined shaped color="Red" on:click={() => dialog.close()}>
       닫기
     </Button>
