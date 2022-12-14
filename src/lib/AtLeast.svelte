@@ -121,7 +121,7 @@
 >
 
 <Dialog bind:dialog>
-  <div style="margin: 50px !important">
+  <div>
     <Carousel bind:this={carousel} dots={false}>
       <div style="margin-bottom: 5px">
         {#if final_A > 100}
