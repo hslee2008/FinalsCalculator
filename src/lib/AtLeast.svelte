@@ -69,15 +69,17 @@
 
     dialog.showModal()
   }
+
+  const ChangedSelect = (e) => {
+    whetherMidterm = e.detail === '중간있는 과목'
+    change()
+  }
 </script>
 
 <div style="margin-bottom: 20px">
   <Select
     labelText="중간"
-    on:change={e => {
-      whetherMidterm = e.detail === '중간있는 과목'
-      change()
-    }}
+    on:change={ChangedSelect}
   >
     <SelectItem value="중간있는 과목" />
     <SelectItem value="중간없는 과목" />
@@ -176,7 +178,7 @@
     </div>
   </Carousel>
 
-  <div  >
+  <div>
     <Button outlined shaped color="Red" on:click={() => dialog.close()}>
       닫기
     </Button>
