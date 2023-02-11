@@ -151,7 +151,7 @@
     title="{number_wrong ? '숫자형식이 잘못되었습니다!' : '결과'}"
   ></ModalHeader>
 
-  <ModalBody>
+  <ModalBody style="margin-top: auto; margin-bottom: auto;">
     <DataTable
       headers="{[
         { key: 'grade', value: '학점' },
@@ -192,7 +192,7 @@
       font-size: 1.5rem;
     }
   }
-  
+
   .mb20 {
     margin-bottom: 20px;
   }
