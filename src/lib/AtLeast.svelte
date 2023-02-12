@@ -120,7 +120,7 @@
     <TextInput
       type="text"
       bind:value={percent}
-      labelText={`각 지필고사 전체에 대한 비율 (${whetherMidterm ? '30, 35' : '50, 60'})`}
+      labelText={`각 지필고사 전체에 대한 비율 (${whetherMidterm ? '30, 35' : '40, 50'})`}
     ></TextInput>
   </div>
 </div>
