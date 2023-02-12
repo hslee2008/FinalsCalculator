@@ -45,3 +45,12 @@ body {
 p {
   font-size: 13px !important;
 }
+
+button {
+  color: red;
+  background: transparent;
+  border: 2px solid red;
+  border-radius: 10px !important;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+}

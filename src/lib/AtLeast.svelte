@@ -12,7 +12,6 @@
     TileGroup,
     RadioTile
   } from 'carbon-components-svelte'
-  import { Button } from 'svelte-mui'
 
   let open
   let whetherMidterm = true
@@ -21,6 +20,12 @@
   let percent = 30
   let midterm = 100
   let projects = 100 - percent * 2
+
+  let labelText
+
+  $: labelText = `각 지필고사 전체에 대한 비율 (${
+    whetherMidterm ? '30, 35' : '40, 50'
+  })`
 
   let final_A = 0,
     final_B = 0,
@@ -42,13 +47,7 @@
     Math.ceil(100 * ((percent - a) / percent))
 
   const parseNumber = (/** @type {number} */ a) =>
-    a < 0
-      ? '확정'
-      : a === 99 || a === 98
-      ? '불가능 (최저 점수가 3점이기 때문에)'
-      : a > 100
-      ? '불가능'
-      : a
+    a < 0 ? '확정' : a > 100 ? '불가능' : a
 
   const calculate = () => {
     const projectsFull = 100 - percent * 2
@@ -119,8 +118,8 @@
   <div class="mb20">
     <TextInput
       type="text"
-      bind:value={percent}
-      labelText={`각 지필고사 전체에 대한 비율 (${whetherMidterm ? '30, 35' : '40, 50'})`}
+      bind:value="{percent}"
+      labelText="{labelText}"
     ></TextInput>
   </div>
 </div>
@@ -141,17 +140,12 @@
   ></TextInput>
 </div>
 
-<Button outlined shaped color="Red" on:click="{CalculateFunction}">
-  계산
-</Button>
+<button on:click="{CalculateFunction}">계산</button>
 
 <ComposedModal bind:open>
-  <ModalHeader
-    label="기말고사 계산기"
-    title="{number_wrong ? '숫자형식이 잘못되었습니다!' : '결과'}"
-  ></ModalHeader>
+  <ModalBody style="margin-top: auto; margin-bottom: auto">
+    <h1 style="margin-bottom: 15px; margin-top: 15px">결과</h1>
 
-  <ModalBody style="margin-top: auto; margin-bottom: auto;">
     <DataTable
       headers="{[
         { key: 'grade', value: '학점' },
@@ -167,10 +161,8 @@
       ]}"
     ></DataTable>
 
-    <div style="margin-top: 50px">
-      <Button outlined shaped color="Red" on:click="{closeDialog}">
-        닫기
-      </Button>
+    <div style="margin-bottom: 50px; margin-top: 50px">
+      <button on:click="{closeDialog}">닫기</button>
     </div>
   </ModalBody>
 </ComposedModal>
