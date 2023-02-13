@@ -116,7 +116,7 @@
 <p style="margin-bottom: 50px; color: grey">
   개발자
   <a
-    href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/AtLeast.svelte"
+    href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/Calculator.svelte"
     rel="noreferrer"
     target="_blank"
   >
