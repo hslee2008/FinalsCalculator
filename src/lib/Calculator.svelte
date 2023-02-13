@@ -10,7 +10,8 @@
     ModalFooter,
     DataTable,
     TileGroup,
-    RadioTile
+    RadioTile,
+    InlineNotification
   } from 'carbon-components-svelte'
 
   let open
@@ -87,11 +88,20 @@
   const validate = () => {
     let check = false
     const global = midterm > 100 || midterm < 0 || projects < 0
+    const checkNull = midterm === '' || projects === ''
 
     if (whetherMidterm) check = projects > 100 - percent * 2
     else check = projects > 100 - percent
 
-    return check || global
+    return check || global || checkNull
+  }
+
+  function onKeyDown(e) {
+    switch (e.keyCode) {
+      case 67:
+        open ? closeDialog() : CalculateFunction()
+        break
+    }
   }
 </script>
 
@@ -161,11 +171,19 @@
       ]}"
     ></DataTable>
 
+    {#if number_wrong}
+    <InlineNotification
+      subtitle="입력하신 숫자가 잘못되었습니다."
+    ></InlineNotification>
+    {/if}
+
     <div style="margin-bottom: 50px; margin-top: 50px">
       <button on:click="{closeDialog}">닫기</button>
     </div>
   </ModalBody>
 </ComposedModal>
+
+<svelte:window on:keydown|preventDefault="{onKeyDown}" />
 
 <style>
   h1 {

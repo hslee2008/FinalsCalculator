@@ -1,12 +1,12 @@
 <script>
-  import AtLeast from './lib/AtLeast.svelte'
+  import Calculator from './lib/Calculator.svelte'
   import { GoogleAnalytics } from "@beyonk/svelte-google-analytics";
 </script>
 
-<main>
-  <GoogleAnalytics properties={['G-PV930WQQFT']} />
+<GoogleAnalytics properties={['G-PV930WQQFT']} />
 
+<main>
   <div class="card">
-    <AtLeast />
+    <Calculator />
   </div>
 </main>
