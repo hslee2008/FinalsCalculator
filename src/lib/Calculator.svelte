@@ -11,7 +11,8 @@
     DataTable,
     TileGroup,
     RadioTile,
-    InlineNotification
+    InlineNotification,
+    Link
   } from 'carbon-components-svelte'
 
   let open
@@ -88,7 +89,7 @@
   const validate = () => {
     let check = false
     const global = midterm > 100 || midterm < 0 || projects < 0
-    const checkNull = midterm === '' || projects === ''
+    const checkNull = midterm === '' || projects === '' || percent === ''
 
     if (whetherMidterm) check = projects > 100 - percent * 2
     else check = projects > 100 - percent
@@ -114,14 +115,16 @@
 
 <h1>기말고사 계산기</h1>
 <p style="margin-bottom: 50px; color: grey">
-  개발자
-  <a
+  <span style="font-size: 13px">
+    개발자
+  </span>
+  <Link
     href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/Calculator.svelte"
     rel="noreferrer"
     target="_blank"
   >
     @이현승
-  </a>
+  </Link>
 </p>
 
 <div class="mb20">
