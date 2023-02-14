@@ -127,7 +127,7 @@
 <div class="mb20">
   <div class="mb20">
     <TextInput
-      type="text"
+      type="number"
       bind:value="{percent}"
       labelText="{labelText}"
     ></TextInput>
@@ -136,7 +136,7 @@
 {#if whetherMidterm}
 <div class="mb20">
   <TextInput
-    type="text"
+    type="number"
     bind:value="{midterm}"
     labelText="중간고사 시험 성적"
   ></TextInput>
@@ -144,7 +144,7 @@
 {/if}
 <div class="mb20">
   <TextInput
-    type="text"
+    type="number"
     bind:value="{projects}"
     labelText="수행평가 성적"
   ></TextInput>
@@ -183,7 +183,7 @@
   </ModalBody>
 </ComposedModal>
 
-<svelte:window on:keydown|preventDefault="{onKeyDown}" />
+<svelte:window on:keydown="{onKeyDown}" />
 
 <style>
   h1 {
