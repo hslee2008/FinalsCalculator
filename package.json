@@ -10,9 +10,9 @@
   },
   "devDependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",
-    "@sveltejs/vite-plugin-svelte": "^1.1.0",
-    "carbon-components-svelte": "^0.70.12",
-    "svelte": "^3.52.0",
-    "vite": "^3.2.3"
+    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "carbon-components-svelte": "^0.72.3",
+    "svelte": "^3.55.1",
+    "vite": "^4.1.1"
   }
 }
