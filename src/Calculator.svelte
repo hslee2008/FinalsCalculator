@@ -30,9 +30,9 @@
 
   let labelText
 
-  $: labelText = `각 지필고사 전체에 대한 비율 (${
-    whetherMidterm ? '30, 35' : '40, 50'
-  })`
+  $: labelText = `${
+    whetherMidterm ? '중간고사와 기말고사 각' : '중간고사'
+  } 비율 (${whetherMidterm ? '30, 35' : '40, 50'})`
 
   $: whetherMidterm = selected === '중간있는 과목'
 
@@ -54,8 +54,9 @@
 
     const projectsFull = whetherMidterm ? 100 - percent * 2 : 100 - percent
     const gotMinused = -(projectsFull - projects)
-    const minus =
-      gotMinused - whetherMidterm ? percent - (midterm / 100) * percent : 0
+    let minus =
+      -(projectsFull - projects) -
+      (whetherMidterm ? percent - (midterm / 100) * percent : 0)
 
     listCalculate(minus)
     openDialog()
@@ -96,7 +97,7 @@
   </Select>
 </div>
 
-<Header></Header>
+<Header title="기말고사 계산기"></Header>
 
 <div class="mb20">
   <div class="mb20">
@@ -112,7 +113,7 @@
   <TextInput
     type="number"
     bind:value="{midterm}"
-    labelText="중간고사 시험 성적"
+    labelText="중간고사 성적"
   ></TextInput>
 </div>
 {/if}
