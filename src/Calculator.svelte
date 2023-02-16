@@ -34,6 +34,8 @@
     whetherMidterm ? '30, 35' : '40, 50'
   })`
 
+  $: whetherMidterm = selected === '중간있는 과목'
+
   let finals = [0, 0, 0, 0, 0, 0]
 
   const listCalculate = (/** @type {number} */ minus) => {
@@ -42,7 +44,7 @@
   }
 
   const ChangedSelect = e => {
-    whetherMidterm = selected !== '중간있는 과목'
+    whetherMidterm = selected === '중간있는 과목'
     percent = whetherMidterm ? 30 : 50
     projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
   }
@@ -105,7 +107,7 @@
     ></TextInput>
   </div>
 </div>
-{#if whetherMidterm}
+{#if selected === '중간있는 과목'}
 <div class="mb20">
   <TextInput
     type="number"
@@ -138,23 +140,6 @@
 <svelte:window on:keydown="{onKeyDown}" />
 
 <style>
-  h1 {
-    font-size: 3rem;
-    line-height: 1.1;
-  }
-
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2rem;
-    }
-  }
-
-  @media (max-width: 360px) {
-    h1 {
-      font-size: 1.5rem;
-    }
-  }
-
   .mb20 {
     margin-bottom: 20px;
   }

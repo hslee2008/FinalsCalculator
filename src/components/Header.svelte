@@ -9,3 +9,22 @@
     @이현승
   </a>
 </p>
+
+<style>
+  h1 {
+    font-size: 3rem;
+    line-height: 1.1;
+  }
+
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  @media (max-width: 360px) {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+</style>
