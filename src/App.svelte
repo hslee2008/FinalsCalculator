@@ -1,5 +1,5 @@
 <script>
-  import Calculator from './lib/Calculator.svelte'
+  import Calculator from './Calculator.svelte'
   import { GoogleAnalytics } from "@beyonk/svelte-google-analytics";
 </script>
 
