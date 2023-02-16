@@ -1,6 +1,6 @@
 <script>
   import katex from 'katex'
-  import Header from './components/Header.svelte'
+  import Header from '../components/Header.svelte'
   import { Select, SelectItem } from 'carbon-components-svelte'
 
   let selected = '중간있는 과목'

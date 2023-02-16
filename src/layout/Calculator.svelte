@@ -13,11 +13,11 @@
     RadioTile
   } from 'carbon-components-svelte'
 
-  import { parsePercent } from './utils/parsePercent.ts'
+  import { parsePercent } from '../utils/parsePercent.ts'
 
-  import Header from './components/Header.svelte'
-  import Table from './components/Table.svelte'
-  import Warning from './components/Warning.svelte'
+  import Header from '../components/Header.svelte'
+  import Table from '../components/Table.svelte'
+  import Warning from '../components/Warning.svelte'
 
   let open
   let whetherMidterm = true

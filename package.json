@@ -6,17 +6,22 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "vitest run .",
+    "test:watch": "vitest ."
   },
   "devDependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",
     "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/svelte": "^3.2.2",
     "carbon-components-svelte": "^0.72.3",
+    "jsdom": "^21.1.0",
     "svelte": "^3.55.1",
-    "vite": "^4.1.1"
+    "vite": "^4.1.1",
+    "vitest": "^0.28.5"
   },
   "dependencies": {
-    "katex": "^0.16.4",
-    "svelte-katex": "^0.1.2"
+    "katex": "^0.16.4"
   }
 }

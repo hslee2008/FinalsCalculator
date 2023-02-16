@@ -1,6 +1,6 @@
 <script>
-  import Calculator from './Calculator.svelte'
-  import Formula from './Formula.svelte'
+  import Calculator from './layout/Calculator.svelte'
+  import Formula from './layout/Formula.svelte'
 
   import { OverflowMenu, OverflowMenuItem } from 'carbon-components-svelte'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
