@@ -10,13 +10,12 @@
     ModalFooter,
     DataTable,
     TileGroup,
-    RadioTile,
-    InlineNotification,
-    Link
+    RadioTile
   } from 'carbon-components-svelte'
 
   let open
   let whetherMidterm = true
+  let selected = '중간있는 과목'
   let number_wrong = false
 
   let percent = 30
@@ -49,7 +48,7 @@
     Math.ceil(100 * ((percent - a) / percent))
 
   const parseNumber = (/** @type {number} */ a) =>
-    a < 0 ? '확정' : a > 100 ? '불가능' : a
+    a < 0 ? '확정' : a > 100 ? '불가능' : `${a}점`
 
   const calculate = () => {
     const projectsFull = 100 - percent * 2
@@ -72,7 +71,7 @@
   }
 
   const ChangedSelect = e => {
-    whetherMidterm = e.detail === '중간있는 과목'
+    whetherMidterm = selected !== '중간있는 과목'
     percent = whetherMidterm ? 30 : 50
     projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
   }
@@ -102,12 +101,16 @@
       case 67:
         open ? closeDialog() : CalculateFunction()
         break
+      case 83:
+        whetherMidterm = !whetherMidterm
+        selected = whetherMidterm ? '중간있는 과목' : '중간없는 과목'
+        break
     }
   }
 </script>
 
 <div class="mb20">
-  <Select on:change="{ChangedSelect}">
+  <Select on:change="{ChangedSelect}" bind:selected>
     <SelectItem value="중간있는 과목"></SelectItem>
     <SelectItem value="중간없는 과목"></SelectItem>
   </Select>
@@ -115,16 +118,14 @@
 
 <h1>기말고사 계산기</h1>
 <p style="margin-bottom: 50px; color: grey">
-  <span style="font-size: 13px">
-    개발자
-  </span>
-  <Link
+  <span style="font-size: 13px"> 개발자 </span>
+  <a
     href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/src/lib/Calculator.svelte"
     rel="noreferrer"
     target="_blank"
   >
     @이현승
-  </Link>
+  </a>
 </p>
 
 <div class="mb20">
@@ -175,9 +176,16 @@
     ></DataTable>
 
     {#if number_wrong}
-    <InlineNotification
-      subtitle="입력하신 숫자가 잘못되었습니다."
-    ></InlineNotification>
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        color: red;
+        margin-top: 5px;
+      "
+    >
+      입력하신 숫자가 잘못되었습니다.
+    </div>
     {/if}
 
     <div style="margin-bottom: 50px; margin-top: 50px">
