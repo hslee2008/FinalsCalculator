@@ -6,7 +6,7 @@
 <p style="margin-bottom: 50px; color: grey">
   <span style="font-size: 13px"> 개발자 </span>
   <a
-    href="https://github.com/HyunseungLee-Travis/FinalsCalcualtor/blob/main/Calculator.svelte"
+    href="https://github.com/HyunseungLee-Travis"
     rel="noreferrer"
     target="_blank"
   >

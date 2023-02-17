@@ -8,7 +8,8 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run .",
-    "test:watch": "vitest ."
+    "test:watch": "vitest .",
+    "update": "yarn upgrade && ncu -u"
   },
   "devDependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",
