@@ -49,6 +49,12 @@
     projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
   }
 
+  const TestChange = () => {
+    whetherMidterm = !whetherMidterm
+    selected = whetherMidterm ? '중간있는 과목' : '중간없는 과목'
+    ChangedSelect()
+  }
+
   const CalculateFunction = () => {
     number_wrong = validate()
 
@@ -95,6 +101,11 @@
     <SelectItem value="중간있는 과목"></SelectItem>
     <SelectItem value="중간없는 과목"></SelectItem>
   </Select>
+  <button
+    data-testid="switch"
+    on:click="{TestChange}"
+    style="display: none"
+  ></button>
 </div>
 
 <Header title="기말고사 계산기"></Header>

@@ -54,3 +54,11 @@ test('Alter 비율, correct format', async () => {
   await fireEvent.click(screen.getByText('계산'))
   expect(screen.getByText('70점')).toBeInTheDocument()
 })
+
+test('Alter 중간고사', async () => {
+  render(Calculator)
+  const input = screen.getByTestId('switch')
+  await fireEvent.click(input)
+  await fireEvent.click(screen.getByText('계산'))
+  expect(screen.getByText('79점')).toBeInTheDocument()
+})

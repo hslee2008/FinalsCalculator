@@ -2,7 +2,7 @@
   import { DataTable } from 'carbon-components-svelte'
 
   const parseNumber = (/** @type {number} */ a) =>
-    a < 0 ? '확정' : a > 100 ? '불가능' : `${a}점`
+    a < 0 ? '확보' : a > 100 ? '불가능' : `${ a }점`
 
   export let finals = [0, 0, 0, 0, 0, 0]
 </script>
