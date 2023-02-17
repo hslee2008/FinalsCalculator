@@ -140,7 +140,7 @@
 
 <ComposedModal bind:open>
   <ModalBody style="margin-top: auto; margin-bottom: auto">
-    <Table finals="{finals}"></Table>
+    <Table bind:finals></Table>
     <Warning bind:number_wrong></Warning>
 
     <div style="margin-bottom: 50px; margin-top: 50px">
