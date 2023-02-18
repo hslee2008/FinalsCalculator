@@ -54,3 +54,8 @@ button {
   padding: 0.4rem 1rem;
   cursor: pointer;
 }
+
+button:hover {
+  color: white;
+  background: red;
+}

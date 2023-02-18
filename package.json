@@ -21,8 +21,5 @@
     "svelte": "^3.55.1",
     "vite": "^4.1.1",
     "vitest": "^0.28.5"
-  },
-  "dependencies": {
-    "katex": "^0.16.4"
   }
 }

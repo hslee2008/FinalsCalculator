@@ -4,7 +4,7 @@
     TextInput,
     Select,
     SelectItem,
-    ComposedModal,
+    Modal,
     ModalHeader,
     ModalBody,
     ModalFooter,
@@ -138,16 +138,16 @@
 
 <button on:click="{CalculateFunction}">계산</button>
 
-<ComposedModal bind:open>
+<Modal bind:open modalHeading="결과" passiveModal selectorPrimaryFocus="#close">
   <ModalBody style="margin-top: auto; margin-bottom: auto">
     <Table bind:finals></Table>
     <Warning bind:number_wrong></Warning>
 
-    <div style="margin-bottom: 50px; margin-top: 50px">
-      <button on:click="{closeDialog}">닫기</button>
+    <div style="margin-top: 50px">
+      <button on:click="{closeDialog}" id="close">닫기</button>
     </div>
   </ModalBody>
-</ComposedModal>
+</Modal>
 
 <svelte:window on:keydown="{onKeyDown}" />
 

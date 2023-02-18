@@ -23,6 +23,4 @@
   })
 </script>
 
-<h1 style="margin-bottom: 15px; margin-top: 15px">결과</h1>
-
 <DataTable bind:headers bind:rows></DataTable>
