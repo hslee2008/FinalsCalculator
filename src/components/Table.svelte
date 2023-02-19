@@ -1,15 +1,16 @@
 <script>
   import { DataTable } from 'carbon-components-svelte'
+  import { t } from '../i18n'
 
   const parseNumber = (/** @type {number} */ a) =>
-    a < 0 ? '확보' : a > 100 ? '불가능' : `${a}점`
+    a < 0 ? $t('secured') : a > 100 ? $t('impossible') : `${a}${$t('score')}`
 
   export let finals = [0, 0, 0, 0, 0, 0]
 
   let rows
   let headers = [
-    { key: 'grade', value: '학점' },
-    { key: 'lowest', value: '기말 최저 점수' }
+    { key: 'grade', value: $t('grade') },
+    { key: 'lowest', value: $t('lowest') }
   ]
 
   $: rows = finals.map((grade, index) => {
@@ -23,4 +24,4 @@
   })
 </script>
 
-<DataTable bind:headers bind:rows></DataTable>
+<DataTable bind:headers bind:rows style="margin-top: 20px"></DataTable>

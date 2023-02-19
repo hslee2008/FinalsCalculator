@@ -1,0 +1,26 @@
+{
+  "developer": "Developer",
+  "name": "Hyunseung Lee",
+  "app_title": "Finals Calculator",
+  "app_description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.",
+
+  "secured": "secured",
+  "score": "%",
+  "impossible": "impossible",
+  "grade": "Grade",
+  "lowest": "Lowest Score in Finals",
+
+  "number_wrong": "The number you entered is wrongly formatted",
+
+  "weight": "weight",
+  "each": "Midterm and Finals each",
+
+  "midterm": "Midterm",
+  "midterm_is": "With midterm",
+  "midterm_is_not": "Without midterm",
+  "midterm_score": "Midterm Score",
+  "perf_evaluation": "Performance Evaluation",
+  "calculate": "Calculate",
+  "result": "Result",
+  "close": "Close"
+}

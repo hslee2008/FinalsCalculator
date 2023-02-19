@@ -1,0 +1,26 @@
+{
+  "developer": "개발자",
+  "name": "이현승",
+  "app_title": "기말고사 계산기",
+  "app_description": "기말고사 계산기는 한국의 교육 시스템에서 사용되는 간단한 앱입니다. 기말고사 점수를 계산해주는 앱입니다.",
+
+  "secured": "확보",
+  "score": "점",
+  "impossible": "불가능",
+  "grade": "학점",
+  "lowest": "기말고사 최저 점수",
+
+  "number_wrong": "입력한 숫자가 잘못되었습니다",
+
+  "weight": "비율",
+  "each": "중간고사와 기말고사 각",
+
+  "midterm": "중간고사",
+  "midterm_is": "중간고사 있는 과목",
+  "midterm_is_not": "중간고사 없는 과목",
+  "midterm_score": "중간고사 점수",
+  "perf_evaluation": "수팽평가",
+  "calculate": "계산하기",
+  "result": "결과 확인하기",
+  "close": "닫기"
+}

@@ -19,6 +19,7 @@
     "carbon-components-svelte": "^0.72.3",
     "jsdom": "^21.1.0",
     "svelte": "^3.55.1",
+    "svelte-meta-tags": "^2.6.5",
     "vite": "^4.1.1",
     "vitest": "^0.28.5"
   }

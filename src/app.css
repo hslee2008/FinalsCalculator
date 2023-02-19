@@ -59,3 +59,7 @@ button:hover {
   color: white;
   background: red;
 }
+
+button:focus {
+  outline: none;
+}

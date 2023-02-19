@@ -12,7 +12,7 @@
     TileGroup,
     RadioTile
   } from 'carbon-components-svelte'
-
+  import { t } from '../i18n'
   import { parsePercent } from '../utils/parsePercent.ts'
 
   import Header from '../components/Header.svelte'
@@ -21,7 +21,7 @@
 
   let open
   let whetherMidterm = true
-  let selected = '중간있는 과목'
+  let selected = $t('midterm_is')
   let number_wrong = false
 
   let percent = 30
@@ -30,11 +30,11 @@
 
   let labelText
 
-  $: labelText = `${
-    whetherMidterm ? '중간고사와 기말고사 각' : '중간고사'
-  } 비율 (${whetherMidterm ? '30, 35' : '40, 50'})`
+  $: labelText = `${whetherMidterm ? $t('each') : $t('midterm')} ${$t(
+    'weight'
+  )} (${whetherMidterm ? '30, 35' : '40, 50'})`
 
-  $: whetherMidterm = selected === '중간있는 과목'
+  $: whetherMidterm = selected === $t('midterm_is')
 
   let finals = [0, 0, 0, 0, 0, 0]
 
@@ -43,16 +43,11 @@
       finals[i] = parsePercent(percent, 10.5 + minus + i * 10)
   }
 
-  const ChangedSelect = e => {
-    whetherMidterm = selected === '중간있는 과목'
+  const ChangeMidtermStatus = () => {
+    whetherMidterm = !whetherMidterm
+    selected = whetherMidterm ? $t('midterm_is') : $t('midterm_is_not')
     percent = whetherMidterm ? 30 : 50
     projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
-  }
-
-  const TestChange = () => {
-    whetherMidterm = !whetherMidterm
-    selected = whetherMidterm ? '중간있는 과목' : '중간없는 과목'
-    ChangedSelect()
   }
 
   const CalculateFunction = () => {
@@ -84,10 +79,6 @@
       case 67:
         open ? closeDialog() : CalculateFunction()
         break
-      case 83:
-        whetherMidterm = !whetherMidterm
-        selected = whetherMidterm ? '중간있는 과목' : '중간없는 과목'
-        break
     }
   }
 
@@ -97,18 +88,18 @@
 </script>
 
 <div class="mb20">
-  <Select on:change="{ChangedSelect}" bind:selected>
-    <SelectItem value="중간있는 과목"></SelectItem>
-    <SelectItem value="중간없는 과목"></SelectItem>
+  <Select on:change="{ChangeMidtermStatus}">
+    <SelectItem value="{$t('midterm_is')}"></SelectItem>
+    <SelectItem value="{$t('midterm_is_not')}"></SelectItem>
   </Select>
   <button
     data-testid="switch"
-    on:click="{TestChange}"
+    on:click="{ChangeMidtermStatus}"
     style="display: none"
   ></button>
 </div>
 
-<Header title="기말고사 계산기"></Header>
+<Header title="{$t('app_title')}"></Header>
 
 <div class="mb20">
   <div class="mb20">
@@ -119,12 +110,12 @@
     ></TextInput>
   </div>
 </div>
-{#if selected === '중간있는 과목'}
+{#if selected === $t('midterm_is')}
 <div class="mb20">
   <TextInput
     type="number"
     bind:value="{midterm}"
-    labelText="중간고사 성적"
+    labelText="{$t('midterm_score')}"
   ></TextInput>
 </div>
 {/if}
@@ -132,19 +123,24 @@
   <TextInput
     type="number"
     bind:value="{projects}"
-    labelText="수행평가 성적"
+    labelText="{$t('perf_evaluation')}"
   ></TextInput>
 </div>
 
-<button on:click="{CalculateFunction}">계산</button>
+<button on:click="{CalculateFunction}">{$t('calculate')}</button>
 
-<Modal bind:open modalHeading="결과" passiveModal selectorPrimaryFocus="#close">
+<Modal
+  bind:open
+  modalHeading="{$t('result')}"
+  passiveModal
+  selectorPrimaryFocus="#close"
+>
   <ModalBody style="margin-top: auto; margin-bottom: auto">
     <Table bind:finals></Table>
     <Warning bind:number_wrong></Warning>
 
     <div style="margin-top: 50px">
-      <button on:click="{closeDialog}" id="close">닫기</button>
+      <button on:click="{closeDialog}" id="close">{$t('close')}</button>
     </div>
   </ModalBody>
 </Modal>
