@@ -7,7 +7,9 @@ const translations = {
   ko
 }
 
-export const locale = writable(navigator.language || 'ko')
+let currentLocale = navigator.language || 'ko'
+
+export const locale = writable(currentLocale)
 export const locales = Object.keys(translations)
 
 function translate(locale, key, vars) {
@@ -29,3 +31,5 @@ export const t = derived(
     (key, vars = {}) =>
       translate($locale, key, vars)
 )
+
+export { currentLocale }
