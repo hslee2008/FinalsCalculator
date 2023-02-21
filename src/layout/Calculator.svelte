@@ -12,7 +12,7 @@
     TileGroup,
     RadioTile
   } from 'carbon-components-svelte'
-  import { t } from '../i18n'
+  import { t } from '../utils/i18n'
   import { parsePercent } from '../utils/parsePercent.ts'
 
   import Header from '../components/Header.svelte'

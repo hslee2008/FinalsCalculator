@@ -1,6 +1,6 @@
 <script>
   import { DataTable } from 'carbon-components-svelte'
-  import { t } from '../i18n'
+  import { t } from '../utils/i18n'
 
   const parseNumber = (/** @type {number} */ a) =>
     a < 0 ? $t('secured') : a > 100 ? $t('impossible') : `${a}${$t('score')}`

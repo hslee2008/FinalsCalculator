@@ -1,8 +1,13 @@
-# 기말고사 계산기
+<div align="center">
+<img src="https://finalscalcu.web.app/icon.png" width="200" height="200" alt="Finals Calculator" />
+<h1>Finals Calculator</h1>
+</div>
 
-학교 기말고사 계산기
-중간고사와 수행평가 성적을 입력하고 A를 받기 위한 기말의 최소 점수를 확인하세요.
+Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.
 
-# Finals Calculator
+## Features
 
-With only the finals left, calculate how much you need to get in your finals to reach A.
+- Calculate your final score needed to get a certain grade
+- Customizable weight for each category
+- Accurate with all the math heavy lifting done for you
+

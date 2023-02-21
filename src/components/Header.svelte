@@ -1,5 +1,5 @@
 <script>
-  import { t } from '../i18n'
+  import { t } from '../utils/i18n'
 
   export let title = '기말고사 계산기'
 </script>

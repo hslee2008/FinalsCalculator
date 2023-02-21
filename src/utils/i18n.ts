@@ -1,6 +1,6 @@
 import { derived, writable } from 'svelte/store'
-import en from './i18n/en-US.json'
-import ko from './i18n/ko.json'
+import en from '../i18n/en-US.json'
+import ko from '../i18n/ko.json'
 
 const translations = {
   'en-US': en,
@@ -8,6 +8,8 @@ const translations = {
 }
 
 let currentLocale = navigator.language || 'ko'
+
+if (process.env.NODE_ENV === 'development') currentLocale = 'ko'
 
 export const locale = writable(currentLocale)
 export const locales = Object.keys(translations)
