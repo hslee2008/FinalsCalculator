@@ -33,13 +33,12 @@
   $: labelText = `${whetherMidterm ? $t('each') : $t('midterm')} ${$t(
     'weight'
   )} (${whetherMidterm ? '30, 35' : '40, 50'})`
-
   $: whetherMidterm = selected === $t('midterm_is')
 
-  let finals = [0, 0, 0, 0, 0, 0]
+  let finals = [0, 0, 0, 0, 0]
 
   const listCalculate = (/** @type {number} */ minus) => {
-    for (let i = 0; i < 6; i++)
+    for (let i = 0; i < finals.length; i++)
       finals[i] = parsePercent(percent, 10.5 + minus + i * 10)
   }
 

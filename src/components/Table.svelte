@@ -5,7 +5,7 @@
   const parseNumber = (/** @type {number} */ a) =>
     a < 0 ? $t('secured') : a > 100 ? $t('impossible') : `${a}${$t('score')}`
 
-  export let finals = [0, 0, 0, 0, 0, 0]
+  export let finals = [0, 0, 0, 0, 0]
 
   let rows
   let headers = [
