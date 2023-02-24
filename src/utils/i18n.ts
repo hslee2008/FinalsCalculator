@@ -34,4 +34,6 @@ export const t = derived(
       translate($locale, key, vars)
 )
 
+export const translateForScript = (key, vars = {}) => translate(currentLocale, key, vars)
+
 export { currentLocale }
