@@ -5,7 +5,7 @@
 </script>
 
 <h1>{title}</h1>
-<p style="margin-bottom: 50px; color: grey">
+<p style="margin-bottom: 50px; color: #575757">
   <span style="font-size: 13px"> {$t('developer')} </span>
   <a
     href="https://github.com/HyunseungLee-Travis"
@@ -23,6 +23,12 @@
   }
 
   @media (max-width: 480px) {
+    h1 {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 410px) {
     h1 {
       font-size: 2rem;
     }

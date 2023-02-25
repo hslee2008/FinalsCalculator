@@ -32,7 +32,7 @@
 
   $: labelText = `${whetherMidterm ? $t('each') : $t('midterm')} ${$t(
     'weight'
-  )} (${whetherMidterm ? '30, 35' : '40, 50'})`
+  )} (${whetherMidterm ? '30, 35' : '50, 60'})`
   $: whetherMidterm = selected === $t('midterm_is')
 
   let finals = [0, 0, 0, 0, 0]
@@ -132,7 +132,7 @@
   bind:open
   modalHeading="{$t('result')}"
   passiveModal
-  selectorPrimaryFocus="#close"
+  selectorPrimaryFocus=".bx--modal-content"
 >
   <ModalBody style="margin-top: auto; margin-bottom: auto">
     <Table bind:finals></Table>

@@ -12,10 +12,18 @@ const FILES_TO_CACHE = [
   '/images/64x64.png',
   '/images/128x128.png',
   '/images/256x256.png',
+  '/images/512x512.png',
   '/images/1024x1024.png',
+  '/images/maskable_icon.png',
   '/icon.png',
-  'manifest-ko.json',
-  'manifest-en-US.json'
+  '/manifest/light/manifest-ko-KR.json',
+  '/manifest/light/manifest-en-US.json',
+  '/manifest/dark/manifest-ko-KR.json',
+  '/manifest/dark/manifest-en-US.json',
+  'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2',
+  'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Light-Latin1.woff2',
+  'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Regular-Latin1.woff2',
+  'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-SemiBold-Latin1.woff2'
 ]
 
 self.addEventListener('install', evt => {

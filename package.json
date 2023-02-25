@@ -9,11 +9,11 @@
     "preview": "vite preview",
     "test": "vitest run .",
     "test:watch": "vitest .",
-    "update": "yarn upgrade && ncu -u"
+    "update": "yarn upgrade && ncu -u && yarn"
   },
   "devDependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",
-    "@sveltejs/vite-plugin-svelte": "^2.0.2",
+    "@sveltejs/vite-plugin-svelte": "^2.0.3",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
     "carbon-components-svelte": "^0.73.1",
@@ -21,6 +21,6 @@
     "svelte": "^3.55.1",
     "svelte-meta-tags": "^2.6.5",
     "vite": "^4.1.4",
-    "vitest": "^0.28.5"
+    "vitest": "^0.29.1"
   }
 }

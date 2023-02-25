@@ -47,17 +47,18 @@ p {
 }
 
 button {
-  color: red;
+  color: #5c62fe;
   background: transparent;
-  border: 2px solid red;
+  border: 2px solid #5c62fe;
   border-radius: 10px !important;
   padding: 0.4rem 1rem;
   cursor: pointer;
 }
 
-button:hover {
+button:hover,
+button:focus {
   color: white;
-  background: red;
+  background: #5c62fe;
 }
 
 button:focus {

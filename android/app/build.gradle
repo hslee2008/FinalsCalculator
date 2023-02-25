@@ -24,14 +24,14 @@ def twaManifest = [
     applicationId: 'app.web.finalscalcu.twa',
     hostName: 'finalscalcu.web.app', // The domain being opened in the TWA.
     launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
-    name: '중학교 내신 계산기', // The application name.
+    name: '기말고사 계산기', // The application name.
     launcherName: '기말 계산기', // The name shown on the Android Launcher.
-    themeColor: '#2F3BA2', // The color used for the status bar.
-    navigationColor: '#000000', // The color used for the navigation bar.
-    navigationColorDark: '#000000', // The color used for the dark navbar.
-    navigationDividerColor: '#000000', // The navbar divider color.
-    navigationDividerColorDark: '#000000', // The dark navbar divider color.
-    backgroundColor: '#2F3BA2', // The color used for the splash screen background.
+    themeColor: '#FFFFFF', // The color used for the status bar.
+    navigationColor: '#FFFFFF', // The color used for the navigation bar.
+    navigationColorDark: '#FFFFFF', // The color used for the dark navbar.
+    navigationDividerColor: '#FFFFFF', // The navbar divider color.
+    navigationDividerColorDark: '#FFFFFF', // The dark navbar divider color.
+    backgroundColor: '#FFFFFF', // The color used for the splash screen background.
     enableNotifications: true, // Set to true to enable notification delegation.
     // Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
@@ -46,7 +46,7 @@ def twaManifest = [
     // 'customtabs' and 'webview'.
     fallbackType: 'customtabs',
     enableSiteSettingsShortcut: 'true',
-    orientation: 'portrait',
+    orientation: 'default',
 ]
 
 android {
@@ -55,8 +55,8 @@ android {
         applicationId "app.web.finalscalcu.twa"
         minSdkVersion 19
         targetSdkVersion 31
-        versionCode 4
-        versionName "4"
+        versionCode 3
+        versionName "3"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
@@ -72,7 +72,7 @@ android {
             // The URL the Web Manifest for the Progressive Web App that the TWA points to. This
             // is used by Chrome OS and Meta Quest to open the Web version of the PWA instead of
             // the TWA, as it will probably give a better user experience for non-mobile devices.
-            resValue "string", "webManifestUrl", 'https://finalscalcu.web.app/manifest-ko.json'
+            resValue "string", "webManifestUrl", 'https://finalscalcu.web.app/manifest/light/manifest-ko-KR.json'
         
 
         

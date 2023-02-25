@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "app.web.finalscalcu.twa",
+      "sha256_cert_fingerprints": [
+        "AA:E5:9C:AB:40:56:31:CD:2F:AF:98:FB:67:F0:0B:68:AC:F1:9A:2C:3A:77:0E:61:42:38:37:66:43:AB:55:4D"
+      ]
+    }
+  }
+]

@@ -1,21 +1,24 @@
 import { derived, writable } from 'svelte/store'
 import en from '../i18n/en-US.json'
-import ko from '../i18n/ko.json'
+import ko from '../i18n/ko-KR.json'
 
 const translations = {
   'en-US': en,
-  ko
+  'ko-KR': ko
 }
 
-let currentLocale = navigator.language || 'ko'
+const url = new URL(window.location)
+const searchParams = url.searchParams
 
-if (process.env.NODE_ENV === 'development') currentLocale = 'ko'
+let currentLocale = searchParams.get('lang') || navigator.language || 'ko-KR'
+
+if (currentLocale === 'ko') currentLocale = 'ko-KR'
 
 export const locale = writable(currentLocale)
 export const locales = Object.keys(translations)
 
 function translate(locale, key, vars) {
-  if (!translations[locale]) locale = 'ko'
+  if (!translations[locale]) locale = 'ko-KR'
 
   let text = translations[locale][key]
 
@@ -34,6 +37,7 @@ export const t = derived(
       translate($locale, key, vars)
 )
 
-export const translateForScript = (key, vars = {}) => translate(currentLocale, key, vars)
+export const translateForScript = (key, vars = {}) =>
+  translate(currentLocale, key, vars)
 
 export { currentLocale }
