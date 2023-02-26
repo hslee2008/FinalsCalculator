@@ -11,8 +11,6 @@
   "grade": "Grade",
   "lowest": "Lowest Score to Achieve",
 
-  "number_wrong": "The number you entered is wrongly formatted",
-
   "weight": "weight",
   "each": "Midterm and Finals each",
 
@@ -30,5 +28,8 @@
   "quest": "Would you like to download it?",
 
   "yes": "Yes",
-  "no": "No"
+  "no": "No",
+
+  "invalid_percent": "30 or 35",
+  "invalid_percent_midterm": "50 or 60"
 }

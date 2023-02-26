@@ -11,8 +11,6 @@
   "grade": "학점",
   "lowest": "기말고사 최저 점수",
 
-  "number_wrong": "입력한 숫자가 잘못되었습니다",
-
   "weight": "비율",
   "each": "중간과 기말 각",
 
@@ -30,5 +28,8 @@
   "quest": "업데이트 하시겠습니까?",
 
   "yes": "예",
-  "no": "아니오"
+  "no": "아니오",
+
+  "invalid_percent": "30 또는 35",
+  "invalid_percent_midterm": "50 또는 60"
 }

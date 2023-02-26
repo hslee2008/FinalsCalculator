@@ -32,17 +32,6 @@ test('Alter midterm', async () => {
   expect(screen.getByText('65%')).toBeInTheDocument()
 })
 
-test('Alter weight, wrong format', async () => {
-  render(Calculator)
-  const input = screen.getByLabelText('Midterm and Finals each weight (30, 35)')
-  await fireEvent.input(input, { target: { value: '35' } })
-  expect(input.value).toBe('35')
-  await fireEvent.click(screen.getByText('Calculate'))
-  expect(
-    screen.getByText('The number you entered is wrongly formatted')
-  ).toBeInTheDocument()
-})
-
 test('Alter weight, correct format', async () => {
   render(Calculator)
   const input = screen.getByLabelText('Midterm and Finals each weight (30, 35)')

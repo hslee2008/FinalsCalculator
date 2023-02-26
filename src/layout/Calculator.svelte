@@ -17,12 +17,10 @@
 
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
-  import Warning from '../components/Warning.svelte'
 
   let open
   let whetherMidterm = true
   let selected = $t('midterm_is')
-  let number_wrong = false
 
   let percent = 30
   let midterm = 100
@@ -50,8 +48,6 @@
   }
 
   const CalculateFunction = () => {
-    number_wrong = validate()
-
     const projectsFull = whetherMidterm ? 100 - percent * 2 : 100 - percent
     const gotMinused = -(projectsFull - projects)
     let minus =
@@ -60,17 +56,6 @@
 
     listCalculate(minus)
     openDialog()
-  }
-
-  const validate = () => {
-    const percentCheck = whetherMidterm
-      ? projects > 100 - percent * 2
-      : projects > 100 - percent
-    const global = midterm > 100 || midterm < 0 || projects < 0
-    const checkNull = midterm === null || projects === null || percent === null
-    const checkEmpty = midterm === '' || projects === '' || percent === ''
-
-    return percentCheck || global || checkNull || checkEmpty
   }
 
   function onKeyDown(e) {
@@ -106,15 +91,21 @@
       type="number"
       bind:value="{percent}"
       labelText="{labelText}"
+      invalid="{whetherMidterm ? percent !== 30 && percent !== 35 : percent !== 50 && percent !== 60}"
+      invalidText="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+      placeholder="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
     ></TextInput>
   </div>
 </div>
-{#if selected === $t('midterm_is')}
+{#if whetherMidterm}
 <div class="mb20">
   <TextInput
     type="number"
     bind:value="{midterm}"
     labelText="{$t('midterm_score')}"
+    invalid="{midterm > 100 || midterm < 0 || midterm === null || midterm === ''}"
+    invalidText="0 ~ 100"
+    placeholder="0 ~ 100"
   ></TextInput>
 </div>
 {/if}
@@ -123,6 +114,9 @@
     type="number"
     bind:value="{projects}"
     labelText="{$t('perf_evaluation')}"
+    invalid="{projects < 0 || (whetherMidterm ? projects > 100 - percent * 2 : projects > 100 - percent)}"
+    invalidText="0 ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
+    placeholder="0 ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
   ></TextInput>
 </div>
 
@@ -136,7 +130,6 @@
 >
   <ModalBody style="margin-top: auto; margin-bottom: auto">
     <Table bind:finals></Table>
-    <Warning bind:number_wrong></Warning>
 
     <div style="margin-top: 50px; margin-bottom: 50px">
       <button on:click="{closeDialog}" id="close">{$t('close')}</button>
