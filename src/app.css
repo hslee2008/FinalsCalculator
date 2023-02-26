@@ -65,6 +65,10 @@ button:focus {
   outline: none;
 }
 
+.bx--modal-content {
+  margin-bottom: 0 !important;
+}
+
 @media (min-width: 672px) {
   .bx--modal-container {
     border-radius: 10px !important;

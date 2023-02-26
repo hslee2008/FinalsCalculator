@@ -138,7 +138,7 @@
     <Table bind:finals></Table>
     <Warning bind:number_wrong></Warning>
 
-    <div style="margin-top: 50px">
+    <div style="margin-top: 50px; margin-bottom: 50px">
       <button on:click="{closeDialog}" id="close">{$t('close')}</button>
     </div>
   </ModalBody>
