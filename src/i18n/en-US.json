@@ -23,5 +23,12 @@
   "perf_evaluation": "Performance Evaluation",
   "calculate": "Calculate",
   "result": "Result",
-  "close": "Close"
+  "close": "Close",
+
+  "new_version": "New Version",
+  "new_version_avail": "A new version of Finals Calculator is available.",
+  "quest": "Would you like to download it?",
+
+  "yes": "Yes",
+  "no": "No"
 }

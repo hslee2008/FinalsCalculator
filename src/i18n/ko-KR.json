@@ -23,5 +23,12 @@
   "perf_evaluation": "수행평가 점수",
   "calculate": "계산하기",
   "result": "결과 확인하기",
-  "close": "닫기"
+  "close": "닫기",
+
+  "new_version": "새로운 버전",
+  "new_version_avail": "기말고사 계산기 새로운 버전 업데이트가 있습니다",
+  "quest": "업데이트 하시겠습니까?",
+
+  "yes": "예",
+  "no": "아니오"
 }
