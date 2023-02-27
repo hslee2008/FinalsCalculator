@@ -57,6 +57,7 @@
   ],
   "id": "/?dark=false&lang=en-US",
   "start_url": "/?dark=false&lang=en-US",
+  "scope": "/",
   "display": "fullscreen",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
@@ -68,6 +69,20 @@
       "platform": "play",
       "url": "https://play.google.com/store/apps/details?id=app.web.finalscalcu.twa",
       "id": "app.web.finalscalcu.twa"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "With Midterm",
+      "short_name": "With Midterm",
+      "description": "Calculate your final score with a midterm.",
+      "url": "/?dark=false&lang=en-US&midterm=true"
+    },
+    {
+      "name": "Without Midterm",
+      "short_name": "Without Midterm",
+      "description": "Calculate your final score without a midterm.",
+      "url": "/?dark=false&lang=en-US&midterm=false"
     }
   ]
 }

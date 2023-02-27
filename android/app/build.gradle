@@ -23,7 +23,7 @@ plugins {
 def twaManifest = [
     applicationId: 'app.web.finalscalcu.twa',
     hostName: 'finalscalcu.web.app', // The domain being opened in the TWA.
-    launchUrl: '/', // The start path for the TWA. Must be relative to the domain.
+    launchUrl: '/?dark=false&lang=ko-KR', // The start path for the TWA. Must be relative to the domain.
     name: '기말고사 계산기', // The application name.
     launcherName: '기말 계산기', // The name shown on the Android Launcher.
     themeColor: '#FFFFFF', // The color used for the status bar.
@@ -38,15 +38,15 @@ def twaManifest = [
     // - short_name: Shorter string used if |name| is too long.
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
-    shortcuts: [],
+    shortcuts: [[name:'중간고사 있는 과목', short_name:'중간 있는 과목', url:'/?dark=false&lang=ko-KR?midterm=true', icon:'shortcut_0'],[name:'중간고사 없는 과목', short_name:'중간 없는 과목', url:'/?dark=false&lang=ko-KR?midterm=false', icon:'shortcut_1']],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
-    splashScreenFadeOutDuration: 300,
+    splashScreenFadeOutDuration: 500,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
     // The fallback strategy for when Trusted Web Activity is not available. Possible values are
     // 'customtabs' and 'webview'.
     fallbackType: 'customtabs',
     enableSiteSettingsShortcut: 'true',
-    orientation: 'default',
+    orientation: 'any',
 ]
 
 android {

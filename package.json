@@ -9,7 +9,8 @@
     "preview": "vite preview",
     "test": "vitest run .",
     "test:watch": "vitest .",
-    "update": "yarn upgrade && ncu -u && yarn"
+    "update": "yarn upgrade && ncu -u && yarn",
+    "build-android": "cd android && bubblewrap build"
   },
   "devDependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",

@@ -57,6 +57,7 @@
   ],
   "id": "/?dark=true&lang=ko-KR",
   "start_url": "/?dark=true&lang=ko-KR",
+  "scope": "/",
   "display": "fullscreen",
   "background_color": "#000000",
   "theme_color": "#000000",
@@ -68,6 +69,20 @@
       "platform": "play",
       "url": "https://play.google.com/store/apps/details?id=app.web.finalscalcu.twa",
       "id": "app.web.finalscalcu.twa"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "중간고사 있는 과목",
+      "short_name": "중간고사 있는 과목",
+      "description": "중간고사가 있는 과목을 계산합니다.",
+      "url": "/?dark=true&lang=ko-KR&midterm=true"
+    },
+    {
+      "name": "중간고사 없는 과목",
+      "short_name": "중간고사 없는 과목",
+      "description": "중간고사가 없는 과목을 계산합니다.",
+      "url": "/?dark=true&lang=ko-KR&midterm=false"
     }
   ]
 }

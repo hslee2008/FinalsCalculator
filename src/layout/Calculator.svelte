@@ -1,4 +1,5 @@
 <script>
+  /* Imports */
   import 'carbon-components-svelte/css/white.css'
   import {
     TextInput,
@@ -14,9 +15,12 @@
   } from 'carbon-components-svelte'
   import { t } from '../utils/i18n'
   import { parsePercent } from '../utils/parsePercent.ts'
+  import { onMount } from 'svelte'
 
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
+
+  /* Variable Initialization */
 
   let open
   let whetherMidterm = true
@@ -27,13 +31,26 @@
   let projects = 100 - percent * 2
 
   let labelText
+  let finals = [0, 0, 0, 0, 0]
+
+  const url = new URL(window.location)
+  const searchParams = url.searchParams
+
+  /* Making sure variable stays up to date */
 
   $: labelText = `${whetherMidterm ? $t('each') : $t('midterm')} ${$t(
     'weight'
   )} (${whetherMidterm ? '30, 35' : '50, 60'})`
   $: whetherMidterm = selected === $t('midterm_is')
 
-  let finals = [0, 0, 0, 0, 0]
+  onMount(() => {
+    if (searchParams.has('midterm')) {
+      whetherMidterm = searchParams.get('midterm') === 'true'
+      ChangeMidtermStatus()
+    }
+  })
+
+  /* Functions */
 
   const listCalculate = (/** @type {number} */ minus) => {
     for (let i = 0; i < finals.length; i++)
@@ -41,10 +58,14 @@
   }
 
   const ChangeMidtermStatus = () => {
-    whetherMidterm = !whetherMidterm
     selected = whetherMidterm ? $t('midterm_is') : $t('midterm_is_not')
     percent = whetherMidterm ? 30 : 50
     projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
+  }
+
+  const TestChangeMidtermStatus = () => {
+    whetherMidterm = !whetherMidterm
+    ChangeMidtermStatus()
   }
 
   const CalculateFunction = () => {
@@ -72,13 +93,13 @@
 </script>
 
 <div class="mb20">
-  <Select on:change="{ChangeMidtermStatus}">
+  <Select on:change="{ChangeMidtermStatus}" bind:selected>
     <SelectItem value="{$t('midterm_is')}"></SelectItem>
     <SelectItem value="{$t('midterm_is_not')}"></SelectItem>
   </Select>
   <button
     data-testid="switch"
-    on:click="{ChangeMidtermStatus}"
+    on:click="{TestChangeMidtermStatus}"
     style="display: none"
   ></button>
 </div>
