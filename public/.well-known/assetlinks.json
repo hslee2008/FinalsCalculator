@@ -1,26 +1,21 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "app.web.finalscalcu.twa",
       "sha256_cert_fingerprints": [
-        "AA:E5:9C:AB:40:56:31:CD:2F:AF:98:FB:67:F0:0B:68:AC:F1:9A:2C:3A:77:0E:61:42:38:37:66:43:AB:55:4D"
+        "AA:E5:9C:AB:40:56:31:CD:2F:AF:98:FB:67:F0:0B:68:AC:F1:9A:2C:3A:77:0E:61:42:38:37:66:43:AB:55:4D",
+        "39:77:6A:AE:F1:88:86:E9:81:EE:16:CE:05:ED:37:13:7B:61:F6:04:44:D5:AC:CB:0A:A8:79:08:0D:DD:27:B3"
       ]
     }
   },
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "app.web.finalscalcu.twa",
-      "sha256_cert_fingerprints": [
-        "39:77:6A:AE:F1:88:86:E9:81:EE:16:CE:05:ED:37:13:7B:61:F6:04:44:D5:AC:CB:0A:A8:79:08:0D:DD:27:B3        "
-      ]
-    }
-  },
-  {
-    "relation": ["check_validation"],
+    "relation": [
+      "check_validation"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "app.web.finalscalcu.twa"

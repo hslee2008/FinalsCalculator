@@ -14,13 +14,13 @@
   "startUrl": "/?dark=false&lang=ko-KR",
   "iconUrl": "https://finalscalcu.web.app/images/1024x1024.png",
   "maskableIconUrl": "https://finalscalcu.web.app/images/maskable_icon.png",
-  "splashScreenFadeOutDuration": 500,
+  "splashScreenFadeOutDuration": 300,
   "signingKey": {
     "path": "C:\\Users\\USER\\Desktop\\Folder\\Code\\FinalsCalculator\\android\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "3",
-  "appVersionCode": 3,
+  "appVersionName": "4",
+  "appVersionCode": 4,
   "shortcuts": [
     {
       "name": "중간고사 있는 과목",
@@ -85,5 +85,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "3"
+  "appVersion": "4"
 }

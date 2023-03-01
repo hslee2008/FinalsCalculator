@@ -40,7 +40,7 @@ def twaManifest = [
     // - icon: Name of the resource in the drawable folder to use as an icon.
     shortcuts: [[name:'중간고사 있는 과목', short_name:'중간 있는 과목', url:'/?dark=false&lang=ko-KR?midterm=true', icon:'shortcut_0'],[name:'중간고사 없는 과목', short_name:'중간 없는 과목', url:'/?dark=false&lang=ko-KR?midterm=false', icon:'shortcut_1']],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
-    splashScreenFadeOutDuration: 500,
+    splashScreenFadeOutDuration: 300,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
     // The fallback strategy for when Trusted Web Activity is not available. Possible values are
     // 'customtabs' and 'webview'.
@@ -55,8 +55,8 @@ android {
         applicationId "app.web.finalscalcu.twa"
         minSdkVersion 19
         targetSdkVersion 31
-        versionCode 3
-        versionName "3"
+        versionCode 4
+        versionName "4"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
