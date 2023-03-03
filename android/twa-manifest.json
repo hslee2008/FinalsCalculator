@@ -3,7 +3,7 @@
   "host": "finalscalcu.web.app",
   "name": "기말고사 계산기",
   "launcherName": "기말 계산기",
-  "display": "fullscreen",
+  "display": "standalone",
   "themeColor": "#FFFFFF",
   "navigationColor": "#FFFFFF",
   "navigationColorDark": "#FFFFFF",
@@ -19,8 +19,8 @@
     "path": "C:\\Users\\USER\\Desktop\\Folder\\Code\\FinalsCalculator\\android\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "4",
-  "appVersionCode": 4,
+  "appVersionName": "5",
+  "appVersionCode": 5,
   "shortcuts": [
     {
       "name": "중간고사 있는 과목",
@@ -85,5 +85,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "4"
+  "appVersion": "5"
 }

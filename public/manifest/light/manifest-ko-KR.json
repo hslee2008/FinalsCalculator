@@ -58,7 +58,7 @@
   "id": "/?dark=false&lang=ko-KR",
   "start_url": "/?dark=false&lang=ko-KR",
   "scope": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "orientation": "any",

@@ -58,7 +58,7 @@
   "id": "/?dark=false&lang=en-US",
   "start_url": "/?dark=false&lang=en-US",
   "scope": "/",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "orientation": "any",

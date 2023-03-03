@@ -95,7 +95,7 @@
 
     <img src="/icon.png" alt="Logo" style="margin-top: 50px" width="250px" />
 
-    <div style="margin-top: 50px">
+    <div style="margin-top: 50px; margin-bottom: 50px">
       <button on:click="{reloadAndUpdate}">{$t('yes')}</button>
       <button on:click="{closeModal}">{$t('no')}</button>
     </div>
