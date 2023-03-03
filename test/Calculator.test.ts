@@ -10,7 +10,7 @@ test('Shows Proper Heading', () => {
 test('Click the Calculate Button', async () => {
   render(Calculator)
   await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('65%')).toBeInTheDocument()
+  expect(screen.getByText('58%')).toBeInTheDocument()
 })
 
 test('Alter performance evaluation', async () => {
@@ -19,7 +19,7 @@ test('Alter performance evaluation', async () => {
   await fireEvent.input(input, { target: { value: '30' } })
   expect(input.value).toBe('30')
   await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('100%')).toBeInTheDocument()
+  expect(screen.getByText('98%')).toBeInTheDocument()
 })
 
 test('Alter midterm', async () => {
@@ -28,13 +28,13 @@ test('Alter midterm', async () => {
   await fireEvent.input(input, { target: { value: '0' } })
   expect(input.value).toBe('0')
   await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('100%')).toBeInTheDocument()
-  expect(screen.getByText('65%')).toBeInTheDocument()
+  expect(screen.getByText('78%')).toBeInTheDocument()
+  expect(screen.getByText('38%')).toBeInTheDocument()
 })
 
 test('Alter weight, correct format', async () => {
   render(Calculator)
-  const input = screen.getByLabelText('Midterm and Finals each weight (30, 35)')
+  const input = screen.getByLabelText('Midterm and Finals each weight (25, 30, 35)')
   await fireEvent.input(input, { target: { value: '35' } })
   expect(input.value).toBe('35')
   const input2 = screen.getByLabelText('Performance Evaluation')
