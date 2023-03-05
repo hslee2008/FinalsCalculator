@@ -1,0 +1,15 @@
+.bx--modal-content {
+  margin-bottom: 0 !important;
+}
+
+@media (min-width: 672px) {
+  .bx--modal-container {
+    border-radius: 10px !important;
+  }
+}
+
+@media (max-width: 672px) {
+  .bx--modal-content {
+    margin-bottom: 0 !important;
+  }
+}

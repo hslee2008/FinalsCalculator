@@ -3,11 +3,11 @@
 const CACHE_NAME = 'finals-calculator-v1.0.0'
 
 const FILES_TO_CACHE = [
-  '/images/16x16.png',
   '/images/24x24.png',
   '/images/32x32.png',
   '/images/48x48.png',
   '/images/64x64.png',
+  '/images/96x96.png',
   '/images/128x128.png',
   '/images/256x256.png',
   '/images/512x512.png',

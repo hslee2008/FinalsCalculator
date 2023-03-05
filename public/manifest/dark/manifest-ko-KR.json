@@ -4,11 +4,6 @@
   "description": "중학교 내신 계산기",
   "icons": [
     {
-      "src": "/images/16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
       "src": "/images/24x24.png",
       "sizes": "24x24",
       "type": "image/png"
@@ -76,13 +71,15 @@
       "name": "중간고사 있는 과목",
       "short_name": "중간고사 있는 과목",
       "description": "중간고사가 있는 과목을 계산합니다.",
-      "url": "/?dark=true&lang=ko-KR&midterm=true"
+      "url": "/?dark=true&lang=ko-KR&midterm=true",
+      "icons": [{ "src": "/images/96x96.png" }]
     },
     {
       "name": "중간고사 없는 과목",
       "short_name": "중간고사 없는 과목",
       "description": "중간고사가 없는 과목을 계산합니다.",
-      "url": "/?dark=true&lang=ko-KR&midterm=false"
+      "url": "/?dark=true&lang=ko-KR&midterm=false",
+      "icons": [{ "src": "/images/96x96.png" }]
     }
   ]
 }

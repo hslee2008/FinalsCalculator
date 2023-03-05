@@ -4,11 +4,6 @@
   "description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.",
   "icons": [
     {
-      "src": "/images/16x16.png",
-      "sizes": "16x16",
-      "type": "image/png"
-    },
-    {
       "src": "/images/24x24.png",
       "sizes": "24x24",
       "type": "image/png"
@@ -76,13 +71,15 @@
       "name": "With Midterm",
       "short_name": "With Midterm",
       "description": "Calculate your final score with a midterm.",
-      "url": "/?dark=false&lang=en-US&midterm=true"
+      "url": "/?dark=false&lang=en-US&midterm=true",
+      "icons": [{ "src": "/images/96x96.png" }]
     },
     {
       "name": "Without Midterm",
       "short_name": "Without Midterm",
       "description": "Calculate your final score without a midterm.",
-      "url": "/?dark=false&lang=en-US&midterm=false"
+      "url": "/?dark=false&lang=en-US&midterm=false",
+      "icons": [{ "src": "/images/96x96.png" }]
     }
   ]
 }

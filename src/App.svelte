@@ -30,51 +30,53 @@
   let isDarkMode = searchParams.get('dark') || mediaQueryObj.matches
 </script>
 
-<GoogleAnalytics properties="{properties}"></GoogleAnalytics>
+<GoogleAnalytics {properties}></GoogleAnalytics>
 <MetaTags
   title="{$t('app_title')}"
   description="{$t('app_description')}"
+  additionalMetaTags="{[
+    {
+      name: 'theme-color',
+      content: isDarkMode ? '#000000' : '#FFFFFF'
+    },
+    {
+      name: 'apple-mobile-web-app-status-bar-style',
+      content: isDarkMode ? '#000000' : '#FFFFFF'
+    },
+    {
+      name: 'msapplication-TileColor',
+      content: isDarkMode ? '#000000' : '#FFFFFF'
+    },
+    {
+      name: 'apple-mobile-web-app-title',
+      content: $t('app_title')
+    },
+    {
+      name: 'subject',
+      content: $t('app_subject')
+    },
+    {
+      name: 'author',
+      content: $t('name')
+    },
+    {
+      name: 'owner',
+      content: $t('name')
+    },
+    {
+      name: 'copyright',
+      content: $t('name')
+    },
+    {
+      name: 'language',
+      content: currentLocale
+    }
+  ]}"
   additionalLinkTags="{[
     {
       rel: 'manifest',
       href: `/manifest/${isDarkMode ? 'dark' : 'light'}/manifest-${currentLocale}.json`
-    },
-    {
-      rel: 'theme-color',
-      href: isDarkMode ? '#000000' : '#FFFFFF'
-    },
-    {
-      rel: 'apple-mobile-web-app-status-bar-style',
-      href: isDarkMode ? '#000000' : '#FFFFFF'
-    },
-    {
-      rel: 'msapplication-TileColor',
-      href: isDarkMode ? '#000000' : '#FFFFFF'
-    },
-    {
-      rel: 'apple-mobile-web-app-title',
-      href: $t('app_title')
-    },
-    {
-      rel: 'subject',
-      href: $t('app_subject')
-    },
-    {
-      rel: 'author',
-      href: $t('name')
-    },
-    {
-      rel: 'owner',
-      href: $t('name')
-    },
-    {
-      rel: 'copyright',
-      href: $t('name')
-    },
-    {
-      rel: 'language',
-      href: currentLocale
-    },
+    }
   ]}"
 ></MetaTags>
 
