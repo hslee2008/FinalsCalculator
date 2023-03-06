@@ -11,6 +11,7 @@ const FILES_TO_CACHE = [
   '/images/128x128.png',
   '/images/256x256.png',
   '/images/512x512.png',
+  '/images/bordered-512x512.png',
   '/images/1024x1024.png',
   '/images/maskable_icon.png',
   '/icon.png',
