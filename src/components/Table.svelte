@@ -1,7 +1,7 @@
 <script>
   import { DataTable } from 'carbon-components-svelte'
   import { t } from '../utils/i18n'
-  import { parseResult } from '../utils/parseResult'
+  import { parseResult } from '../utils/numbers'
 
   export let finals = [0, 0, 0, 0, 0]
 

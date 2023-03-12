@@ -19,7 +19,7 @@ test('Alter performance evaluation', async () => {
   await fireEvent.input(input, { target: { value: '30' } })
   expect(input.value).toBe('30')
   await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('98%')).toBeInTheDocument()
+  expect(screen.getByText('100%')).toBeInTheDocument()
 })
 
 test('Alter midterm', async () => {

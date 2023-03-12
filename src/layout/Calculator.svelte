@@ -16,27 +16,27 @@
   import { onMount } from 'svelte'
 
   import { t } from '../utils/i18n'
-  import { parsePercent } from '../utils/parsePercent.ts'
-  import { FourtyPercent as per40 } from '../utils/40percent.ts'
+  import {
+    parsePercent,
+    TwentyPercent as p20,
+    TwentyPercentMidterm as p20_m
+  } from '../utils/numbers'
 
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
 
   /* Variable Initialization */
 
-  let open
+  let opened = false
   let whetherMidterm = true
   let selected = $t('midterm_is')
 
   let percent = 25
-  let midterm = 100
+  let midterm_score = 100
   let projects = 100 - percent * 2
 
   let labelText
   let finals = [0, 0, 0, 0, 0]
-
-  const url = new URL(window.location)
-  const searchParams = url.searchParams
 
   /* Making sure variable stays up to date */
 
@@ -46,7 +46,10 @@
   $: whetherMidterm = selected === $t('midterm_is')
 
   onMount(() => {
-    if (searchParams.has('midterm')) {
+    const url = new URL(window.location)
+    const searchParams = url.searchParams
+
+    if (!!searchParams.get('midterm')) {
       whetherMidterm = searchParams.get('midterm') === 'true'
       ChangeMidtermStatus()
     }
@@ -54,44 +57,50 @@
 
   /* Functions */
 
-  const listCalculate = (/** @type {number} */ minus) => {
-    for (let i = 0; i < finals.length; i++)
-      finals[i] = parsePercent(percent, 10.5 + minus + i * 10)
-  }
-
   const ChangeMidtermStatus = () => {
+    // Initialize the numbers for each midterm
+
     selected = whetherMidterm ? $t('midterm_is') : $t('midterm_is_not')
     percent = whetherMidterm ? 25 : 50
     projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
   }
 
-  const TestChangeMidtermStatus = () => {
+  const ProgrammaticallyChange = () => {
     whetherMidterm = !whetherMidterm
     ChangeMidtermStatus()
   }
 
   const CalculateFunction = () => {
     const projectsFull = whetherMidterm ? 100 - percent * 2 : 100 - percent
-    const gotMinused = -(projectsFull - projects)
-    let minus =
-      -(projectsFull - projects) -
-      (whetherMidterm ? percent - (midterm / 100) * percent : 0)
+    let subtracted = -(projectsFull - projects)
 
-    listCalculate(minus)
-    openDialog()
+    // If there is no midterm, simply subtract the values taken from projects
+    // If there is a midterm, subtract by adding weights
+    if (whetherMidterm) {
+      subtracted -= percent - (midterm_score / 100) * percent
+    }
+
+    // By order of alphabets (A, B, C, D, E), calculate the necessary grades
+    for (let i = 0; i < finals.length; i++)
+      finals[i] = parsePercent(percent, 10.5 + subtracted + i * 10)
+
+    open()
   }
 
   function onKeyDown(e) {
     switch (e.keyCode) {
       case 67:
-        open ? closeDialog() : CalculateFunction()
+        opened ? close() : CalculateFunction()
+        break
+      case 83:
+        ProgrammaticallyChange()
         break
     }
   }
 
   // Short Functions
-  const closeDialog = () => (open = false)
-  const openDialog = () => (open = true)
+  const close = () => (opened = false)
+  const open = () => (opened = true)
 </script>
 
 <div class="mb20">
@@ -101,7 +110,7 @@
   </Select>
   <button
     data-testid="switch"
-    on:click="{TestChangeMidtermStatus}"
+    on:click="{ProgrammaticallyChange}"
     style="display: none"
   ></button>
 </div>
@@ -109,24 +118,22 @@
 <Header title="{$t('app_title')}"></Header>
 
 <div class="mb20">
-  <div class="mb20">
-    <TextInput
-      type="number"
-      bind:value="{percent}"
-      labelText="{labelText}"
-      invalid="{whetherMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
-      invalidText="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
-      placeholder="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
-    ></TextInput>
-  </div>
+  <TextInput
+    type="number"
+    bind:value="{percent}"
+    labelText="{labelText}"
+    invalid="{whetherMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
+    invalidText="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+    placeholder="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+  ></TextInput>
 </div>
 {#if whetherMidterm}
 <div class="mb20">
   <TextInput
     type="number"
-    bind:value="{midterm}"
+    bind:value="{midterm_score}"
     labelText="{$t('midterm_score')}"
-    invalid="{midterm > 100 || midterm < 0 || midterm === null}"
+    invalid="{midterm_score > 100 || midterm_score < 0 || midterm_score === null}"
     invalidText="0 ~ 100"
     placeholder="0 ~ 100"
   ></TextInput>
@@ -137,16 +144,16 @@
     type="number"
     bind:value="{projects}"
     labelText="{$t('perf_evaluation')}"
-    invalid="{projects < 0 || (whetherMidterm ? projects < per40(100 - percent * 2) : projects < per40(100 - percent)) || (whetherMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
-    invalidText="{whetherMidterm ? per40(100 - percent * 2) : per40(100 - percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
-    placeholder="{whetherMidterm ? per40(100 - percent * 2) : per40(100 - percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
+    invalid="{projects < 0 || (whetherMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (whetherMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
+    invalidText="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
+    placeholder="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
   ></TextInput>
 </div>
 
 <button on:click="{CalculateFunction}">{$t('calculate')}</button>
 
 <Modal
-  bind:open
+  bind:open="{opened}"
   modalHeading="{$t('result')}"
   passiveModal
   selectorPrimaryFocus=".bx--modal-content"
@@ -155,7 +162,7 @@
     <Table bind:finals></Table>
 
     <div style="margin-top: 50px; margin-bottom: 50px">
-      <button on:click="{closeDialog}" id="close">{$t('close')}</button>
+      <button on:click="{close}" id="close">{$t('close')}</button>
     </div>
   </ModalBody>
 </Modal>
