@@ -122,8 +122,8 @@
     type="number"
     bind:value="{percent}"
     labelText="{labelText}"
-    invalid="{whetherMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
-    invalidText="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+    warn="{whetherMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
+    warnText="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
     placeholder="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
   ></TextInput>
 </div>
