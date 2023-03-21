@@ -84,18 +84,8 @@
     for (let i = 0; i < finals.length; i++)
       finals[i] = parsePercent(percent, 10.5 + subtracted + i * 10)
 
+    // open modal after calculation
     open()
-  }
-
-  function onKeyDown(e) {
-    switch (e.keyCode) {
-      case 67:
-        opened ? close() : CalculateFunction()
-        break
-      case 83:
-        ProgrammaticallyChange()
-        break
-    }
   }
 
   // Short Functions
@@ -133,8 +123,8 @@
     type="number"
     bind:value="{midterm_score}"
     labelText="{$t('midterm_score')}"
-    invalid="{midterm_score > 100 || midterm_score < 0 || midterm_score === null}"
-    invalidText="0 ~ 100"
+    warn="{midterm_score > 100 || midterm_score < 0 || midterm_score === null}"
+    warnText="0 ~ 100"
     placeholder="0 ~ 100"
   ></TextInput>
 </div>
@@ -144,8 +134,8 @@
     type="number"
     bind:value="{projects}"
     labelText="{$t('perf_evaluation')}"
-    invalid="{projects < 0 || (whetherMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (whetherMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
-    invalidText="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
+    warn="{projects < 0 || (whetherMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (whetherMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
+    warnText="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
     placeholder="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
   ></TextInput>
 </div>
@@ -166,8 +156,6 @@
     </div>
   </ModalBody>
 </Modal>
-
-<svelte:window on:keydown="{onKeyDown}" />
 
 <style>
   .mb20 {

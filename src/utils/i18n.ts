@@ -14,11 +14,13 @@ let currentLocale = searchParams.get('lang') || navigator.language || 'ko-KR'
 
 if (currentLocale === 'ko') currentLocale = 'ko-KR'
 
+if (process.env.NODE_ENV === 'development') currentLocale = 'ko-KR'
+
 export const locale = writable(currentLocale)
 export const locales = Object.keys(translations)
 
 function translate(locale, key, vars) {
-  if (!translations[locale]) locale = 'ko-KR'
+  if (!translations[locale]) locale = 'en-US'
 
   let text = translations[locale][key]
 
