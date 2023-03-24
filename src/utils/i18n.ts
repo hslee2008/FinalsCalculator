@@ -7,39 +7,35 @@ const translations = {
   'ko-KR': ko
 }
 
-const url = new URL(window.location)
-const searchParams = url.searchParams
-
+const { searchParams } = new URL(window.location)
 let currentLocale = searchParams.get('lang') || navigator.language || 'ko-KR'
-
 if (currentLocale === 'ko') currentLocale = 'ko-KR'
-
 if (process.env.NODE_ENV === 'development') currentLocale = 'ko-KR'
 
-export const locale = writable(currentLocale)
-export const locales = Object.keys(translations)
+const locale = writable(currentLocale)
+const locales = Object.keys(translations)
 
 function translate(locale, key, vars) {
   if (!translations[locale]) locale = 'en-US'
 
   let text = translations[locale][key]
 
-  Object.keys(vars).map(k => {
+  for (const k in vars) {
     const regex = new RegExp(`{{${k}}}`, 'g')
     text = text.replace(regex, vars[k])
-  })
+  }
 
   return text
 }
 
-export const t = derived(
+const t = derived(
   locale,
   $locale =>
     (key, vars = {}) =>
       translate($locale, key, vars)
 )
 
-export const translateForScript = (key, vars = {}) =>
+const translateTs = (key, vars = {}) =>
   translate(currentLocale, key, vars)
 
-export { currentLocale }
+export { currentLocale, locale, locales, t, translateTs }

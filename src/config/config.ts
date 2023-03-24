@@ -1,4 +1,4 @@
-import { translateForScript, currentLocale } from '../utils/i18n'
+import { currentLocale, translateTs } from '../utils/i18n'
 
 const url = new URL(window.location)
 const searchParams = url.searchParams
@@ -20,23 +20,23 @@ const additionalMetaTags = [
   },
   {
     name: 'apple-mobile-web-app-title',
-    content: translateForScript('app_title')
+    content: translateTs('app_title')
   },
   {
     name: 'subject',
-    content: translateForScript('app_subject')
+    content: translateTs('app_subject')
   },
   {
     name: 'author',
-    content: translateForScript('name')
+    content: translateTs('name')
   },
   {
     name: 'owner',
-    content: translateForScript('name')
+    content: translateTs('name')
   },
   {
     name: 'copyright',
-    content: translateForScript('name')
+    content: translateTs('name')
   },
   {
     name: 'language',
@@ -46,10 +46,11 @@ const additionalMetaTags = [
 const additionalLinkTags = [
   {
     rel: 'manifest',
-    href: `/manifest/${
-      isDarkMode ? 'dark' : 'light'
-    }/manifest-${currentLocale}.json`
+    href: `/manifest/${isDarkMode ? 'dark' : 'light'
+      }/manifest-${currentLocale}.json`
   }
 ]
+const properties = ['G-PV930WQQFT']
 
-export { additionalMetaTags, additionalLinkTags }
+export { additionalLinkTags, additionalMetaTags, properties }
+

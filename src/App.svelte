@@ -10,11 +10,13 @@
   import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
   import { t, currentLocale } from './utils/i18n'
-  import { additionalLinkTags, additionalMetaTags } from './config/meta'
+  import {
+    additionalLinkTags,
+    additionalMetaTags,
+    properties
+  } from './config/config'
 
   registerSW()
-
-  const properties = ['G-PV930WQQFT']
 </script>
 
 <GoogleAnalytics {properties}></GoogleAnalytics>

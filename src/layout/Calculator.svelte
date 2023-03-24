@@ -28,7 +28,7 @@
   /* Variable Initialization */
 
   let opened = false
-  let whetherMidterm = true
+  let hasMidterm = true
   let selected = $t('midterm_is')
 
   let percent = 25
@@ -40,17 +40,17 @@
 
   /* Making sure variable stays up to date */
 
-  $: labelText = `${whetherMidterm ? $t('each') : $t('midterm')} ${$t(
-    'weight'
-  )} (${whetherMidterm ? '25, 30, 35' : '50, 60'})`
-  $: whetherMidterm = selected === $t('midterm_is')
+  $: labelText = `${hasMidterm ? $t('each') : $t('midterm')} ${$t('weight')} (${
+    hasMidterm ? '25, 30, 35' : '50, 60'
+  })`
+  $: hasMidterm = selected === $t('midterm_is')
 
   onMount(() => {
     const url = new URL(window.location)
     const searchParams = url.searchParams
 
     if (!!searchParams.get('midterm')) {
-      whetherMidterm = searchParams.get('midterm') === 'true'
+      hasMidterm = searchParams.get('midterm') === 'true'
       ChangeMidtermStatus()
     }
   })
@@ -60,23 +60,23 @@
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
 
-    selected = whetherMidterm ? $t('midterm_is') : $t('midterm_is_not')
-    percent = whetherMidterm ? 25 : 50
-    projects = whetherMidterm ? 100 - percent * 2 : 100 - percent
+    selected = hasMidterm ? $t('midterm_is') : $t('midterm_is_not')
+    percent = hasMidterm ? 25 : 50
+    projects = hasMidterm ? 100 - percent * 2 : 100 - percent
   }
 
   const ProgrammaticallyChange = () => {
-    whetherMidterm = !whetherMidterm
+    hasMidterm = !hasMidterm
     ChangeMidtermStatus()
   }
 
   const CalculateFunction = () => {
-    const projectsFull = whetherMidterm ? 100 - percent * 2 : 100 - percent
+    const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
     let subtracted = -(projectsFull - projects)
 
     // If there is no midterm, simply subtract the values taken from projects
     // If there is a midterm, subtract by adding weights
-    if (whetherMidterm) {
+    if (hasMidterm) {
       subtracted -= percent - (midterm_score / 100) * percent
     }
 
@@ -105,19 +105,19 @@
   ></button>
 </div>
 
-<Header title="{$t('app_title')}"></Header>
+<Header></Header>
 
 <div class="mb20">
   <TextInput
     type="number"
     bind:value="{percent}"
     labelText="{labelText}"
-    warn="{whetherMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
-    warnText="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
-    placeholder="{whetherMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+    warn="{hasMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
+    warnText="{hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+    placeholder="{hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
   ></TextInput>
 </div>
-{#if whetherMidterm}
+{#if hasMidterm}
 <div class="mb20">
   <TextInput
     type="number"
@@ -134,9 +134,9 @@
     type="number"
     bind:value="{projects}"
     labelText="{$t('perf_evaluation')}"
-    warn="{projects < 0 || (whetherMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (whetherMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
-    warnText="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
-    placeholder="{whetherMidterm ? p20_m(percent) : p20(percent)} ~ {whetherMidterm ? 100 - percent * 2 : 100 - percent}"
+    warn="{projects < 0 || (hasMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (hasMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
+    warnText="{hasMidterm ? p20_m(percent) : p20(percent)} ~ {hasMidterm ? 100 - percent * 2 : 100 - percent}"
+    placeholder="{hasMidterm ? p20_m(percent) : p20(percent)} ~ {hasMidterm ? 100 - percent * 2 : 100 - percent}"
   ></TextInput>
 </div>
 

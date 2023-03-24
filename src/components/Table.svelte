@@ -12,6 +12,8 @@
   ]
 
   $: rows = finals.map((grade, index) => {
+    // Index 0 is A, 1 is B, etc.
+    // A: 65, B: 66, etc.
     const LetterGrade = String.fromCharCode(65 + index)
 
     return {

@@ -1,8 +1,14 @@
 {
   "name": "finalscalculator",
+  "description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hslee2008/finalscalcu.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",

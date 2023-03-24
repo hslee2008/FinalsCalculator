@@ -1,17 +1,11 @@
 <script>
   import { t } from '../utils/i18n'
-
-  export let title = '기말고사 계산기'
 </script>
 
-<h1>{title}</h1>
+<h1>{$t('app_title')}</h1>
 <p style="margin-bottom: 50px; color: #575757">
   <span style="font-size: 13px"> {$t('developer')} </span>
-  <a
-    href="https://github.com/hslee2008"
-    rel="noreferrer"
-    target="_blank"
-  >
+  <a href="https://github.com/hslee2008" rel="noreferrer" target="_blank">
     @{$t('name')}
   </a>
 </p>

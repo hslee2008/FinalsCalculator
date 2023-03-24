@@ -1,53 +1,73 @@
 import '@testing-library/jest-dom'
-import { render, fireEvent, screen } from '@testing-library/svelte'
+import { fireEvent, render, screen } from '@testing-library/svelte'
 import Calculator from '../src/layout/Calculator.svelte'
 
-test('Shows Proper Heading', () => {
-  render(Calculator)
-  expect(screen.getByText('Finals Calculator')).toBeInTheDocument()
-})
+describe('Calculator Component', () => {
+  beforeEach(() => render(Calculator))
 
-test('Click the Calculate Button', async () => {
-  render(Calculator)
-  await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('58%')).toBeInTheDocument()
-})
+  test('Shows Proper Heading', () => {
+    // Index Page
+    expect(screen.getByText('Finals Calculator')).toBeInTheDocument()
+    expect(screen.getByText('Developed by')).toBeInTheDocument()
+  })
 
-test('Alter performance evaluation', async () => {
-  render(Calculator)
-  const input = screen.getByLabelText('Performance Evaluation')
-  await fireEvent.input(input, { target: { value: '30' } })
-  expect(input.value).toBe('30')
-  await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('100%')).toBeInTheDocument()
-})
+  test('Click the Calculate Button', async () => {
+    // Click the calculate button on default values
+    await fireEvent.click(screen.getByText('Calculate'))
+    expect(screen.getByText('58%')).toBeInTheDocument()
+    expect(screen.getByText('18%')).toBeInTheDocument()
+  })
 
-test('Alter midterm', async () => {
-  render(Calculator)
-  const input = screen.getByLabelText('Midterm Score')
-  await fireEvent.input(input, { target: { value: '0' } })
-  expect(input.value).toBe('0')
-  await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('78%')).toBeInTheDocument()
-  expect(screen.getByText('38%')).toBeInTheDocument()
-})
+  test('Alter performance evaluation', async () => {
+    // Change the performance evaluation to 30
+    const input = screen.getByLabelText('Performance Evaluation')
+    await fireEvent.input(input, { target: { value: '40' } })
+    expect(input.value).toBe('40')
 
-test('Alter weight, correct format', async () => {
-  render(Calculator)
-  const input = screen.getByLabelText('Midterm and Finals each weight (25, 30, 35)')
-  await fireEvent.input(input, { target: { value: '35' } })
-  expect(input.value).toBe('35')
-  const input2 = screen.getByLabelText('Performance Evaluation')
-  await fireEvent.input(input2, { target: { value: '30' } })
-  expect(input2.value).toBe('30')
-  await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('70%')).toBeInTheDocument()
-})
+    await fireEvent.click(screen.getByText('Calculate'))
+    expect(screen.getByText('100%')).toBeInTheDocument()
+    expect(screen.getByText('58%')).toBeInTheDocument()
+    expect(screen.getByText('18%')).toBeInTheDocument()
+  })
 
-test('Alter Midterm Field', async () => {
-  render(Calculator)
-  const input = screen.getByTestId('switch')
-  await fireEvent.click(input)
-  await fireEvent.click(screen.getByText('Calculate'))
-  expect(screen.getByText('79%')).toBeInTheDocument()
+  test('Alter midterm', async () => {
+    // Change midterm
+    const input = screen.getByLabelText('Midterm Score')
+    await fireEvent.input(input, { target: { value: '96' } })
+    expect(input.value).toBe('96')
+
+    await fireEvent.click(screen.getByText('Calculate'))
+    expect(screen.getByText('62%')).toBeInTheDocument()
+    expect(screen.getByText('22%')).toBeInTheDocument()
+  })
+
+  test('Alter weight, correct format', async () => {
+    // Alter weight
+    const input = screen.getByLabelText(
+      'Midterm and Finals each weight (25, 30, 35)'
+    )
+    await fireEvent.input(input, { target: { value: '35' } })
+    expect(input.value).toBe('35')
+
+    const input2 = screen.getByLabelText('Performance Evaluation')
+    await fireEvent.input(input2, { target: { value: '30' } })
+    expect(input2.value).toBe('30')
+
+    await fireEvent.click(screen.getByText('Calculate'))
+    expect(screen.getByText('70%')).toBeInTheDocument()
+    expect(screen.getByText('42%')).toBeInTheDocument()
+    expect(screen.getByText('13%')).toBeInTheDocument()
+  })
+
+  test('Alter Midterm Field', async () => {
+    // Switch to without midterm
+    const input = screen.getByTestId('switch')
+    await fireEvent.click(input)
+
+    await fireEvent.click(screen.getByText('Calculate'))
+    expect(screen.getByText('79%')).toBeInTheDocument()
+    expect(screen.getByText('59%')).toBeInTheDocument()
+    expect(screen.getByText('39%')).toBeInTheDocument()
+    expect(screen.getByText('19%')).toBeInTheDocument()
+  })
 })
