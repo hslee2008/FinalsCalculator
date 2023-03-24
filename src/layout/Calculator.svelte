@@ -8,19 +8,16 @@
     Modal,
     ModalHeader,
     ModalBody,
-    ModalFooter,
-    DataTable,
-    TileGroup,
-    RadioTile
+    ModalFooter
   } from 'carbon-components-svelte'
   import { onMount } from 'svelte'
 
   import { t } from '../utils/i18n'
   import {
-    parsePercent,
     TwentyPercent as p20,
     TwentyPercentMidterm as p20_m
   } from '../utils/numbers'
+  import { CalculateFunction } from '../utils/calculate'
 
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
@@ -70,22 +67,14 @@
     ChangeMidtermStatus()
   }
 
-  const CalculateFunction = () => {
-    const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
-    let subtracted = -(projectsFull - projects)
-
-    // If there is no midterm, simply subtract the values taken from projects
-    // If there is a midterm, subtract by adding weights
-    if (hasMidterm) {
-      subtracted -= percent - (midterm_score / 100) * percent
-    }
-
-    // By order of alphabets (A, B, C, D, E), calculate the necessary grades
-    for (let i = 0; i < finals.length; i++)
-      finals[i] = parsePercent(percent, 10.5 + subtracted + i * 10)
-
-    // open modal after calculation
-    open()
+  const calculate = () => {
+    finals = CalculateFunction(
+      hasMidterm,
+      percent,
+      projects,
+      midterm_score,
+      open
+    )
   }
 
   // Short Functions
@@ -140,7 +129,7 @@
   ></TextInput>
 </div>
 
-<button on:click="{CalculateFunction}">{$t('calculate')}</button>
+<button on:click="{calculate}">{$t('calculate')}</button>
 
 <Modal
   bind:open="{opened}"
@@ -149,7 +138,7 @@
   selectorPrimaryFocus=".bx--modal-content"
 >
   <ModalBody style="margin-top: auto; margin-bottom: auto">
-    <Table bind:finals></Table>
+    <Table bind:finals bind:percent bind:midterm_score bind:projects></Table>
 
     <div style="margin-top: 50px; margin-bottom: 50px">
       <button on:click="{close}" id="close">{$t('close')}</button>

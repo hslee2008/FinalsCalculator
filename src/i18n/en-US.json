@@ -30,6 +30,6 @@
   "yes": "Yes",
   "no": "No",
 
-  "invalid_percent": "30 or 35",
+  "invalid_percent": "25 or 30 or 35",
   "invalid_percent_midterm": "50 or 60"
 }

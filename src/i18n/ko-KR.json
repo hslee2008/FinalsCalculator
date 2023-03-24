@@ -30,6 +30,6 @@
   "yes": "예",
   "no": "아니오",
 
-  "invalid_percent": "30 또는 35",
+  "invalid_percent": "25 또는 30 또는 35",
   "invalid_percent_midterm": "50 또는 60"
 }

@@ -7,6 +7,14 @@ export const parseResult = (/** @type {number} */ percent) => {
   else return `${percent}${translateTs('score')}`
 }
 
+export const findGrade = (/** @type {number} */ percent) => {
+  if (percent >= 89.5) return 'A'
+  else if (percent >= 79.5) return 'B'
+  else if (percent >= 69.5) return 'C'
+  else if (percent >= 59.5) return 'D'
+  else return 'E'
+}
+
 export const parsePercent = (percent: number, subtracted: number) => {
   // Make the subtracted current amount into a score needed in finals
   return Math.ceil(100 * ((percent - subtracted) / percent))
