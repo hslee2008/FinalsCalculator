@@ -29,7 +29,7 @@
         finals_score
       )
 
-      with_finals_grade = `${calculated} (${findGrade(calculated)})`
+      with_finals_grade = `${Math.round(calculated)} (${findGrade(calculated)})`
     } else {
       with_finals_grade = '기말고사 점수를 입력해 주세요'
     }
@@ -85,7 +85,7 @@
   </table>
   <TextInput
     type="number"
-    bind:value="{Math.round((finals_score + Number.EPSILON) * 100) / 100}"
+    bind:value="{finals_score}"
     placeholder="기말고사 점수 입력"
     helperText="{with_finals_grade}"
     style="background-color: #f4f4f4"
