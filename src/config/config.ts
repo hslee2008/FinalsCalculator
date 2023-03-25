@@ -1,4 +1,4 @@
-import { currentLocale, translateTs } from '../utils/i18n'
+import { currentLocale, translated } from '../utils/i18n'
 
 const url = new URL(window.location)
 const searchParams = url.searchParams
@@ -20,23 +20,23 @@ const additionalMetaTags = [
   },
   {
     name: 'apple-mobile-web-app-title',
-    content: translateTs('app_title')
+    content: translated('app_title')
   },
   {
     name: 'subject',
-    content: translateTs('app_subject')
+    content: translated('app_subject')
   },
   {
     name: 'author',
-    content: translateTs('name')
+    content: translated('name')
   },
   {
     name: 'owner',
-    content: translateTs('name')
+    content: translated('name')
   },
   {
     name: 'copyright',
-    content: translateTs('name')
+    content: translated('name')
   },
   {
     name: 'language',

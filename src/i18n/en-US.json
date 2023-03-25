@@ -31,5 +31,6 @@
   "no": "No",
 
   "invalid_percent": "25 or 30 or 35",
-  "invalid_percent_midterm": "50 or 60"
+  "invalid_percent_midterm": "50 or 60",
+  "input_finals": "Input Finals Score"
 }

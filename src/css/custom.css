@@ -15,7 +15,7 @@ p {
   font-size: 13px !important;
 }
 
-button {
+.main-btn {
   color: #5c62fe;
   background: transparent;
   border: 2px solid #5c62fe;
@@ -24,12 +24,14 @@ button {
   cursor: pointer;
 }
 
-button:hover,
-button:focus {
+.main-btn:hover,
+.main-btn:focus {
   color: white;
   background: #5c62fe;
+  transition-duration: 0.3s;
 }
 
-button:focus {
+.main-btn:focus {
   outline: none;
 }
+
