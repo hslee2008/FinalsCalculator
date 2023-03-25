@@ -2,6 +2,10 @@
   margin-bottom: 0 !important;
 }
 
+.bx--modal-close {
+  border-radius: 0 10px 0 0 !important;
+}
+
 @media (min-width: 672px) {
   .bx--modal-container {
     border-radius: 10px !important;

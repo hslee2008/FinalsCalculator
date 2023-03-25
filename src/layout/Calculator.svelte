@@ -129,7 +129,7 @@
   ></TextInput>
 </div>
 
-<button on:click="{calculate}">{$t('calculate')}</button>
+<button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
 
 <Modal
   bind:open="{opened}"
@@ -138,10 +138,16 @@
   selectorPrimaryFocus=".bx--modal-content"
 >
   <ModalBody style="margin-top: auto; margin-bottom: auto">
-    <Table bind:finals bind:percent bind:midterm_score bind:projects bind:hasMidterm></Table>
+    <Table
+      bind:finals
+      bind:percent
+      bind:midterm_score
+      bind:projects
+      bind:hasMidterm
+    ></Table>
 
     <div style="margin-top: 50px; margin-bottom: 50px">
-      <button on:click="{close}" id="close">{$t('close')}</button>
+      <button on:click="{close}" id="close" class="main-btn">{$t('close')}</button>
     </div>
   </ModalBody>
 </Modal>

@@ -8,9 +8,10 @@ const translations = {
 }
 
 const { searchParams } = new URL(window.location)
-let currentLocale = searchParams.get('lang') || navigator.language || 'ko-KR'
+let currentLocale = navigator.language || 'ko-KR'
 if (currentLocale === 'ko') currentLocale = 'ko-KR'
 if (process.env.NODE_ENV === 'development') currentLocale = 'ko-KR'
+currentLocale = searchParams.get('lang') || currentLocale
 
 const locale = writable(currentLocale)
 const locales = Object.keys(translations)
@@ -35,7 +36,6 @@ const t = derived(
       translate($locale, key, vars)
 )
 
-const translateTs = (key, vars = {}) =>
-  translate(currentLocale, key, vars)
+const translated = (key, vars = {}) => translate(currentLocale, key, vars)
 
-export { currentLocale, locale, locales, t, translateTs }
+export { currentLocale, locale, locales, t, translated }

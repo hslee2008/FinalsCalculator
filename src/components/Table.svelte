@@ -1,6 +1,6 @@
 <script>
   import { DataTable, TextInput } from 'carbon-components-svelte'
-  import { t } from '../utils/i18n'
+  import { t, translated } from '../utils/i18n'
   import { parseResult, findGrade } from '../utils/numbers'
   import { NormalCalculation } from '../utils/calculate'
 
@@ -17,10 +17,10 @@
   ]
 
   let finals_score
-  let with_finals_grade = '기말고사 점수를 입력해 주세요'
+  let with_finals_grade = translated('input_finals')
 
   $: {
-    if (finals_score) {
+    if (finals_score || finals_score === 0) {
       const calculated = NormalCalculation(
         hasMidterm,
         percent,
@@ -29,9 +29,11 @@
         finals_score
       )
 
-      with_finals_grade = `${Math.round(calculated)} (${findGrade(calculated)})`
+      with_finals_grade = `${Math.round(calculated * 100) / 100} (${findGrade(
+        calculated
+      )})`
     } else {
-      with_finals_grade = '기말고사 점수를 입력해 주세요'
+      with_finals_grade = translated('input_finals')
     }
   }
 
@@ -61,34 +63,21 @@
       </tr>
     </thead>
     <tbody aria-live="polite">
-      <tr data-row="A">
-        <td>A</td>
-        <td>{rows[0].lowest}</td>
+      {#each ['A', 'B', 'C', 'D', 'E'] as grade, i}
+      <tr>
+        <td>{grade}</td>
+        <td>{rows[i].lowest}</td>
       </tr>
-      <tr data-row="B">
-        <td>B</td>
-        <td>{rows[1].lowest}</td>
-      </tr>
-      <tr data-row="C">
-        <td>C</td>
-        <td>{rows[2].lowest}</td>
-      </tr>
-      <tr data-row="D">
-        <td>D</td>
-        <td>{rows[3].lowest}</td>
-      </tr>
-      <tr data-row="E">
-        <td>E</td>
-        <td>{rows[4].lowest}</td>
-      </tr>
+      {/each}
     </tbody>
   </table>
   <TextInput
     type="number"
     bind:value="{finals_score}"
-    placeholder="기말고사 점수 입력"
+    placeholder="{$t('input_finals')}"
     helperText="{with_finals_grade}"
     warn="{finals_score > 100 || finals_score < 0}"
+    size="xl"
     style="background-color: #f4f4f4"
   ></TextInput>
 </div>
