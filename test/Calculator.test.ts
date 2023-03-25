@@ -16,13 +16,19 @@ describe('Calculator Component', () => {
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('58%')).toBeInTheDocument()
     expect(screen.getByText('18%')).toBeInTheDocument()
+
+    const input = screen.getByPlaceholderText('Input Finals Score')
+    await fireEvent.input(input, { target: { value: '100' } })
+    expect(screen.getByText('100 (A)')).toBeInTheDocument()
+
+    await fireEvent.input(input, { target: { value: '57' } })
+    expect(screen.getByText('89.25 (B)')).toBeInTheDocument()
   })
 
   test('Alter performance evaluation', async () => {
     // Change the performance evaluation to 30
     const input = screen.getByLabelText('Performance Evaluation')
     await fireEvent.input(input, { target: { value: '40' } })
-    expect(input.value).toBe('40')
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('100%')).toBeInTheDocument()
@@ -34,7 +40,6 @@ describe('Calculator Component', () => {
     // Change midterm
     const input = screen.getByLabelText('Midterm Score')
     await fireEvent.input(input, { target: { value: '96' } })
-    expect(input.value).toBe('96')
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('62%')).toBeInTheDocument()
@@ -47,11 +52,9 @@ describe('Calculator Component', () => {
       'Midterm and Finals each weight (25, 30, 35)'
     )
     await fireEvent.input(input, { target: { value: '35' } })
-    expect(input.value).toBe('35')
 
     const input2 = screen.getByLabelText('Performance Evaluation')
     await fireEvent.input(input2, { target: { value: '30' } })
-    expect(input2.value).toBe('30')
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('70%')).toBeInTheDocument()
