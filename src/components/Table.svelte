@@ -88,6 +88,7 @@
     bind:value="{finals_score}"
     placeholder="기말고사 점수 입력"
     helperText="{with_finals_grade}"
+    warn="{finals_score > 100 || finals_score < 0}"
     style="background-color: #f4f4f4"
   ></TextInput>
 </div>

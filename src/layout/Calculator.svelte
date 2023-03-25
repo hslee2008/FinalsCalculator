@@ -138,7 +138,7 @@
   selectorPrimaryFocus=".bx--modal-content"
 >
   <ModalBody style="margin-top: auto; margin-bottom: auto">
-    <Table bind:finals bind:percent bind:midterm_score bind:projects></Table>
+    <Table bind:finals bind:percent bind:midterm_score bind:projects bind:hasMidterm></Table>
 
     <div style="margin-top: 50px; margin-bottom: 50px">
       <button on:click="{close}" id="close">{$t('close')}</button>
