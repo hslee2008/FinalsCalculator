@@ -73,14 +73,14 @@
   ],
   "shortcuts": [
     {
-      "name": "With Midterm",
+      "name": "Subjects with Midterm",
       "short_name": "With Midterm",
       "description": "Calculate your final score with a midterm.",
       "url": "/?dark=true&lang=en-US&midterm=true",
       "icons": [{ "src": "/images/96x96.png" }]
     },
     {
-      "name": "Without Midterm",
+      "name": "Subjects without Midterm",
       "short_name": "Without Midterm",
       "description": "Calculate your final score without a midterm.",
       "url": "/?dark=true&lang=en-US&midterm=false",

@@ -18,6 +18,7 @@
     TwentyPercentMidterm as p20_m
   } from '../utils/numbers'
   import { CalculateFunction } from '../utils/calculate'
+  import { EventHandler } from '../utils/analytics'
 
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
@@ -56,10 +57,12 @@
 
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
-
     selected = hasMidterm ? $t('midterm_is') : $t('midterm_is_not')
     percent = hasMidterm ? 25 : 50
     projects = hasMidterm ? 100 - percent * 2 : 100 - percent
+
+    // Send data
+    EventHandler('Midterm Changed', {})
   }
 
   const ProgrammaticallyChange = () => {
@@ -75,10 +78,14 @@
       midterm_score,
       open
     )
+    EventHandler('Calculate Button', {})
   }
 
   // Short Functions
-  const close = () => (opened = false)
+  const close = () => {
+    opened = false
+    EventHandler('Close', {})
+  }
   const open = () => (opened = true)
 </script>
 
@@ -126,7 +133,8 @@
     warn="{projects < 0 || (hasMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (hasMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
     warnText="{hasMidterm ? p20_m(percent) : p20(percent)} ~ {hasMidterm ? 100 - percent * 2 : 100 - percent}"
     placeholder="{hasMidterm ? p20_m(percent) : p20(percent)} ~ {hasMidterm ? 100 - percent * 2 : 100 - percent}"
-  ></TextInput>
+  >
+  </TextInput>
 </div>
 
 <button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
@@ -147,7 +155,9 @@
     ></Table>
 
     <div style="margin-top: 50px; margin-bottom: 50px">
-      <button on:click="{close}" id="close" class="main-btn">{$t('close')}</button>
+      <button on:click="{close}" id="close" class="main-btn">
+        {$t('close')}
+      </button>
     </div>
   </ModalBody>
 </Modal>
