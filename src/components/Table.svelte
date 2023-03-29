@@ -54,7 +54,7 @@
   <table class="bx--data-table">
     <thead>
       <tr>
-        <th scope="col" data-header="grade">
+        <th scope="col" data-header="grade" style="width: 20%">
           <div class="bx--table-header-label">{$t('grade')}</div>
         </th>
         <th scope="col" data-header="lowest">
