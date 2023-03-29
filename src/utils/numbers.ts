@@ -21,9 +21,9 @@ export const parsePercent = (percent: number, subtracted: number) => {
 }
 
 export const TwentyPercentMidterm = (percent: number) => {
-  return (100 - percent * 2) * 0.2
+  return Math.floor((100 - percent * 2) * 0.2)
 }
 
 export const TwentyPercent = (percent: number) => {
-  return (100 - percent) * 0.2
+  return Math.floor((100 - percent) * 0.2)
 }

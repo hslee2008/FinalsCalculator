@@ -46,11 +46,11 @@ const additionalMetaTags = [
 const additionalLinkTags = [
   {
     rel: 'manifest',
-    href: `/manifest/${isDarkMode ? 'dark' : 'light'
-      }/manifest-${currentLocale}.json`
+    href: `/manifest/${
+      isDarkMode ? 'dark' : 'light'
+    }/manifest-${currentLocale}.json`
   }
 ]
 const properties = ['G-PV930WQQFT']
 
 export { additionalLinkTags, additionalMetaTags, properties }
-

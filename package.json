@@ -12,11 +12,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview",
     "test": "vitest run .",
     "test:watch": "vitest .",
     "update": "yarn upgrade && ncu -u && yarn",
-    "build:android": "cd android && bubblewrap build"
+    "build:android": "cd android && bubblewrap build",
+    "lint": "eslint . --ext .js,.svelte",
+    "firebase-hosting-build": "yarn && yarn test && yarn lint && yarn build"
   },
   "devDependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",
@@ -25,8 +26,10 @@
     "@testing-library/svelte": "^3.2.2",
     "carbon-components-svelte": "^0.73.5",
     "carbon-preprocess-svelte": "^0.9.1",
+    "eslint": ">=5.16.0",
     "jsdom": "^21.1.1",
     "svelte": "^3.57.0",
+    "svelte-eslint-parser": "^0.24.2",
     "svelte-meta-tags": "^2.7.0",
     "vite": "^4.2.1",
     "vitest": "^0.29.8"

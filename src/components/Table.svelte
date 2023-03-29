@@ -1,5 +1,5 @@
 <script>
-  import { DataTable, TextInput } from 'carbon-components-svelte'
+  import { TextInput } from 'carbon-components-svelte'
   import { t, translated } from '../utils/i18n'
   import { parseResult, findGrade } from '../utils/numbers'
   import { NormalCalculation } from '../utils/calculate'
@@ -11,11 +11,6 @@
   export let hasMidterm = true
 
   let rows
-  let headers = [
-    { key: 'grade', value: $t('grade') },
-    { key: 'lowest', value: $t('lowest') }
-  ]
-
   let finals_score
   let with_finals_grade = translated('input_finals')
 

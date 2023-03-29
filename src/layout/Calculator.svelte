@@ -6,9 +6,7 @@
     Select,
     SelectItem,
     Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter
+    ModalBody
   } from 'carbon-components-svelte'
   import { onMount } from 'svelte'
 
@@ -47,7 +45,7 @@
     const url = new URL(window.location)
     const searchParams = url.searchParams
 
-    if (!!searchParams.get('midterm')) {
+    if (searchParams.get('midterm')) {
       hasMidterm = searchParams.get('midterm') === 'true'
       ChangeMidtermStatus()
     }
@@ -87,6 +85,21 @@
     EventHandler('Close', {})
   }
   const open = () => (opened = true)
+
+  // invalid
+  let percentageInvalid = false
+  let midtermScoreInvalid = false
+  let projectsInvalid = false
+
+  $: percentageInvalid = hasMidterm
+    ? percent !== 30 && percent !== 35 && percent !== 25
+    : percent !== 50 && percent !== 60
+  $: midtermScoreInvalid =
+    midterm_score > 100 || midterm_score < 0 || midterm_score === null
+  $: projectsInvalid =
+    projects < 0 ||
+    (hasMidterm ? projects < p20_m(percent) : projects < p20(percent)) ||
+    (hasMidterm ? projects > 100 - percent * 2 : projects > 100 - percent)
 </script>
 
 <div class="mb20">
@@ -107,10 +120,8 @@
   <TextInput
     type="number"
     bind:value="{percent}"
-    labelText="{labelText}"
-    warn="{hasMidterm ? percent !== 30 && percent !== 35 && percent !== 25 : percent !== 50 && percent !== 60}"
-    warnText="{hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
-    placeholder="{hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')}"
+    labelText="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
+    warn="{percentageInvalid}"
   ></TextInput>
 </div>
 {#if hasMidterm}
@@ -118,10 +129,8 @@
   <TextInput
     type="number"
     bind:value="{midterm_score}"
-    labelText="{$t('midterm_score')}"
-    warn="{midterm_score > 100 || midterm_score < 0 || midterm_score === null}"
-    warnText="0 ~ 100"
-    placeholder="0 ~ 100"
+    labelText="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
+    warn="{midtermScoreInvalid}"
   ></TextInput>
 </div>
 {/if}
@@ -129,10 +138,8 @@
   <TextInput
     type="number"
     bind:value="{projects}"
-    labelText="{$t('perf_evaluation')}"
-    warn="{projects < 0 || (hasMidterm ? projects < p20_m(percent) : projects < p20(percent)) || (hasMidterm ? projects > 100 - percent * 2 : projects > (100 - percent))}"
-    warnText="{hasMidterm ? p20_m(percent) : p20(percent)} ~ {hasMidterm ? 100 - percent * 2 : 100 - percent}"
-    placeholder="{hasMidterm ? p20_m(percent) : p20(percent)} ~ {hasMidterm ? 100 - percent * 2 : 100 - percent}"
+    labelText="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
+    warn="{projectsInvalid}"
   >
   </TextInput>
 </div>
@@ -161,9 +168,3 @@
     </div>
   </ModalBody>
 </Modal>
-
-<style>
-  .mb20 {
-    margin-bottom: 20px;
-  }
-</style>

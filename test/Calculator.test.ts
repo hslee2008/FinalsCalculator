@@ -53,7 +53,7 @@ describe('Calculator Component', () => {
     )
     await fireEvent.input(input, { target: { value: '35' } })
 
-    const input2 = screen.getByLabelText('Performance Evaluation')
+    const input2 = screen.getByLabelText('6 ~ 30')
     await fireEvent.input(input2, { target: { value: '30' } })
 
     await fireEvent.click(screen.getByText('Calculate'))

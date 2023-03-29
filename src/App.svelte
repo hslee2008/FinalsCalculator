@@ -1,15 +1,9 @@
 <script>
   import { MetaTags } from 'svelte-meta-tags'
-  import {
-    ComposedModal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter
-  } from 'carbon-components-svelte'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
   import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
-  import { t, currentLocale } from './utils/i18n'
+  import { t } from './utils/i18n'
   import {
     additionalLinkTags,
     additionalMetaTags,
