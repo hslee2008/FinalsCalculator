@@ -5,7 +5,7 @@
 
 <h1>{$t('app_title')}</h1>
 <p style="margin-bottom: 50px; color: #575757">
-  <span>v4.2</span>
+  <span>v4.2.1</span>
   <span> · </span>
   <span class="mit">
     <span>MIT License</span>

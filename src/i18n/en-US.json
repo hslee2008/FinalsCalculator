@@ -23,13 +23,6 @@
   "result": "Result",
   "close": "Close",
 
-  "new_version": "New Version",
-  "new_version_avail": "A new version of Finals Calculator is available.",
-  "quest": "Would you like to download it?",
-
-  "yes": "Yes",
-  "no": "No",
-
   "invalid_percent": "25 or 30 or 35",
   "invalid_percent_midterm": "50 or 60",
   "input_finals": "Input Finals Score"

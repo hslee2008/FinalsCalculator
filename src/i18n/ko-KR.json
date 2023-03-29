@@ -23,14 +23,7 @@
   "result": "결과 확인하기",
   "close": "닫기",
 
-  "new_version": "새로운 버전",
-  "new_version_avail": "기말고사 계산기 새로운 버전 업데이트가 있습니다",
-  "quest": "업데이트 하시겠습니까?",
-
-  "yes": "예",
-  "no": "아니오",
-
   "invalid_percent": "25 또는 30 또는 35",
   "invalid_percent_midterm": "50 또는 60",
-  "input_finals": "기말고사 점수를 입력해주세요"
+  "input_finals": "기말고사 점수 입력"
 }
