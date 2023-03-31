@@ -12,6 +12,8 @@
 
   let rows
   let finals_score
+  let finals_input_grade
+  let finals_invalid
   let with_finals_grade = translated('input_finals')
 
   $: {
@@ -23,14 +25,17 @@
         midterm_score,
         finals_score
       )
+      finals_input_grade = findGrade(calculated)
 
-      with_finals_grade = `${Math.round(calculated * 100) / 100} (${findGrade(
-        calculated
-      )})`
+      with_finals_grade = `${
+        Math.round(calculated * 100) / 100
+      } (${finals_input_grade})`
     } else {
       with_finals_grade = translated('input_finals')
     }
   }
+
+  $: finals_invalid = finals_score > 100 || finals_score < 0
 
   $: rows = finals.map((grade, index) => {
     // Index 0 is A, 1 is B, etc.
@@ -49,7 +54,7 @@
   <table class="bx--data-table">
     <thead>
       <tr>
-        <th scope="col" data-header="grade" style="width: 20%">
+        <th scope="col" data-header="grade" class="grade-row">
           <div class="bx--table-header-label">{$t('grade')}</div>
         </th>
         <th scope="col" data-header="lowest">
@@ -59,7 +64,9 @@
     </thead>
     <tbody aria-live="polite">
       {#each ['A', 'B', 'C', 'D', 'E'] as grade, i}
-      <tr>
+      <tr
+        class="{finals_input_grade === grade && finals_score !== null && !finals_invalid ? 'bordered' : ''}"
+      >
         <td>{grade}</td>
         <td>{rows[i].lowest}</td>
       </tr>
@@ -71,7 +78,8 @@
     bind:value="{finals_score}"
     placeholder="{$t('input_finals')}"
     helperText="{with_finals_grade}"
-    warn="{finals_score > 100 || finals_score < 0}"
+    warn="{finals_invalid}"
+    warnText="0 ~ 100"
     size="xl"
     style="background-color: #f4f4f4"
   ></TextInput>

@@ -38,3 +38,23 @@ p {
 .mb20 {
   margin-bottom: 20px;
 }
+
+.bordered {
+  box-shadow: 3px 0px 0px 0px #5c62fe !important;
+}
+
+.grade-row {
+  width: 25%;
+}
+
+@media screen and (max-width: 360px) {
+  .grade-row {
+    width: 30% !important;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .grade-row {
+    width: 35% !important;
+  }
+}

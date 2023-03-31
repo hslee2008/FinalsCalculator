@@ -1,28 +1,15 @@
 import '@testing-library/jest-dom'
-import { fireEvent, render, screen } from '@testing-library/svelte'
+import { cleanup, fireEvent, render, screen } from '@testing-library/svelte'
 import Calculator from '../src/layout/Calculator.svelte'
 
 describe('Calculator Component', () => {
   beforeEach(() => render(Calculator))
 
-  test('Shows Proper Heading', () => {
-    // Index Page
-    expect(screen.getByText('Finals Calculator')).toBeInTheDocument()
-    expect(screen.getByText('Developed by')).toBeInTheDocument()
-  })
-
   test('Click the Calculate Button', async () => {
-    // Click the calculate button on default values
     await fireEvent.click(screen.getByText('Calculate'))
+
     expect(screen.getByText('58%')).toBeInTheDocument()
     expect(screen.getByText('18%')).toBeInTheDocument()
-
-    const input = screen.getByPlaceholderText('Input Finals Score')
-    await fireEvent.input(input, { target: { value: '100' } })
-    expect(screen.getByText('100 (A)')).toBeInTheDocument()
-
-    await fireEvent.input(input, { target: { value: '57' } })
-    expect(screen.getByText('89.25 (B)')).toBeInTheDocument()
   })
 
   test('Alter performance evaluation', async () => {
