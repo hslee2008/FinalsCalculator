@@ -10,7 +10,7 @@
   } from 'carbon-components-svelte'
   import { onMount } from 'svelte'
 
-  import { t } from '../utils/i18n'
+  import { t } from '../i18n/i18n'
   import {
     TwentyPercent as p20,
     TwentyPercentMidterm as p20_m

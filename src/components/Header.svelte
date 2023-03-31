@@ -1,11 +1,11 @@
 <script>
-  import { t } from '../utils/i18n'
+  import { t } from '../i18n/i18n'
   import { EventHandler } from '../utils/analytics'
 </script>
 
 <h1>{$t('app_title')}</h1>
 <p style="margin-bottom: 50px; color: #575757">
-  <span>v4.2.2</span>
+  <span>v4.2.3</span>
   <span> · </span>
   <span class="mit">
     <span>MIT License</span>

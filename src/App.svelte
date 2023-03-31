@@ -4,7 +4,7 @@
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
   import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
-  import { t, currentLocale } from './utils/i18n'
+  import { t, currentLocale } from './i18n/i18n'
   import {
     additionalLinkTags,
     additionalMetaTags,

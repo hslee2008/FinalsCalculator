@@ -1,6 +1,6 @@
 <script>
   import { TextInput } from 'carbon-components-svelte'
-  import { t, translated } from '../utils/i18n'
+  import { t, translated } from '../i18n/i18n'
   import { parseResult, findGrade } from '../utils/numbers'
   import { NormalCalculation } from '../utils/calculate'
 

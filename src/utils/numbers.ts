@@ -1,4 +1,4 @@
-import { translated } from './i18n'
+import { translated } from '../i18n/i18n'
 
 export const parseResult = (/** @type {number} */ percent) => {
   if (percent === 98 || percent === 99) return `100${translated('score')}`

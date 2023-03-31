@@ -33,7 +33,7 @@
     "src/**/*.d.ts",
     "src/**/*.js",
     "src/**/*.svelte",
-    "src/utils/i18n.ts",
+    "src/i18n/i18n.ts",
     "src/main.ts",
     "src/utils/register-sw.ts"
   ]

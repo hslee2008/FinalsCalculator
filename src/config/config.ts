@@ -1,4 +1,4 @@
-import { currentLocale, translated } from '../utils/i18n'
+import { currentLocale, translated } from '../i18n/i18n'
 
 const url = new URL(window.location)
 const searchParams = url.searchParams
