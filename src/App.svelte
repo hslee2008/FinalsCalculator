@@ -1,9 +1,10 @@
 <script>
+  import { onMount } from 'svelte'
   import { MetaTags } from 'svelte-meta-tags'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
   import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
-  import { t } from './utils/i18n'
+  import { t, currentLocale } from './utils/i18n'
   import {
     additionalLinkTags,
     additionalMetaTags,
@@ -11,6 +12,7 @@
   } from './config/config'
 
   registerSW()
+  onMount(() => (document.documentElement.lang = currentLocale))
 </script>
 
 <GoogleAnalytics {properties}></GoogleAnalytics>

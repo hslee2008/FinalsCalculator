@@ -22,7 +22,6 @@
   import Table from '../components/Table.svelte'
 
   /* Variable Initialization */
-
   let opened = false
   let hasMidterm = true
   let selected = $t('midterm_is')
@@ -33,8 +32,6 @@
 
   let labelText
   let finals = [0, 0, 0, 0, 0]
-
-  /* Making sure variable stays up to date */
 
   $: labelText = `${hasMidterm ? $t('each') : $t('midterm')} ${$t('weight')} (${
     hasMidterm ? '25, 30, 35' : '50, 60'
@@ -52,12 +49,12 @@
   })
 
   /* Functions */
-
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
     selected = hasMidterm ? $t('midterm_is') : $t('midterm_is_not')
     percent = hasMidterm ? 25 : 50
     projects = hasMidterm ? 100 - percent * 2 : 100 - percent
+    midterm_score = 100
 
     // Send data
     EventHandler('Midterm Changed', {})
