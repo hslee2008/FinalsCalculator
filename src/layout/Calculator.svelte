@@ -12,7 +12,7 @@
 
   import { t } from '../i18n/i18n'
   import { p20, p20_m } from '../utils/numbers'
-  import { CalculateFunction } from '../utils/calculate'
+    import { TableCalculation } from '../utils/calculate'
   import { Event } from '../utils/analytics'
 
   import Header from '../components/Header.svelte'
@@ -63,7 +63,7 @@
   }
 
   const calculate = () => {
-    finals = CalculateFunction(
+    finals = TableCalculation(
       hasMidterm,
       percent,
       projects,

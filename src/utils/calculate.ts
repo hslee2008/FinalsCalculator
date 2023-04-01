@@ -1,6 +1,6 @@
 import { parsePercent } from './numbers'
 
-const CalculateFunction = (
+const TableCalculation = (
   hasMidterm,
   percent,
   projects,
@@ -27,7 +27,7 @@ const CalculateFunction = (
   return finals
 }
 
-const NormalCalculation = (
+const CalculateFinalsScore = (
   hasMidterm,
   percent,
   projects,
@@ -48,4 +48,5 @@ const NormalCalculation = (
   return 100 + subtracted
 }
 
-export { CalculateFunction, NormalCalculation }
+export { CalculateFinalsScore, TableCalculation }
+

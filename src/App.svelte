@@ -4,6 +4,7 @@
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
   import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
+  import { SetUser } from './utils/analytics'
   import { t, currentLocale } from './i18n/i18n'
   import {
     additionalLinkTags,
@@ -12,9 +13,10 @@
   } from './config/config'
 
   registerSW()
-  onMount(() => (document.documentElement.lang = currentLocale))
+  SetUser()
 </script>
 
+<svelte:document lang="{currentLocale}" />
 <GoogleAnalytics {properties}></GoogleAnalytics>
 <MetaTags
   title="{$t('app_title')}"
