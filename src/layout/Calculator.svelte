@@ -96,17 +96,15 @@
     (hasMidterm ? projects > 100 - percent * 2 : projects > 100 - percent)
 </script>
 
-<div class="mb20">
-  <Select on:change="{ChangeMidtermStatus}" bind:selected>
-    <SelectItem value="{$t('midterm_is')}"></SelectItem>
-    <SelectItem value="{$t('midterm_is_not')}"></SelectItem>
-  </Select>
-  <button
-    data-testid="switch"
-    on:click="{ProgrammaticallyChange}"
-    style="display: none"
-  ></button>
-</div>
+<button
+  data-testid="switch"
+  on:click="{ProgrammaticallyChange}"
+  style="display: none"
+></button>
+<Select on:change="{ChangeMidtermStatus}" bind:selected class="mb20">
+  <SelectItem value="{$t('midterm_is')}"></SelectItem>
+  <SelectItem value="{$t('midterm_is_not')}"></SelectItem>
+</Select>
 
 <Header></Header>
 
@@ -134,8 +132,7 @@
     bind:value="{projects}"
     labelText="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
     warn="{projectsInvalid}"
-  >
-  </TextInput>
+  ></TextInput>
 </div>
 
 <button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
@@ -155,10 +152,13 @@
       bind:hasMidterm
     ></Table>
 
-    <div style="margin-top: 50px; margin-bottom: 50px">
-      <button on:click="{close}" id="close" class="main-btn">
-        {$t('close')}
-      </button>
-    </div>
+    <button
+      on:click="{close}"
+      id="close"
+      class="main-btn"
+      style="margin-top: 50px; margin-bottom: 50px"
+    >
+      {$t('close')}
+    </button>
   </ModalBody>
 </Modal>

@@ -47,6 +47,10 @@ p {
   width: 25%;
 }
 
+.finals-input {
+  background-color: #f4f4f4 !important;
+}
+
 @media screen and (max-width: 360px) {
   .grade-row {
     width: 30% !important;

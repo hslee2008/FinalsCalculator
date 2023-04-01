@@ -65,7 +65,7 @@
     <tbody aria-live="polite">
       {#each ['A', 'B', 'C', 'D', 'E'] as grade, i}
       <tr
-        class="{finals_input_grade === grade && finals_score !== null && !finals_invalid ? 'bordered' : ''}"
+        class:bordered="{finals_input_grade === grade && finals_score !== null && !finals_invalid}"
       >
         <td>{grade}</td>
         <td>{rows[i].lowest}</td>
@@ -81,6 +81,6 @@
     warn="{finals_invalid}"
     warnText="0 ~ 100"
     size="xl"
-    style="background-color: #f4f4f4"
+    class="finals-input"
   ></TextInput>
 </div>
