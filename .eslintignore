@@ -104,3 +104,4 @@ app/release/output.json
 service-worker.js
 vitest.config.js
 vite.config.js
+App.svelte
