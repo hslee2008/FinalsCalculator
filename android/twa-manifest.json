@@ -11,7 +11,7 @@
   "navigationDividerColorDark": "#FFFFFF",
   "backgroundColor": "#FFFFFF",
   "enableNotifications": true,
-  "startUrl": "/?dark=false&lang=ko-KR",
+  "startUrl": "/?lang=ko-KR",
   "iconUrl": "https://finalscalcu.web.app/images/1024x1024.png",
   "maskableIconUrl": "https://finalscalcu.web.app/images/maskable_icon.png",
   "splashScreenFadeOutDuration": 300,
@@ -25,13 +25,13 @@
     {
       "name": "중간고사 있는 과목",
       "shortName": "중간 있는 과목",
-      "url": "/?dark=false&lang=ko-KR?midterm=true",
+      "url": "/?lang=ko-KR?midterm=true",
       "chosenIconUrl": "https://finalscalcu.web.app/images/48x48.png"
     },
     {
       "name": "중간고사 없는 과목",
       "shortName": "중간 없는 과목",
-      "url": "/?dark=false&lang=ko-KR?midterm=false",
+      "url": "/?lang=ko-KR?midterm=false",
       "chosenIconUrl": "https://finalscalcu.web.app/images/48x48.png"
     }
   ],
@@ -85,5 +85,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "5"
+  "appVersion": "6"
 }

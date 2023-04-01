@@ -55,12 +55,12 @@
       "purpose": "maskable"
     }
   ],
-  "id": "/?dark=true&lang=en-US",
-  "start_url": "/?dark=true&lang=en-US",
+  "id": "/?lang=en-US",
+  "start_url": "/?lang=en-US",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#000000",
-  "theme_color": "#000000",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
   "orientation": "any",
   "categories": ["education"],
   "prefer_related_applications": true,
@@ -76,14 +76,14 @@
       "name": "Subjects with Midterm",
       "short_name": "With Midterm",
       "description": "Calculate your final score with a midterm.",
-      "url": "/?dark=true&lang=en-US&midterm=true",
+      "url": "/?lang=en-US&midterm=true",
       "icons": [{ "src": "/images/96x96.png" }]
     },
     {
       "name": "Subjects without Midterm",
       "short_name": "Without Midterm",
       "description": "Calculate your final score without a midterm.",
-      "url": "/?dark=true&lang=en-US&midterm=false",
+      "url": "/?lang=en-US&midterm=false",
       "icons": [{ "src": "/images/96x96.png" }]
     }
   ]

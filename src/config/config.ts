@@ -2,21 +2,19 @@ import { currentLocale, translated } from '../i18n/i18n'
 
 const url = new URL(window.location)
 const searchParams = url.searchParams
-const mediaQueryObj = window.matchMedia('(prefers-color-scheme: dark)')
-const isDarkMode = searchParams.get('dark') || mediaQueryObj.matches
 
 const additionalMetaTags = [
   {
     name: 'theme-color',
-    content: isDarkMode ? '#000000' : '#FFFFFF'
+    content: '#FFFFFF'
   },
   {
     name: 'apple-mobile-web-app-status-bar-style',
-    content: isDarkMode ? '#000000' : '#FFFFFF'
+    content: '#FFFFFF'
   },
   {
     name: 'msapplication-TileColor',
-    content: isDarkMode ? '#000000' : '#FFFFFF'
+    content: '#FFFFFF'
   },
   {
     name: 'apple-mobile-web-app-title',
@@ -46,9 +44,7 @@ const additionalMetaTags = [
 const additionalLinkTags = [
   {
     rel: 'manifest',
-    href: `/manifest/${
-      isDarkMode ? 'dark' : 'light'
-    }/manifest-${currentLocale}.json`
+    href: `/manifest/manifest-${currentLocale}.json`
   }
 ]
 const properties = ['G-PV930WQQFT']

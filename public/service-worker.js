@@ -17,8 +17,6 @@ const FILES_TO_CACHE = [
   '/icon.png',
   '/manifest/light/manifest-ko-KR.json',
   '/manifest/light/manifest-en-US.json',
-  '/manifest/dark/manifest-ko-KR.json',
-  '/manifest/dark/manifest-en-US.json',
   'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Regular-Latin1.woff2',
   'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Sans/fonts/split/woff2/IBMPlexSans-Light-Latin1.woff2',
   'https://1.www.s81c.com/common/carbon/plex/fonts/IBM-Plex-Mono/fonts/split/woff2/IBMPlexMono-Regular-Latin1.woff2',

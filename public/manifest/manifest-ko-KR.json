@@ -1,7 +1,7 @@
 {
-  "name": "Finals Calculator",
-  "short_name": "Finals Calculator",
-  "description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.",
+  "name": "기말고사 계산기",
+  "short_name": "기말 계산기",
+  "description": "중학교 내신 계산기",
   "icons": [
     {
       "src": "/images/24x24.png",
@@ -55,8 +55,8 @@
       "purpose": "maskable"
     }
   ],
-  "id": "/?dark=false&lang=en-US",
-  "start_url": "/?dark=false&lang=en-US",
+  "id": "/?lang=ko-KR",
+  "start_url": "/?lang=ko-KR",
   "scope": "/",
   "display": "standalone",
   "background_color": "#FFFFFF",
@@ -73,17 +73,17 @@
   ],
   "shortcuts": [
     {
-      "name": "Subjects with Midterm",
-      "short_name": "With Midterm",
-      "description": "Calculate your final score with a midterm.",
-      "url": "/?dark=false&lang=en-US&midterm=true",
+      "name": "중간고사 있는 과목",
+      "short_name": "중간 있는 과목",
+      "description": "중간고사가 있는 과목을 계산합니다.",
+      "url": "/?lang=ko-KR&midterm=true",
       "icons": [{ "src": "/images/96x96.png" }]
     },
     {
-      "name": "Subjects without Midterm",
-      "short_name": "Without Midterm",
-      "description": "Calculate your final score without a midterm.",
-      "url": "/?dark=false&lang=en-US&midterm=false",
+      "name": "중간 없는 과목",
+      "short_name": "중간고사 없는 과목",
+      "description": "중간고사가 없는 과목을 계산합니다.",
+      "url": "/?lang=ko-KR&midterm=false",
       "icons": [{ "src": "/images/96x96.png" }]
     }
   ]
