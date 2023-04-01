@@ -11,12 +11,9 @@
   import { onMount } from 'svelte'
 
   import { t } from '../i18n/i18n'
-  import {
-    TwentyPercent as p20,
-    TwentyPercentMidterm as p20_m
-  } from '../utils/numbers'
+  import { p20, p20_m } from '../utils/numbers'
   import { CalculateFunction } from '../utils/calculate'
-  import { EventHandler } from '../utils/analytics'
+  import { Event } from '../utils/analytics'
 
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
@@ -57,7 +54,7 @@
     midterm_score = 100
 
     // Send data
-    EventHandler('Midterm Changed', {})
+    Event('Midterm Changed', {})
   }
 
   const ProgrammaticallyChange = () => {
@@ -73,13 +70,13 @@
       midterm_score,
       open
     )
-    EventHandler('Calculate Button', {})
+    Event('Calculate Button', {})
   }
 
   // Short Functions
   const close = () => {
     opened = false
-    EventHandler('Close', {})
+    Event('Close', {})
   }
   const open = () => (opened = true)
 

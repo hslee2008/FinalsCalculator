@@ -1,6 +1,6 @@
 <script>
   import { t } from '../i18n/i18n'
-  import { EventHandler } from '../utils/analytics'
+    import { Event } from '../utils/analytics'
 </script>
 
 <h1>{$t('app_title')}</h1>
@@ -16,7 +16,7 @@
     href="https://github.com/hslee2008"
     rel="noreferrer"
     target="_blank"
-    on:click="{() => EventHandler('Programmer Link')}"
+    on:click="{() => Event('Programmer Link')}"
   >
     @{$t('name')}
   </a>
