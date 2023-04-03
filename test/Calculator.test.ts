@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
-import { cleanup, fireEvent, render, screen } from '@testing-library/svelte'
+import { fireEvent, render, screen } from '@testing-library/svelte'
+// @ts-ignore
 import Calculator from '../src/layout/Calculator.svelte'
 
 describe('Calculator Component', () => {
@@ -53,6 +54,10 @@ describe('Calculator Component', () => {
     // Switch to without midterm
     const input = screen.getByTestId('switch')
     await fireEvent.click(input)
+
+    const midterm = screen.getByLabelText('Midterm weight (50, 60)')
+    // @ts-ignore
+    expect(midterm.value).toBe('50')
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('79%')).toBeInTheDocument()

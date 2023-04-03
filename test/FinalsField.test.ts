@@ -1,5 +1,6 @@
 import '@testing-library/jest-dom'
-import { cleanup, fireEvent, render, screen } from '@testing-library/svelte'
+import { fireEvent, render, screen } from '@testing-library/svelte'
+// @ts-ignore
 import Calculator from '../src/layout/Calculator.svelte'
 
 describe('Finals Field', () => {

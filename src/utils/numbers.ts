@@ -1,13 +1,13 @@
 import { translated } from '../i18n/i18n'
 
-const parseResult = (/** @type {number} */ percent) => {
+const parseResult = (percent: number) => {
   if (percent === 98 || percent === 99) return `100${translated('score')}`
   if (percent < 0) return translated('secured')
   else if (percent > 100) return translated('impossible')
   else return `${percent}${translated('score')}`
 }
 
-const findGrade = (/** @type {number} */ percent) => {
+const findGrade = (percent: number) => {
   if (percent >= 89.5) return 'A'
   else if (percent >= 79.5) return 'B'
   else if (percent >= 69.5) return 'C'

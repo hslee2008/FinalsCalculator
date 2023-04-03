@@ -1,13 +1,11 @@
 <script>
   import { t } from '../i18n/i18n'
-    import { Event } from '../utils/analytics'
+  import { Event } from '../utils/analytics'
 </script>
 
 <h1>{$t('app_title')}</h1>
 <p style="margin-bottom: 50px; color: #575757">
-  <span>v4.2.3</span>
-  <span> · </span>
-  <span class="mit">
+  <span>
     <span>MIT License</span>
     <span> · </span>
   </span>
@@ -37,10 +35,6 @@
   @media (max-width: 410px) {
     h1 {
       font-size: 2rem;
-    }
-
-    .mit {
-      display: none;
     }
   }
 

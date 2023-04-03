@@ -2,7 +2,7 @@
   import { TextInput } from 'carbon-components-svelte'
   import { t, translated } from '../i18n/i18n'
   import { parseResult, findGrade } from '../utils/numbers'
-    import { CalculateFinalsScore } from '../utils/calculate'
+  import { CalculateFinalsScore } from '../utils/calculate'
 
   export let finals = [0, 0, 0, 0, 0]
   export let percent = 25

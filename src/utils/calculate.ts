@@ -1,11 +1,11 @@
 import { parsePercent } from './numbers'
 
 const TableCalculation = (
-  hasMidterm,
-  percent,
-  projects,
-  midterm_score,
-  callback
+  hasMidterm: any,
+  percent: number,
+  projects: number,
+  midterm_score: number,
+  callback: () => void
 ) => {
   const finals = [0, 0, 0, 0, 0]
   const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
@@ -28,11 +28,11 @@ const TableCalculation = (
 }
 
 const CalculateFinalsScore = (
-  hasMidterm,
-  percent,
-  projects,
-  midterm_score,
-  finals_score
+  hasMidterm: any,
+  percent: number,
+  projects: number,
+  midterm_score: number,
+  finals_score: number
 ) => {
   const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
@@ -49,4 +49,3 @@ const CalculateFinalsScore = (
 }
 
 export { CalculateFinalsScore, TableCalculation }
-

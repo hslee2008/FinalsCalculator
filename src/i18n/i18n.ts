@@ -7,7 +7,7 @@ const translations = {
   'ko-KR': ko
 }
 
-const { searchParams } = new URL(window.location)
+const searchParams = new URLSearchParams(window.location.search)
 let currentLocale = navigator.language || 'ko-KR'
 if (currentLocale === 'ko') currentLocale = 'ko-KR'
 if (process.env.NODE_ENV === 'development') currentLocale = 'ko-KR'
@@ -16,7 +16,11 @@ currentLocale = searchParams.get('lang') || currentLocale
 const locale = writable(currentLocale)
 const locales = Object.keys(translations)
 
-function translate(locale, key, vars) {
+function translate(
+  locale: string,
+  key: string | number,
+  vars: { [x: string]: any }
+) {
   if (!translations[locale]) locale = 'en-US'
 
   let text = translations[locale][key]
@@ -32,10 +36,11 @@ function translate(locale, key, vars) {
 const t = derived(
   locale,
   $locale =>
-    (key, vars = {}) =>
+    (key: string | number, vars = {}) =>
       translate($locale, key, vars)
 )
 
-const translated = (key, vars = {}) => translate(currentLocale, key, vars)
+const translated = (key: string | number, vars = {}) =>
+  translate(currentLocale, key, vars)
 
 export { currentLocale, locale, locales, t, translated }
