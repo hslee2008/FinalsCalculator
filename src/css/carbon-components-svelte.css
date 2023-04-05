@@ -6,6 +6,14 @@
   border-radius: 0 10px 0 0 !important;
 }
 
+.bx--modal-container, .bx--data-table td {
+  background-color: #ffffff !important;
+}
+
+.bx--data-table th {
+  background-color: #f0f0f0 !important;
+}
+
 @media (min-width: 672px) {
   .bx--modal-container {
     border-radius: 10px !important;
