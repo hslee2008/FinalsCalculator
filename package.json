@@ -16,7 +16,7 @@
     "test:watch": "vitest .",
     "update": "yarn upgrade && ncu -u && yarn",
     "build:android": "cd android && bubblewrap build",
-    "lint": "eslint . --ext .js,.svelte",
+    "lint": "eslint . --ext .ts,.js,.svelte",
     "firebase-hosting-build": "yarn && yarn test && yarn lint && yarn build"
   },
   "devDependencies": {
@@ -24,9 +24,11 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
+    "@typescript-eslint/parser": "^5.57.1",
     "carbon-components-svelte": "^0.73.5",
     "carbon-preprocess-svelte": "^0.9.1",
     "eslint": ">=8.37.0",
+    "eslint-plugin-testing-library": "^5.10.2",
     "jsdom": "^21.1.1",
     "svelte": "^3.58.0",
     "svelte-eslint-parser": "^0.25.1",

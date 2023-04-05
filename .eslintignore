@@ -100,8 +100,7 @@ lint/tmp/
 app/release/output.json
 .idea/codeStyles/
 .firebase
-# Unnecessary files
-service-worker.js
-vitest.config.js
-vite.config.js
+# Remove test since it is not supported in eslint-plugin-testing-library
+*.test.ts
+# Remove App.svelte since `svelte:document` is not supported in svelte-eslint-parser
 App.svelte
