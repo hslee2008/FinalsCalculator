@@ -24,7 +24,6 @@
     "@sveltejs/vite-plugin-svelte": "^2.0.4",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/svelte": "^3.2.2",
-    "@tsconfig/svelte": "^4.0.1",
     "carbon-components-svelte": "^0.73.5",
     "carbon-preprocess-svelte": "^0.9.1",
     "eslint": ">=8.37.0",
