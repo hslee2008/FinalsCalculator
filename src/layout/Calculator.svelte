@@ -18,12 +18,18 @@
   import Header from '../components/Header.svelte'
   import Table from '../components/Table.svelte'
 
+  /* Saved */
+  const savedMidtermPercent = parseInt(localStorage.getItem('midterm_percent'))
+  const savedNoMidtermPercent = parseInt(
+    localStorage.getItem('no_midterm_percent')
+  )
+
   /* Variable Initialization */
   let opened = false
   let hasMidterm = true
   let selected = $t('midterm_is')
 
-  let percent = 25
+  let percent = savedMidtermPercent || 25
   let midterm_score = 100
   let projects = 100 - percent * 2
 
@@ -49,7 +55,9 @@
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
     selected = hasMidterm ? $t('midterm_is') : $t('midterm_is_not')
-    percent = hasMidterm ? 25 : 50
+    percent = hasMidterm
+      ? savedMidtermPercent || 25
+      : savedNoMidtermPercent || 50
     projects = hasMidterm ? 100 - percent * 2 : 100 - percent
     midterm_score = 100
 
@@ -71,6 +79,16 @@
       open
     )
     Event('Calculate Button', {})
+  }
+
+  const UpdateProjects = () => {
+    if (hasMidterm) {
+      projects = 100 - percent * 2
+      localStorage.setItem('midterm_percent', percent)
+    } else {
+      projects = 100 - percent
+      localStorage.setItem('no_midterm_percent', percent)
+    }
   }
 
   // Short Functions
@@ -114,6 +132,7 @@
     bind:value="{percent}"
     labelText="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
     warn="{percentageInvalid}"
+    on:keyup="{UpdateProjects}"
   ></TextInput>
 </div>
 {#if hasMidterm}
