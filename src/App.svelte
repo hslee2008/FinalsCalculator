@@ -1,5 +1,4 @@
 <script>
-  import { onMount } from 'svelte'
   import { MetaTags } from 'svelte-meta-tags'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
   import Calculator from './layout/Calculator.svelte'
