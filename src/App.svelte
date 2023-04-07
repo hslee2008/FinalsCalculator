@@ -4,6 +4,7 @@
   import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
   import { SetUser } from './utils/analytics'
+  import { initializeFirebasePerformance } from './utils/firebase'
   import { t, currentLocale } from './i18n/i18n'
   import {
     additionalLinkTags,
@@ -13,6 +14,7 @@
 
   registerSW()
   SetUser()
+  initializeFirebasePerformance()
 </script>
 
 <svelte:document lang="{currentLocale}" />
