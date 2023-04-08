@@ -36,6 +36,11 @@
   let labelText
   let finals = [0, 0, 0, 0, 0]
 
+  /* invalid */
+  let percentageInvalid = false
+  let midtermScoreInvalid = false
+  let projectsInvalid = false
+
   $: labelText = `${hasMidterm ? $t('each') : $t('midterm')} ${$t('weight')} (${
     hasMidterm ? '25, 30, 35' : '50, 60'
   })`
@@ -84,10 +89,10 @@
   const UpdateProjects = () => {
     if (hasMidterm) {
       projects = 100 - percent * 2
-      localStorage.setItem('midterm_percent', percent)
+      !percentageInvalid && localStorage.setItem('midterm_percent', percent)
     } else {
       projects = 100 - percent
-      localStorage.setItem('no_midterm_percent', percent)
+      !percentageInvalid && localStorage.setItem('no_midterm_percent', percent)
     }
   }
 
@@ -97,11 +102,6 @@
     Event('Close', {})
   }
   const open = () => (opened = true)
-
-  // invalid
-  let percentageInvalid = false
-  let midtermScoreInvalid = false
-  let projectsInvalid = false
 
   $: percentageInvalid = hasMidterm
     ? percent !== 30 && percent !== 35 && percent !== 25
