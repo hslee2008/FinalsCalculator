@@ -2,21 +2,21 @@
   /* Imports */
   import 'carbon-components-svelte/css/white.css'
   import {
-    TextInput,
     Select,
     SelectItem,
     Modal,
-    ModalBody
+    ModalBody,
+    NumberInput
   } from 'carbon-components-svelte'
   import { onMount } from 'svelte'
 
-  import { t } from '../i18n/i18n'
-  import { p20, p20_m } from '../utils/numbers'
-  import { TableCalculation } from '../utils/calculate'
-  import { Event } from '../utils/analytics'
+  import { t } from './i18n/i18n'
+  import { p20, p20_m } from './utils/numbers'
+  import { TableCalculation } from './utils/calculate'
+  import { Event } from './utils/analytics'
 
-  import Header from '../components/Header.svelte'
-  import Table from '../components/Table.svelte'
+  import Header from './components/Header.svelte'
+  import Table from './components/Table.svelte'
 
   /* Saved */
   const savedMidtermPercent = parseInt(localStorage.getItem('midterm_percent'))
@@ -127,31 +127,31 @@
 <Header></Header>
 
 <div class="mb20">
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{percent}"
-    labelText="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
+    label="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
     warn="{percentageInvalid}"
     on:keyup="{UpdateProjects}"
-  ></TextInput>
+    hideSteppers
+  ></NumberInput>
 </div>
 {#if hasMidterm}
 <div class="mb20">
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{midterm_score}"
-    labelText="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
+    label="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
     warn="{midtermScoreInvalid}"
-  ></TextInput>
+    hideSteppers
+  ></NumberInput>
 </div>
 {/if}
 <div class="mb20">
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{projects}"
-    labelText="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
+    label="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
     warn="{projectsInvalid}"
-  ></TextInput>
+    hideSteppers
+  ></NumberInput>
 </div>
 
 <button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>

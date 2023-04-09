@@ -2,17 +2,19 @@ import { translated } from '../i18n/i18n'
 
 const parseResult = (percent: number) => {
   if (percent === 98 || percent === 99) return `100${translated('score')}`
-  if (percent < 0) return translated('secured')
-  else if (percent > 100) return translated('impossible')
-  else return `${percent}${translated('score')}`
+  if (percent <= 0) return translated('secured')
+  if (percent > 100) return translated('impossible')
+
+  return `${percent}${translated('score')}`
 }
 
 const findGrade = (percent: number) => {
   if (percent >= 89.5) return 'A'
-  else if (percent >= 79.5) return 'B'
-  else if (percent >= 69.5) return 'C'
-  else if (percent >= 59.5) return 'D'
-  else return 'E'
+  if (percent >= 79.5) return 'B'
+  if (percent >= 69.5) return 'C'
+  if (percent >= 59.5) return 'D'
+
+  return 'E'
 }
 
 const parsePercent = (percent: number, subtracted: number) => {
