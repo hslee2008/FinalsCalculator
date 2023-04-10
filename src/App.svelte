@@ -1,7 +1,7 @@
 <script>
   import { MetaTags } from 'svelte-meta-tags'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
-  import Calculator from './Calculator.svelte'
+  import Calculator from './layout/Calculator.svelte'
   import { registerSW } from './utils/register-sw'
   import { SetUser } from './utils/analytics'
   import { initializeFirebasePerformance } from './utils/firebase'
