@@ -15,9 +15,7 @@ function SetUser() {
   if (isPwa) user_platform = 'pwa'
   else if (isTwa) user_platform = 'twa'
 
-  ga.setUserProperties({
-    user_platform
-  })
+  Event(user_platform, {})
 }
 
 export { Event, SetUser }
