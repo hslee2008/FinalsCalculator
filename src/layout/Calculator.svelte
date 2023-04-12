@@ -1,6 +1,5 @@
 <script>
   /* Imports */
-  import 'carbon-components-svelte/css/white.css'
   import {
     TextInput,
     Select,

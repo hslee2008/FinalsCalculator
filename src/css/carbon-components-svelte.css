@@ -26,6 +26,6 @@
   }
 
   .bx--modal-close {
-    border-radius: 0 0 0 0 !important;
+    border-radius: 0 !important;
   }
 }

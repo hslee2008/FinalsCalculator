@@ -22,6 +22,7 @@ p {
   border-radius: 10px !important;
   padding: 0.4rem 1rem;
   cursor: pointer;
+  margin-top: 5px;
 }
 
 .main-btn:hover,
@@ -29,9 +30,6 @@ p {
   color: white;
   background: #5c62fe;
   transition-duration: 0.3s;
-}
-
-.main-btn:focus {
   outline: none;
 }
 
@@ -46,10 +44,6 @@ p {
 
 .grade-row {
   width: 25%;
-}
-
-.finals-input {
-  background-color: #ffffff !important;
 }
 
 @media screen and (max-width: 360px) {
