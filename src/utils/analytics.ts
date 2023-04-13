@@ -4,7 +4,7 @@ function Event(event_name: any, object: any) {
   ga.addEvent(event_name, object)
 }
 
-function SetUser() {
+function GetUserPlatform() {
   const isStandalone =
     window.matchMedia && window.matchMedia('(display-mode: standalone)').matches
   const isPwa = isStandalone || (navigator as any).standalone
@@ -15,7 +15,11 @@ function SetUser() {
   if (isPwa) user_platform = 'pwa'
   else if (isTwa) user_platform = 'twa'
 
-  Event(user_platform, {})
+  return user_platform
 }
 
-export { Event, SetUser }
+function SetUser() {
+  Event(GetUserPlatform(), {})
+}
+
+export { Event, SetUser, GetUserPlatform }
