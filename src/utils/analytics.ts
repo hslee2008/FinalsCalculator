@@ -13,7 +13,7 @@ function GetUserPlatform() {
   let user_platform = 'web'
 
   if (isPwa) user_platform = 'pwa'
-  else if (isTwa) user_platform = 'twa'
+  if (isTwa) user_platform = 'twa'
 
   return user_platform
 }
