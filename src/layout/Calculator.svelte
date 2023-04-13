@@ -161,7 +161,7 @@
   passiveModal
   selectorPrimaryFocus=".bx--modal-content"
 >
-  <ModalBody style="margin-top: auto; margin-bottom: auto">
+  <ModalBody>
     <Table
       bind:finals
       bind:percent
@@ -170,12 +170,7 @@
       bind:hasMidterm
     ></Table>
 
-    <button
-      on:click="{close}"
-      id="close"
-      class="main-btn"
-      style="margin-top: 50px; margin-bottom: 50px"
-    >
+    <button on:click="{close}" id="close" class="main-btn mb50">
       {$t('close')}
     </button>
   </ModalBody>

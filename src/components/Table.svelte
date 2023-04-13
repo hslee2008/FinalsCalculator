@@ -50,7 +50,10 @@
   })
 </script>
 
-<div class="bx--data-table-container" style="margin-top: 25px">
+<div
+  class="bx--data-table-container"
+  style="margin-top: 25px; margin-bottom: 25px"
+>
   <table class="bx--data-table">
     <thead>
       <tr>

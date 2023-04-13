@@ -1,20 +1,3 @@
-a {
-  font-weight: 500;
-  color: #5c62fe;
-  text-decoration: inherit;
-}
-a:hover {
-  text-decoration: underline;
-}
-
-.card {
-  padding: 2em;
-}
-
-p {
-  font-size: 13px !important;
-}
-
 .main-btn {
   color: #5c62fe;
   background: transparent;
@@ -33,13 +16,9 @@ p {
   outline: none;
 }
 
-.mb20 {
-  margin-bottom: 20px;
-}
-
 .bordered {
   box-shadow: -2px 0px 0px 0px #5c62fe !important;
-  border-radius:10%;
+  border-radius: 10%;
 }
 
 .grade-row {

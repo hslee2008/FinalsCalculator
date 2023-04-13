@@ -27,7 +27,5 @@
 ></MetaTags>
 
 <main>
-  <div class="card">
-    <Calculator></Calculator>
-  </div>
+  <Calculator></Calculator>
 </main>
