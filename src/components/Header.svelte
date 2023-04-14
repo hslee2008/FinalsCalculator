@@ -6,6 +6,13 @@
   let sec_dev = false
 
   const OpenSecDev = () => (sec_dev = true)
+  const SwitchLanguage = () => {
+    if (t.locale === 'en-US') {
+      window.location = "https://finalscalcu.web.app/?lang=ko-KR"
+    } else {
+      window.location = "https://finalscalcu.web.app/?lang=en-US"
+    }
+  }
 </script>
 
 <h1>{$t('app_title')}</h1>
@@ -60,7 +67,7 @@
           </tr>
           <tr>
             <td>언어</td>
-            <td>{navigator.language}</td>
+            <td on:click="{SwitchLanguage}">{navigator.language}</td>
           </tr>
           <tr>
             <td>URL</td>
@@ -79,18 +86,6 @@
             <td>referrer</td>
             <td>{document.referrer}</td>
           </tr>
-          {#if "getInstalledRelatedApps" in navigator}
-          <tr>
-            <td>앱</td>
-            {#await navigator.getInstalledRelatedApps()}
-            <td>Waiting...</td>
-            {:then app}
-            <td>{app}</td>
-            {:catch error}
-            <td>{error}</td>
-            {/await}
-          </tr>
-          {/if}
         </tbody>
       </table>
     </div>
