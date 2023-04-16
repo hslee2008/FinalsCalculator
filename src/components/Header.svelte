@@ -5,12 +5,17 @@
 
   let sec_dev = false
 
+  const standalone = window.watchMedia && window.matchMedia('(display-mode: standalone)').matches
   const OpenSecDev = () => (sec_dev = true)
   const SwitchLanguage = () => {
-    if (t.locale === 'en-US') {
-      window.location = "https://finalscalcu.web.app/?lang=ko-KR"
+    const searchParams = new URLSearchParams(window.location.search).get('lang')
+
+    if (searchParams === 'ko-KR') {
+      window.location.search = '?lang=en-US'
+    } else if (searchParams === 'en-US') {
+      window.location.search = '?lang=ko-KR'
     } else {
-      window.location = "https://finalscalcu.web.app/?lang=en-US"
+      return
     }
   }
 </script>
@@ -67,7 +72,7 @@
           </tr>
           <tr>
             <td>언어</td>
-            <td on:click="{SwitchLanguage}">{navigator.language}</td>
+            <td on:click|once="{SwitchLanguage}">{navigator.language}</td>
           </tr>
           <tr>
             <td>URL</td>
@@ -78,9 +83,7 @@
           </tr>
           <tr>
             <td>standalone</td>
-            <td>
-              {window.matchMedia && window.matchMedia('(display-mode: standalone)').matches}
-            </td>
+            <td>{standalone}</td>
           </tr>
           <tr>
             <td>referrer</td>
