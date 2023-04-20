@@ -1,7 +1,6 @@
 import { translated } from '../i18n/i18n'
 
 const parseResult = (percent: number) => {
-  if (percent === 98 || percent === 99) return `100${translated('score')}`
   if (percent <= 0) return translated('secured')
   if (percent > 100) return translated('impossible')
 

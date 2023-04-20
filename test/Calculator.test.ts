@@ -14,12 +14,12 @@ describe('Calculator Component', () => {
   })
 
   test('Alter performance evaluation', async () => {
-    // Change the performance evaluation to 30
+    // Change the performance evaluation to 40
     const input = screen.getByLabelText('Performance Evaluation')
     await fireEvent.input(input, { target: { value: '40' } })
 
     await fireEvent.click(screen.getByText('Calculate'))
-    expect(screen.getByText('100%')).toBeInTheDocument()
+    expect(screen.getByText('98%')).toBeInTheDocument()
     expect(screen.getByText('58%')).toBeInTheDocument()
     expect(screen.getByText('18%')).toBeInTheDocument()
   })
