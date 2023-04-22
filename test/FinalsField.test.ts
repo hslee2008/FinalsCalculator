@@ -7,7 +7,7 @@ describe('Finals Field', () => {
   beforeEach(() => render(Calculator))
 
   test('[Finals 1] Finals Basic Values', async () => {
-    const input = screen.getByPlaceholderText('Input Finals Score')
+    const input = screen.getByLabelText('Input Finals Score')
 
     await fireEvent.input(input, { target: { value: '100' } })
     expect(screen.getByText('100 (A)')).toBeInTheDocument()

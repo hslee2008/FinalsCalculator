@@ -52,7 +52,7 @@
 
 <div
   class="bx--data-table-container"
-  style="margin-top: 25px; margin-bottom: 25px"
+  style="margin-top: 25px; margin-bottom: 15px"
 >
   <table class="bx--data-table">
     <thead>
@@ -78,8 +78,9 @@
   </table>
   <NumberInput
     bind:value="{finals_score}"
-    placeholder="{$t('input_finals')}"
     helperText="{with_finals_grade}"
+    label="{$t('input_finals')}"
+    hideLabel
     warn="{finals_invalid}"
     warnText="0 ~ 100"
     size="xl"

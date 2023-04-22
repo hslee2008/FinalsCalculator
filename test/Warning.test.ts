@@ -28,7 +28,7 @@ describe('Warning of Incorrect Values', () => {
 
   test('[Warn 4] Alter Finals Field', async () => {
     await fireEvent.click(screen.getByText('Calculate'))
-    const finals = screen.getByPlaceholderText('Input Finals Score')
+    const finals = screen.getByLabelText('Input Finals Score')
     await fireEvent.input(finals, { target: { value: '101' } })
     expect(screen.getByText('0 ~ 100')).toBeInTheDocument()
   })
