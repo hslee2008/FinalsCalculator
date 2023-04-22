@@ -1,11 +1,12 @@
 <script>
   /* Imports */
   import {
-    TextInput,
+    NumberInput,
     Select,
     SelectItem,
     Modal,
-    ModalBody
+    ModalBody,
+    Checkbox
   } from 'carbon-components-svelte'
   import { onMount } from 'svelte'
 
@@ -31,6 +32,7 @@
   let percent = savedMidtermPercent || 25
   let midterm_score = 100
   let projects = 100 - percent * 2
+  let hasDecimalScore = false
 
   let labelText
   let finals = [0, 0, 0, 0, 0]
@@ -80,6 +82,7 @@
       percent,
       projects,
       midterm_score,
+      hasDecimalScore,
       open
     )
     Event('Calculate Button', {})
@@ -126,31 +129,33 @@
 <Header></Header>
 
 <div class="mb20">
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{percent}"
-    labelText="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
+    label="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
     warn="{percentageInvalid}"
     on:keyup="{UpdateProjects}"
-  ></TextInput>
+    hideSteppers
+  ></NumberInput>
 </div>
 {#if hasMidterm}
 <div class="mb20">
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{midterm_score}"
-    labelText="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
-    warn="{midtermScoreInvalid}"
-  ></TextInput>
+    label="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
+    hideSteppers
+    min="0"
+    max="100"
+  ></NumberInput>
 </div>
 {/if}
 <div class="mb20">
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{projects}"
-    labelText="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
-    warn="{projectsInvalid}"
-  ></TextInput>
+    label="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
+    hideSteppers
+    min="{hasMidterm ? p20_m(percent) : p20(percent)}"
+    max="{hasMidterm ? 100 - percent * 2 : 100 - percent}"
+  ></NumberInput>
 </div>
 
 <button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
@@ -169,6 +174,14 @@
       bind:projects
       bind:hasMidterm
     ></Table>
+
+    <div class="mb20">
+      <Checkbox
+        on:change="{calculate}"
+        bind:checked="{hasDecimalScore}"
+        labelText="{$t('has_decimal_score')}"
+      ></Checkbox>
+    </div>
 
     <button on:click="{close}" id="close" class="main-btn mb50">
       {$t('close')}

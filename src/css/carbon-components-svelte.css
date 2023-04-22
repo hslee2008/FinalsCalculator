@@ -6,12 +6,24 @@
   border-radius: 0 10px 0 0 !important;
 }
 
-.bx--modal-container, .bx--data-table td {
+.bx--modal-container,
+.bx--data-table td {
   background-color: #ffffff !important;
 }
 
 .bx--data-table th {
   background-color: #f0f0f0 !important;
+}
+
+.bx--label {
+  font-size: 0.75rem !important;
+  text-align: left !important;
+  letter-spacing: 0.32px;
+}
+
+.bx--number__input-wrapper > input {
+  font-weight: 400 !important;
+  font-size: 0.875rem !important;
 }
 
 @media (min-width: 672px) {

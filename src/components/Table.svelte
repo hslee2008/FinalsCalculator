@@ -1,5 +1,5 @@
 <script>
-  import { TextInput } from 'carbon-components-svelte'
+  import { NumberInput } from 'carbon-components-svelte'
   import { t, translated } from '../i18n/i18n'
   import { parseResult, findGrade } from '../utils/numbers'
   import { CalculateFinalsScore } from '../utils/calculate'
@@ -76,8 +76,7 @@
       {/each}
     </tbody>
   </table>
-  <TextInput
-    type="number"
+  <NumberInput
     bind:value="{finals_score}"
     placeholder="{$t('input_finals')}"
     helperText="{with_finals_grade}"
@@ -85,5 +84,7 @@
     warnText="0 ~ 100"
     size="xl"
     class="finals-input"
-  ></TextInput>
+    hideSteppers
+    allowEmpty
+  ></NumberInput>
 </div>

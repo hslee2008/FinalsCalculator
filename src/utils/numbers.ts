@@ -16,9 +16,17 @@ const findGrade = (percent: number) => {
   return 'E'
 }
 
-const parsePercent = (percent: number, subtracted: number) => {
+const parsePercent = (
+  percent: number,
+  subtracted: number,
+  hasDecimalScore: boolean
+) => {
+  const score = 100 * ((percent - subtracted) / percent)
+
+  if (hasDecimalScore) return Math.ceil(score * 10) / 10
+
   // Make the subtracted current amount into a score needed in finals
-  return Math.ceil(100 * ((percent - subtracted) / percent))
+  return Math.ceil(score)
 }
 
 const TwentyPercentMidterm = (percent: number) => {

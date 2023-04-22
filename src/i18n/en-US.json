@@ -25,5 +25,7 @@
 
   "invalid_percent": "25 or 30 or 35",
   "invalid_percent_midterm": "50 or 60",
-  "input_finals": "Input Finals Score"
+  "input_finals": "Input Finals Score",
+
+  "has_decimal_score": "Decimal Score"
 }

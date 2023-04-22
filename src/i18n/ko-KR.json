@@ -25,5 +25,7 @@
 
   "invalid_percent": "25 또는 30 또는 35",
   "invalid_percent_midterm": "50 또는 60",
-  "input_finals": "기말고사 점수 입력"
+  "input_finals": "기말고사 점수 입력",
+
+  "has_decimal_score": "소수점 점수"
 }
