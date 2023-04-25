@@ -71,6 +71,10 @@
     Event('Midterm Changed', {})
   }
 
+  const FieldChanged = () => {
+    Event('Field Changed', {})
+  }
+
   const ProgrammaticallyChange = () => {
     hasMidterm = !hasMidterm
     ChangeMidtermStatus()
@@ -134,6 +138,7 @@
     label="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
     warn="{percentageInvalid}"
     on:keyup="{UpdateProjects}"
+    on:change="{FieldChanged}"
     hideSteppers
   ></NumberInput>
 </div>
@@ -141,6 +146,7 @@
 <div class="mb20">
   <NumberInput
     bind:value="{midterm_score}"
+    on:change="{FieldChanged}"
     label="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
     hideSteppers
     min="0"
@@ -151,6 +157,7 @@
 <div class="mb20">
   <NumberInput
     bind:value="{projects}"
+    on:change="{FieldChanged}"
     label="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
     hideSteppers
     min="{hasMidterm ? p20_m(percent) : p20(percent)}"

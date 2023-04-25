@@ -52,7 +52,7 @@
 
 <div
   class="bx--data-table-container"
-  style="margin-top: 25px; margin-bottom: 15px"
+  style="margin-top: 25px; margin-bottom: 5px"
 >
   <table class="bx--data-table">
     <thead>
