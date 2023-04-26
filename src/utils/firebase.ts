@@ -11,5 +11,6 @@ const firebaseConfig = {
   measurementId: 'G-PV930WQQFT'
 }
 
-export const initializeFirebasePerformance = () =>
+export const initializeFirebasePerformance = () => {
   getPerformance(initializeApp(firebaseConfig))
+}
