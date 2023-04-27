@@ -1,13 +1,13 @@
 import { parsePercent } from './numbers'
 
-const TableCalculation = (
+function TableCalculation(
   hasMidterm: any,
   percent: number,
   projects: number,
   midterm_score: number,
   hasDecimalScore: boolean,
-  callback: () => void,
-) => {
+  callback: () => void
+): number[] {
   const finals = [0, 0, 0, 0, 0]
   const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
@@ -20,7 +20,11 @@ const TableCalculation = (
 
   // By order of alphabets (A, B, C, D, E), calculate the necessary grades
   for (let i = 0; i < finals.length; i++)
-    finals[i] = parsePercent(percent, 10.5 + subtracted + i * 10, hasDecimalScore)
+    finals[i] = parsePercent(
+      percent,
+      10.5 + subtracted + i * 10,
+      hasDecimalScore
+    )
 
   // callback after calculation
   callback()
@@ -28,13 +32,13 @@ const TableCalculation = (
   return finals
 }
 
-const CalculateFinalsScore = (
+function CalculateFinalsScore(
   hasMidterm: any,
   percent: number,
   projects: number,
   midterm_score: number,
   finals_score: number
-) => {
+): number {
   const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
 

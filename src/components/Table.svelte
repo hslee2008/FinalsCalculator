@@ -66,10 +66,9 @@
       </tr>
     </thead>
     <tbody aria-live="polite">
-      {#each ['A', 'B', 'C', 'D', 'E'] as grade, i}
-      <tr
-        class:bordered="{finals_input_grade === grade && finals_score !== null && !finals_invalid}"
-      >
+      {#each ['A', 'B', 'C', 'D', 'E'] as grade, i} {@const bordered =
+      finals_input_grade === grade && finals_score !== null && !finals_invalid}
+      <tr class:bordered>
         <td>{grade}</td>
         <td>{rows[i].lowest}</td>
       </tr>

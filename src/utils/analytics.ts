@@ -4,7 +4,7 @@ function Event(event_name: any, object: any) {
   ga.addEvent(event_name, object)
 }
 
-function GetUserPlatform() {
+function GetUserPlatform(): string {
   const isStandalone =
     window.matchMedia && window.matchMedia('(display-mode: standalone)').matches
   const isPwa = isStandalone || (navigator as any).standalone
