@@ -24,27 +24,19 @@ const FILES_TO_CACHE = [
 ]
 
 self.addEventListener('install', evt => {
-  console.log('[FinalsCalculator] Service Worker Install')
-
   evt.waitUntil(
-    caches.open(CACHE_NAME).then(cache => {
-      console.log('[FinalsCalculator] Pre-caching offline page')
-      return cache.addAll(FILES_TO_CACHE)
-    })
+    caches.open(CACHE_NAME).then(cache => cache.addAll(FILES_TO_CACHE))
   )
-
   self.skipWaiting()
 })
 
 self.addEventListener('activate', evt => {
-  console.log('[FinalsCalculator] Activate')
   // Remove previous cached data from disk.
   evt.waitUntil(
     caches.keys().then(keyList => {
       return Promise.all(
         keyList.map(key => {
           if (key !== CACHE_NAME) {
-            console.log('[FinalsCalculator] Removing old cache', key)
             return caches.delete(key)
           }
         })
@@ -56,8 +48,6 @@ self.addEventListener('activate', evt => {
 })
 
 self.addEventListener('fetch', evt => {
-  console.log('[FinalsCalculator] Fetch', evt.request.url)
-
   if (evt.request.mode !== 'navigate') return
 
   evt.respondWith(

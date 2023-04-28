@@ -1,4 +1,5 @@
 <script>
+  import { onMount } from 'svelte'
   import { MetaTags } from 'svelte-meta-tags'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
   import Calculator from './layout/Calculator.svelte'
@@ -15,9 +16,10 @@
   registerSW()
   SetUser()
   initializeFirebasePerformance()
+
+  onMount(() => (document.documentElement.lang = currentLocale))
 </script>
 
-<svelte:document lang="{currentLocale}" />
 <GoogleAnalytics {properties}></GoogleAnalytics>
 <MetaTags
   title="{$t('app_title')}"
