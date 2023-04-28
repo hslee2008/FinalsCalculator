@@ -80,7 +80,7 @@
     ChangeMidtermStatus()
   }
 
-  const calculate = () => {
+  const CalculateTable = () => {
     finals = TableCalculation(
       hasMidterm,
       percent,
@@ -89,8 +89,18 @@
       hasDecimalScore,
       open
     )
+  }
+
+  const calculate = () => {
+    CalculateTable()
     Event('Calculate Button', {})
   }
+
+  const onChangeDecimal = () => {
+    CalculateTable()
+    Event('Decimal Changed', {})
+  }
+
 
   const UpdateProjects = () => {
     if (hasMidterm) {
@@ -184,7 +194,7 @@
 
     <div class="mb20">
       <Checkbox
-        on:change="{calculate}"
+        on:change="{onChangeDecimal}"
         bind:checked="{hasDecimalScore}"
         labelText="{$t('has_decimal_score')}"
       ></Checkbox>
