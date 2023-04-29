@@ -20,7 +20,7 @@ const parsePercent = (
   percent: number,
   subtracted: number,
   hasDecimalScore: boolean
-): number => {
+): number | string => {
   const score = 100 * ((percent - subtracted) / percent)
 
   if (hasDecimalScore) {
@@ -28,11 +28,9 @@ const parsePercent = (
     const roundedScore = score.toFixed(1)
     const decimal = Number(roundedScore.split('.')[1])
 
-    if (decimal === 0) return parseInt(roundedScore)
+    if (decimal === 0) return parseInt(roundedScore).toFixed(1)
     if (decimal < 5) return Math.floor(score) + 0.5
-    if (decimal > 5) return parseInt(Math.ceil(score).toFixed(1))
-
-    return parseInt(roundedScore)
+    if (decimal > 5) return (Math.ceil(score).toFixed(1))
   }
 
   // Make the subtracted current amount into a score needed in finals
