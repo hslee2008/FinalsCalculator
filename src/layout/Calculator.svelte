@@ -68,11 +68,17 @@
     midterm_score = 100
 
     // Send data
-    Event('Midterm Changed', {})
+    Event('Midterm Changed', {
+      midterm: hasMidterm
+    })
   }
 
   const FieldChanged = () => {
-    Event('Field Changed', {})
+    Event('Field Changed', {
+      percent,
+      projects,
+      midterm_score
+    })
   }
 
   const ProgrammaticallyChange = () => {
@@ -98,9 +104,10 @@
 
   const onChangeDecimal = () => {
     CalculateTable()
-    Event('Decimal Changed', {})
+    Event('Decimal Changed', {
+      decimal: hasDecimalScore
+    })
   }
-
 
   const UpdateProjects = () => {
     if (hasMidterm) {

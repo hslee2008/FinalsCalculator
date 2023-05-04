@@ -7,11 +7,8 @@
   import { SetUser } from './utils/analytics'
   import { initializeFirebasePerformance } from './utils/firebase'
   import { t, currentLocale } from './i18n/i18n'
-  import {
-    additionalLinkTags,
-    additionalMetaTags,
-    properties
-  } from './config/config'
+  import { additionalLinkTags, additionalMetaTags } from './config/theme'
+  import { properties, configuration } from './config/ga'
 
   registerSW()
   SetUser()
@@ -20,7 +17,7 @@
   onMount(() => (document.documentElement.lang = currentLocale))
 </script>
 
-<GoogleAnalytics {properties}></GoogleAnalytics>
+<GoogleAnalytics {properties} {configuration}></GoogleAnalytics>
 <MetaTags
   title="{$t('app_title')}"
   description="{$t('app_description')}"

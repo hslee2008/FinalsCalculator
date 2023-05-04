@@ -44,6 +44,5 @@ const additionalLinkTags = [
     href: `/manifest/manifest-${currentLocale}.json`
   }
 ]
-const properties = ['G-PV930WQQFT']
 
-export { additionalLinkTags, additionalMetaTags, properties }
+export { additionalLinkTags, additionalMetaTags }
