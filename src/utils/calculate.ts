@@ -1,4 +1,4 @@
-import { parsePercent } from './numbers'
+import { roundPercent } from './numbers'
 
 function TableCalculation(
   hasMidterm: any,
@@ -20,7 +20,7 @@ function TableCalculation(
 
   // By order of alphabets (A, B, C, D, E), calculate the necessary grades
   for (let i = 0; i < finals.length; i++)
-    finals[i] = parsePercent(
+    finals[i] = roundPercent(
       percent,
       10.5 + subtracted + i * 10,
       hasDecimalScore

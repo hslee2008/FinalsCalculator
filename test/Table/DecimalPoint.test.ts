@@ -3,10 +3,10 @@ import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
 import Calculator from '@/layout/Calculator.svelte'
 
-describe('Finals Field', () => {
+describe('CheckBox Decimal Point', () => {
   beforeEach(() => render(Calculator))
 
-  test('[Finals 1] Test Checkbox', async () => {
+  test('[CheckBox 1] Test Checkbox', async () => {
     await fireEvent.click(screen.getByText('Calculate'))
 
     const checkbox = screen.getByLabelText('Decimal Score')
@@ -17,7 +17,7 @@ describe('Finals Field', () => {
     expect(screen.getByText('18.0%')).toBeInTheDocument()
   })
 
-  test('[Finals 2] Test with 35%', async () => {
+  test('[CheckBox 2] Test with 35%', async () => {
     const input = screen.getByLabelText(
       'Midterm and Finals each weight (25, 30, 35)'
     )

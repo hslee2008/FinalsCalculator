@@ -1,7 +1,7 @@
 <script>
   import { NumberInput } from 'carbon-components-svelte'
   import { t, translated } from '@/i18n/i18n'
-  import { parseResult, findGrade } from '@/utils/numbers'
+  import { percentToString, percentToGrade } from '@/utils/numbers'
   import { CalculateFinalsScore } from '@/utils/calculate'
 
   export let finals = [0, 0, 0, 0, 0]
@@ -25,7 +25,7 @@
         midterm_score,
         finals_score
       )
-      finals_input_grade = findGrade(calculated)
+      finals_input_grade = percentToGrade(calculated)
 
       with_finals_grade = `${
         Math.round(calculated * 100) / 100
@@ -45,7 +45,7 @@
     return {
       id: LetterGrade,
       grade: LetterGrade,
-      lowest: parseResult(grade)
+      lowest: percentToString(grade)
     }
   })
 </script>
