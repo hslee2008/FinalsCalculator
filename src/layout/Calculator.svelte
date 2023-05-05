@@ -1,7 +1,6 @@
 <script>
   /* Imports */
   import {
-    NumberInput,
     Select,
     SelectItem,
     Modal,
@@ -10,13 +9,15 @@
   } from 'carbon-components-svelte'
   import { onMount } from 'svelte'
 
-  import { t } from '../i18n/i18n'
-  import { p20, p20_m } from '../utils/numbers'
-  import { TableCalculation } from '../utils/calculate'
-  import { Event } from '../utils/analytics'
+  import { t } from '@/i18n/i18n'
+  import { TableCalculation } from '@/utils/calculate'
+  import { Event } from '@/utils/analytics'
 
-  import Header from '../components/Header.svelte'
-  import Table from '../components/Table.svelte'
+  import Header from '@/components/Header.svelte'
+  import Table from '@/components/Table.svelte'
+  import InputPercentage from '@/components/Input/Percentage.svelte'
+  import InputProjects from '@/components/Input/Projects.svelte'
+  import InputMidterm from '@/components/Input/Midterm.svelte'
 
   /* Saved */
   const savedMidtermPercent = parseInt(localStorage.getItem('midterm_percent'))
@@ -34,17 +35,8 @@
   let projects = 100 - percent * 2
   let hasDecimalScore = false
 
-  let labelText
   let finals = [0, 0, 0, 0, 0]
 
-  /* invalid */
-  let percentageInvalid = false
-  let midtermScoreInvalid = false
-  let projectsInvalid = false
-
-  $: labelText = `${hasMidterm ? $t('each') : $t('midterm')} ${$t('weight')} (${
-    hasMidterm ? '25, 30, 35' : '50, 60'
-  })`
   $: hasMidterm = selected === $t('midterm_is')
 
   onMount(() => {
@@ -70,14 +62,6 @@
     // Send data
     Event('Midterm Changed', {
       midterm: hasMidterm
-    })
-  }
-
-  const FieldChanged = () => {
-    Event('Field Changed', {
-      percent,
-      projects,
-      midterm_score
     })
   }
 
@@ -112,10 +96,10 @@
   const UpdateProjects = () => {
     if (hasMidterm) {
       projects = 100 - percent * 2
-      !percentageInvalid && localStorage.setItem('midterm_percent', percent)
+      localStorage.setItem('midterm_percent', percent)
     } else {
       projects = 100 - percent
-      !percentageInvalid && localStorage.setItem('no_midterm_percent', percent)
+      localStorage.setItem('no_midterm_percent', percent)
     }
   }
 
@@ -125,16 +109,6 @@
     Event('Close', {})
   }
   const open = () => (opened = true)
-
-  $: percentageInvalid = hasMidterm
-    ? percent !== 30 && percent !== 35 && percent !== 25
-    : percent !== 50 && percent !== 60
-  $: midtermScoreInvalid =
-    midterm_score > 100 || midterm_score < 0 || midterm_score === null
-  $: projectsInvalid =
-    projects < 0 ||
-    (hasMidterm ? projects < p20_m(percent) : projects < p20(percent)) ||
-    (hasMidterm ? projects > 100 - percent * 2 : projects > 100 - percent)
 </script>
 
 <button
@@ -149,38 +123,15 @@
 
 <Header></Header>
 
-<div class="mb20">
-  <NumberInput
-    bind:value="{percent}"
-    label="{percentageInvalid ? (hasMidterm ? $t('invalid_percent') : $t('invalid_percent_midterm')) : labelText}"
-    warn="{percentageInvalid}"
-    on:keyup="{UpdateProjects}"
-    on:change="{FieldChanged}"
-    hideSteppers
-  ></NumberInput>
-</div>
+<InputPercentage
+  bind:hasMidterm
+  bind:percent
+  {UpdateProjects}
+></InputPercentage>
 {#if hasMidterm}
-<div class="mb20">
-  <NumberInput
-    bind:value="{midterm_score}"
-    on:change="{FieldChanged}"
-    label="{midtermScoreInvalid ? '0 ~ 100' : $t('midterm_score')}"
-    hideSteppers
-    min="0"
-    max="100"
-  ></NumberInput>
-</div>
+<InputMidterm bind:midterm_score></InputMidterm>
 {/if}
-<div class="mb20">
-  <NumberInput
-    bind:value="{projects}"
-    on:change="{FieldChanged}"
-    label="{projectsInvalid ? `${hasMidterm ? p20_m(percent) : p20(percent)} ~ ${hasMidterm ? 100 - percent * 2 : 100 - percent}` : $t('perf_evaluation')}"
-    hideSteppers
-    min="{hasMidterm ? p20_m(percent) : p20(percent)}"
-    max="{hasMidterm ? 100 - percent * 2 : 100 - percent}"
-  ></NumberInput>
-</div>
+<InputProjects bind:projects bind:percent bind:hasMidterm></InputProjects>
 
 <button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
 

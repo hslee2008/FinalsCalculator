@@ -2,13 +2,13 @@
   import { onMount } from 'svelte'
   import { MetaTags } from 'svelte-meta-tags'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
-  import Calculator from './layout/Calculator.svelte'
-  import { registerSW } from './utils/register-sw'
-  import { SetUser } from './utils/analytics'
-  import { initializeFirebasePerformance } from './utils/firebase'
-  import { t, currentLocale } from './i18n/i18n'
-  import { additionalLinkTags, additionalMetaTags } from './config/theme'
-  import { properties, configuration } from './config/ga'
+  import Calculator from '@/layout/Calculator.svelte'
+  import { registerSW } from '@/utils/register-sw'
+  import { SetUser } from '@/utils/analytics'
+  import { initializeFirebasePerformance } from '@/utils/firebase'
+  import { t, currentLocale } from '@/i18n/i18n'
+  import { additionalLinkTags, additionalMetaTags } from '@/config/theme'
+  import { properties, configuration } from '@/config/ga'
 
   registerSW()
   SetUser()

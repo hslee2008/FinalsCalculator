@@ -17,14 +17,14 @@
   "midterm": "Midterm",
   "midterm_is": "With midterm",
   "midterm_is_not": "Without midterm",
-  "midterm_score": "Midterm Score",
-  "perf_evaluation": "Performance Evaluation",
+  "mid_score": "Midterm Score",
+  "eval": "Performance Evaluation",
   "calculate": "Calculate",
   "result": "Result",
   "close": "Close",
 
-  "invalid_percent": "25 or 30 or 35",
-  "invalid_percent_midterm": "50 or 60",
+  "inval_per": "25 or 30 or 35",
+  "inval_per_midterm": "50 or 60",
   "input_finals": "Input Finals Score",
 
   "has_decimal_score": "Decimal Score"

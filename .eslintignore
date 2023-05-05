@@ -100,5 +100,6 @@ lint/tmp/
 app/release/output.json
 .idea/codeStyles/
 .firebase
+
 # Remove test since it is not supported in eslint-plugin-testing-library
 *.test.ts

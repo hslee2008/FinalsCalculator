@@ -1,4 +1,4 @@
-import { currentLocale, translated } from '../i18n/i18n'
+import { currentLocale, translated } from '@/i18n/i18n'
 
 const additionalMetaTags = [
   {

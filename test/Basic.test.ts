@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '../src/layout/Calculator.svelte'
+import Calculator from '@/layout/Calculator.svelte'
 
 describe('Basic Rendering', () => {
   beforeEach(() => render(Calculator))

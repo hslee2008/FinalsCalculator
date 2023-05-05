@@ -17,14 +17,14 @@
   "midterm": "중간",
   "midterm_is": "중간 있는 과목",
   "midterm_is_not": "중간 없는 과목",
-  "midterm_score": "중간 점수",
-  "perf_evaluation": "수행평가 점수",
+  "mid_score": "중간 점수",
+  "eval": "수행평가 점수",
   "calculate": "계산하기",
   "result": "결과 확인하기",
   "close": "닫기",
 
-  "invalid_percent": "25 또는 30 또는 35",
-  "invalid_percent_midterm": "50 또는 60",
+  "inval_per": "25 또는 30 또는 35",
+  "inval_per_midterm": "50 또는 60",
   "input_finals": "기말고사 점수 입력",
 
   "has_decimal_score": "소수점 점수"

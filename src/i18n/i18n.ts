@@ -1,6 +1,6 @@
 import { derived, writable } from 'svelte/store'
-import en from '../i18n/en-US.json'
-import ko from '../i18n/ko-KR.json'
+import en from './en-US.json'
+import ko from './ko-KR.json'
 
 const translations = {
   'en-US': en,

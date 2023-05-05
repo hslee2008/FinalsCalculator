@@ -1,6 +1,6 @@
 <script>
-  import { t } from '../i18n/i18n'
-  import { Event } from '../utils/analytics'
+  import { t } from '@/i18n/i18n'
+  import { Event } from '@/utils/analytics'
 
   const ClickedLink = () => {
     Event('Programmer Link')
