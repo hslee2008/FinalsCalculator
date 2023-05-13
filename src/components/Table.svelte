@@ -16,6 +16,8 @@
   let finals_invalid
   let with_finals_grade = translated('input_finals')
 
+  const gradeList = ['A', 'B', 'C', 'D', 'E']
+
   $: {
     if (finals_score || finals_score === 0) {
       const calculated = CalculateFinalsScore(
@@ -48,6 +50,23 @@
       lowest: percentToString(grade)
     }
   })
+
+  const viewTransition = () => {
+    document.startViewTransition(() => {
+      document.querySelector(`.${finals_input_grade}`).classList.add('bordered')
+      gradeList
+        .filter(grade => grade !== finals_input_grade)
+        .forEach(grade => {
+          document.querySelector(`.${grade}`).classList.remove('bordered')
+        })
+
+      if (finals_score === null) {
+        gradeList.forEach(grade => {
+          document.querySelector(`.${grade}`).classList.remove('bordered')
+        })
+      }
+    })
+  }
 </script>
 
 <div
@@ -66,9 +85,8 @@
       </tr>
     </thead>
     <tbody aria-live="polite">
-      {#each ['A', 'B', 'C', 'D', 'E'] as grade, i} {@const bordered =
-      finals_input_grade === grade && finals_score !== null && !finals_invalid}
-      <tr class:bordered>
+      {#each ['A', 'B', 'C', 'D', 'E'] as grade, i}
+      <tr class="{grade}">
         <td>{grade}</td>
         <td>{rows[i].lowest}</td>
       </tr>
@@ -86,5 +104,6 @@
     class="finals-input"
     hideSteppers
     allowEmpty
+    on:keydown="{viewTransition}"
   ></NumberInput>
 </div>

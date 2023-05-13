@@ -19,24 +19,11 @@
     "path": "C:\\Users\\USER\\Desktop\\Folder\\Code\\FinalsCalculator\\android\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "5",
-  "appVersionCode": 5,
-  "shortcuts": [
-    {
-      "name": "중간고사 있는 과목",
-      "shortName": "중간 있는 과목",
-      "url": "/?lang=ko-KR?midterm=true",
-      "chosenIconUrl": "https://finalscalcu.web.app/images/48x48.png"
-    },
-    {
-      "name": "중간고사 없는 과목",
-      "shortName": "중간 없는 과목",
-      "url": "/?lang=ko-KR?midterm=false",
-      "chosenIconUrl": "https://finalscalcu.web.app/images/48x48.png"
-    }
-  ],
+  "appVersionName": "8",
+  "appVersionCode": 8,
+  "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
-  "webManifestUrl": "https://finalscalcu.web.app/manifest/light/manifest-ko-KR.json",
+  "webManifestUrl": "https://finalscalcu.web.app/manifest/manifest-ko-KR.json",
   "fallbackType": "customtabs",
   "features": {},
   "alphaDependencies": {
@@ -57,19 +44,8 @@
         "namespace": "android_app",
         "package_name": "app.web.finalscalcu.twa",
         "sha256_cert_fingerprints": [
-          "AA:E5:9C:AB:40:56:31:CD:2F:AF:98:FB:67:F0:0B:68:AC:F1:9A:2C:3A:77:0E:61:42:38:37:66:43:AB:55:4D"
-        ]
-      }
-    },
-    {
-      "relation": [
-        "delegate_permission/common.handle_all_urls"
-      ],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.web.finalscalcu.twa",
-        "sha256_cert_fingerprints": [
-          "39:77:6A:AE:F1:88:86:E9:81:EE:16:CE:05:ED:37:13:7B:61:F6:04:44:D5:AC:CB:0A:A8:79:08:0D:DD:27:B3        "
+          "35:4D:78:A7:2F:2A:C8:0F:C0:7B:9B:A4:A7:42:1E:6C:05:86:8C:0E:14:0B:B8:8B:E5:47:BF:76:CD:82:AC:94",
+          "39:77:6A:AE:F1:88:86:E9:81:EE:16:CE:05:ED:37:13:7B:61:F6:04:44:D5:AC:CB:0A:A8:79:08:0D:DD:27:B3"
         ]
       }
     },
@@ -85,5 +61,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "6"
+  "appVersion": "8"
 }

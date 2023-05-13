@@ -7,8 +7,8 @@ function TableCalculation(
   midterm_score: number,
   hasDecimalScore: boolean,
   callback: () => void
-): number[] {
-  const finals = [0, 0, 0, 0, 0]
+): string[] {
+  const finals = ['0', '0', '0', '0', '0']
   const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
 

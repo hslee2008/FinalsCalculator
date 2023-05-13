@@ -1,6 +1,6 @@
 'use strict'
 
-const CACHE_NAME = 'finals-calculator-v6.0.0'
+const CACHE_NAME = 'finals-calculator-v8'
 
 const FILES_TO_CACHE = [
   '/images/24x24.png',

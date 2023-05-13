@@ -1,10 +1,1 @@
-<shortcuts xmlns:android='http://schemas.android.com/apk/res/android'>
-    <shortcut android:shortcutId='shortcut0' android:enabled='true' android:icon='@drawable/shortcut_0' android:shortcutShortLabel='@string/shortcut_short_name_0' android:shortcutLongLabel='@string/shortcut_name_0'>
-        <intent android:action='android.intent.action.MAIN' android:targetPackage='app.web.finalscalcu.twa' android:targetClass='app.web.finalscalcu.twa.LauncherActivity' android:data='/?lang=ko-KR?midterm=true' />
-        <categories android:name='android.intent.category.LAUNCHER' />
-    </shortcut>
-    <shortcut android:shortcutId='shortcut1' android:enabled='true' android:icon='@drawable/shortcut_1' android:shortcutShortLabel='@string/shortcut_short_name_1' android:shortcutLongLabel='@string/shortcut_name_1'>
-        <intent android:action='android.intent.action.MAIN' android:targetPackage='app.web.finalscalcu.twa' android:targetClass='app.web.finalscalcu.twa.LauncherActivity' android:data='/?lang=ko-KR?midterm=false' />
-        <categories android:name='android.intent.category.LAUNCHER' />
-    </shortcut>
-</shortcuts>
+<shortcuts xmlns:android='http://schemas.android.com/apk/res/android' />
