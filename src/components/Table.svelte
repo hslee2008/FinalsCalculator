@@ -85,12 +85,16 @@
       </tr>
     </thead>
     <tbody aria-live="polite">
-      {#each ['A', 'B', 'C', 'D', 'E'] as grade, i}
+      {#each ['A', 'B', 'C', 'D'] as grade, i}
       <tr class="{grade}">
         <td>{grade}</td>
         <td>{rows[i].lowest}</td>
       </tr>
       {/each}
+      <tr class="E">
+        <td>E</td>
+        <td>{$t("secured")}</td>
+      </tr>
     </tbody>
   </table>
   <NumberInput

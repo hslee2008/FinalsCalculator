@@ -102,3 +102,5 @@ app/release/output.json
 .idea/codeStyles/
 # Firebase
 .firebase
+# Google Drive
+.tmp.driveupload

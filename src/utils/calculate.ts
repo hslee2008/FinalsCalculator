@@ -8,7 +8,7 @@ function TableCalculation(
   hasDecimalScore: boolean,
   callback: () => void
 ): string[] {
-  const finals = ['0', '0', '0', '0', '0']
+  const finals = ['0', '0', '0', '0']
   const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
 
@@ -18,7 +18,7 @@ function TableCalculation(
     subtracted -= percent - (midterm_score / 100) * percent
   }
 
-  // By order of alphabets (A, B, C, D, E), calculate the necessary grades
+  // By order of alphabets (A, B, C, D), calculate the necessary grades
   for (let i = 0; i < finals.length; i++)
     finals[i] = roundPercent(
       percent,
