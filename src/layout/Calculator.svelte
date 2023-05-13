@@ -112,7 +112,7 @@
 </script>
 
 <button
-  data-testid="switch"
+  data-testid="switch-midterm"
   on:click="{ProgrammaticallyChange}"
   style="display: none"
 ></button>

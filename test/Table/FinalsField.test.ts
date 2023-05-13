@@ -7,24 +7,24 @@ describe('Finals Field', () => {
   beforeEach(() => render(Calculator))
 
   test('[Finals 1] Finals Basic Values', async () => {
-    const input = screen.getByLabelText('Input Finals Score')
+    const finalsScore = screen.getByLabelText('Input Finals Score')
 
-    await fireEvent.input(input, { target: { value: '100' } })
+    await fireEvent.input(finalsScore, { target: { value: '100' } })
     expect(screen.getByText('100 (A)')).toBeInTheDocument()
 
-    await fireEvent.input(input, { target: { value: '58' } })
+    await fireEvent.input(finalsScore, { target: { value: '58' } })
     expect(screen.getByText('89.5 (A)')).toBeInTheDocument()
 
-    await fireEvent.input(input, { target: { value: '57' } })
+    await fireEvent.input(finalsScore, { target: { value: '57' } })
     expect(screen.getByText('89.25 (B)')).toBeInTheDocument()
 
-    await fireEvent.input(input, { target: { value: '18' } })
+    await fireEvent.input(finalsScore, { target: { value: '18' } })
     expect(screen.getByText('79.5 (B)')).toBeInTheDocument()
 
-    await fireEvent.input(input, { target: { value: '17' } })
+    await fireEvent.input(finalsScore, { target: { value: '17' } })
     expect(screen.getByText('79.25 (C)')).toBeInTheDocument()
 
-    await fireEvent.input(input, { target: { value: '0' } })
+    await fireEvent.input(finalsScore, { target: { value: '0' } })
     expect(screen.getByText('75 (C)')).toBeInTheDocument()
   })
 })

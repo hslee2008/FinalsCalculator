@@ -14,8 +14,8 @@ describe('Calculator Component', () => {
   })
 
   test('Alter performance evaluation', async () => {
-    const input = screen.getByLabelText('Performance Evaluation')
-    await fireEvent.input(input, { target: { value: '40' } })
+    const performEval = screen.getByLabelText('Performance Evaluation')
+    await fireEvent.input(performEval, { target: { value: '40' } })
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('98%')).toBeInTheDocument()
@@ -24,8 +24,8 @@ describe('Calculator Component', () => {
   })
 
   test('Alter midterm', async () => {
-    const input = screen.getByLabelText('Midterm Score')
-    await fireEvent.input(input, { target: { value: '96' } })
+    const midtermScore = screen.getByLabelText('Midterm Score')
+    await fireEvent.input(midtermScore, { target: { value: '96' } })
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('62%')).toBeInTheDocument()
@@ -33,13 +33,13 @@ describe('Calculator Component', () => {
   })
 
   test('Alter weight', async () => {
-    const input = screen.getByLabelText(
+    const weight = screen.getByLabelText(
       'Midterm and Finals each weight (25, 30, 35)'
     )
-    await fireEvent.input(input, { target: { value: '35' } })
+    await fireEvent.input(weight, { target: { value: '35' } })
 
-    const input2 = screen.getByLabelText('6 ~ 30')
-    await fireEvent.input(input2, { target: { value: '30' } })
+    const performEval = screen.getByLabelText('6 ~ 30')
+    await fireEvent.input(performEval, { target: { value: '30' } })
 
     await fireEvent.click(screen.getByText('Calculate'))
     expect(screen.getByText('70%')).toBeInTheDocument()
