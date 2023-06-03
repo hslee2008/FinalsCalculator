@@ -3,26 +3,28 @@
   import { t } from '@/i18n/i18n'
   import { Event } from '@/utils/analytics'
 
-  export let midterm_score
+  export let mid_score
 
   let invalid = false
 
+  // Score must be between 0 and 100
   $: invalid =
-    midterm_score > 100 || midterm_score < 0 || midterm_score === null
+    mid_score > 100 || mid_score < 0 || mid_score === null
 
   const FieldChanged = () => {
     Event('Field Changed', {
       field: 'Midterm Score',
-      value: midterm_score
+      value: mid_score
     })
   }
 </script>
 
 <div class="mb20">
   <NumberInput
-    bind:value="{midterm_score}"
+    bind:value="{mid_score}"
     on:change="{FieldChanged}"
     label="{invalid ? '0 ~ 100' : $t('mid_score')}"
+    warn="{invalid}"
     hideSteppers
     min="0"
     max="100"

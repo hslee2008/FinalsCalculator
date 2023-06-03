@@ -38,7 +38,7 @@ describe('CheckBox Decimal Point', () => {
   })
 
   test('[CheckBox 3] Test without Midterm, 60 (max)', async () => {
-    const switchMidterm = screen.getByTestId('switch-midterm')
+    const switchMidterm = screen.getByTestId('switch-mid')
     await fireEvent.click(switchMidterm)
 
     const midtermWeight = screen.getByLabelText('Midterm weight (50, 60)')

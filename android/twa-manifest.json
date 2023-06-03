@@ -10,7 +10,7 @@
   "navigationDividerColor": "#FFFFFF",
   "navigationDividerColorDark": "#FFFFFF",
   "backgroundColor": "#FFFFFF",
-  "enableNotifications": true,
+  "enableNotifications": false,
   "startUrl": "/?lang=ko-KR",
   "iconUrl": "https://finalscalcu.web.app/images/1024x1024.png",
   "maskableIconUrl": "https://finalscalcu.web.app/images/maskable_icon.png",
@@ -19,8 +19,8 @@
     "path": "C:\\Users\\USER\\Desktop\\Folder\\Code\\FinalsCalculator\\android\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "8",
-  "appVersionCode": 8,
+  "appVersionName": "9",
+  "appVersionCode": 9,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://finalscalcu.web.app/manifest/manifest-ko-KR.json",
@@ -34,7 +34,7 @@
   "isMetaQuest": false,
   "fullScopeUrl": "https://finalscalcu.web.app/",
   "minSdkVersion": 19,
-  "orientation": "any",
+  "orientation": "portrait",
   "fingerprints": [
     {
       "relation": [
@@ -61,5 +61,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "8"
+  "appVersion": "9"
 }

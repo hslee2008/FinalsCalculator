@@ -23,7 +23,7 @@ describe('Basic Rendering', () => {
   })
 
   test('[Text 2] Shows Proper Text - Without Midterm', async () => {
-    const switchMidterm = screen.getByTestId('switch-midterm')
+    const switchMidterm = screen.getByTestId('switch-mid')
     await fireEvent.click(switchMidterm)
 
     expect(screen.getByText('Midterm weight (50, 60)')).toBeInTheDocument()

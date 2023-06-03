@@ -1,3 +1,4 @@
+/* Remove bottom margin & round */
 .bx--modal-content {
   margin-bottom: 0 !important;
 }
@@ -6,6 +7,7 @@
   border-radius: 0 10px 0 0 !important;
 }
 
+/* Remove background color */
 .bx--modal-container,
 .bx--data-table td {
   background-color: #ffffff !important;
@@ -15,6 +17,7 @@
   background-color: #f0f0f0 !important;
 }
 
+/* Standard */
 .bx--label {
   font-size: 0.75rem !important;
   text-align: left !important;
@@ -26,6 +29,10 @@
   font-size: 0.875rem !important;
 }
 
+/*
+  For Desktop, dialog with radius
+  For mobile, fullscreen no radius
+*/
 @media (min-width: 672px) {
   .bx--modal-container {
     border-radius: 10px !important;

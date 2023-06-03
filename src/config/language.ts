@@ -1,18 +1,6 @@
-import { currentLocale, translated } from '@/i18n/i18n'
+import { currentLocale, translated } from '../i18n/i18n'
 
 const additionalMetaTags = [
-  {
-    name: 'theme-color',
-    content: '#FFFFFF'
-  },
-  {
-    name: 'apple-mobile-web-app-status-bar-style',
-    content: '#FFFFFF'
-  },
-  {
-    name: 'msapplication-TileColor',
-    content: '#FFFFFF'
-  },
   {
     name: 'apple-mobile-web-app-title',
     content: translated('app_title')

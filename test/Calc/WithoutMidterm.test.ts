@@ -7,7 +7,7 @@ describe('Calculator Component', () => {
   beforeEach(async () => {
     render(Calculator)
 
-    const switchMidterm = screen.getByTestId('switch-midterm')
+    const switchMidterm = screen.getByTestId('switch-mid')
     await fireEvent.click(switchMidterm)
   })
 

@@ -27,24 +27,30 @@
 
   /* Variable Initialization */
   let opened = false
-  let hasMidterm = true
+  let hasMid = true
   let selected = $t('midterm_is')
 
+  /*
+    The default percentage:
+    - If Midterm, 25% for midterm, 50% for projects
+    - If No Midterm, 50% for midterm, 50% for projects
+  */
   let percent = savedMidtermPercent || 25
-  let midterm_score = 100
+  let mid_score = 100
   let projects = 100 - percent * 2
   let hasDecimalScore = false
 
   let finals = [0, 0, 0, 0, 0]
 
-  $: hasMidterm = selected === $t('midterm_is')
+  $: hasMid = selected === $t('midterm_is')
 
   onMount(() => {
     const url = new URL(window.location)
     const searchParams = url.searchParams
 
+    // For PWA shortcuts
     if (searchParams.get('midterm')) {
-      hasMidterm = searchParams.get('midterm') === 'true'
+      hasMid = searchParams.get('midterm') === 'true'
       ChangeMidtermStatus()
     }
   })
@@ -52,40 +58,48 @@
   /* Functions */
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
-    selected = hasMidterm ? $t('midterm_is') : $t('midterm_is_not')
-    percent = hasMidterm
-      ? savedMidtermPercent || 25
-      : savedNoMidtermPercent || 50
-    projects = hasMidterm ? 100 - percent * 2 : 100 - percent
-    midterm_score = 100
+    if (hasMid) {
+      selected = $t('midterm_is')
+      percent = savedMidtermPercent || 25
+      mid_score = 100
+      projects = 100 - percent * 2
+    } else {
+      selected = $t('midterm_is_not')
+      percent = savedNoMidtermPercent || 50
+      mid_score = 0
+      projects = 100 - percent
+    }
 
-    // Send data
     Event('Midterm Changed', {
-      midterm: hasMidterm
+      midterm: hasMid
     })
   }
 
+  // For testing
   const ProgrammaticallyChange = () => {
-    hasMidterm = !hasMidterm
+    hasMid = !hasMid
     ChangeMidtermStatus()
   }
 
+  // Only calculate
   const CalculateTable = () => {
     finals = TableCalculation(
-      hasMidterm,
+      hasMid,
       percent,
       projects,
-      midterm_score,
+      mid_score,
       hasDecimalScore,
       open
     )
   }
 
+  // Calculate with event
   const calculate = () => {
     CalculateTable()
     Event('Calculate Button', {})
   }
 
+  // Automatically update table when decimal is changed
   const onChangeDecimal = () => {
     CalculateTable()
     Event('Decimal Changed', {
@@ -93,8 +107,9 @@
     })
   }
 
+  // Automatically update projects value when percent is changed
   const UpdateProjects = () => {
-    if (hasMidterm) {
+    if (hasMid) {
       projects = 100 - percent * 2
       localStorage.setItem('midterm_percent', percent)
     } else {
@@ -103,7 +118,7 @@
     }
   }
 
-  // Short Functions
+  // Dialog functions
   const close = () => {
     opened = false
     Event('Close', {})
@@ -111,11 +126,8 @@
   const open = () => (opened = true)
 </script>
 
-<button
-  data-testid="switch-midterm"
-  on:click="{ProgrammaticallyChange}"
-  style="display: none"
-></button>
+<button data-testid="switch-mid" on:click="{ProgrammaticallyChange}"></button>
+
 <Select on:change="{ChangeMidtermStatus}" bind:selected class="mb20">
   <SelectItem value="{$t('midterm_is')}"></SelectItem>
   <SelectItem value="{$t('midterm_is_not')}"></SelectItem>
@@ -123,15 +135,11 @@
 
 <Header></Header>
 
-<InputPercentage
-  bind:hasMidterm
-  bind:percent
-  {UpdateProjects}
-></InputPercentage>
-{#if hasMidterm}
-<InputMidterm bind:midterm_score></InputMidterm>
+<InputPercentage bind:hasMid bind:percent {UpdateProjects}></InputPercentage>
+{#if hasMid}
+<InputMidterm bind:mid_score></InputMidterm>
 {/if}
-<InputProjects bind:projects bind:percent bind:hasMidterm></InputProjects>
+<InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
 
 <button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
 
@@ -145,9 +153,9 @@
     <Table
       bind:finals
       bind:percent
-      bind:midterm_score
+      bind:mid_score
       bind:projects
-      bind:hasMidterm
+      bind:hasMid
     ></Table>
 
     <div class="mb20">

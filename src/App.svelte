@@ -7,7 +7,7 @@
   import { SetUser } from '@/utils/analytics'
   import { initializeFirebasePerformance } from '@/utils/firebase'
   import { t, currentLocale } from '@/i18n/i18n'
-  import { additionalLinkTags, additionalMetaTags } from '@/config/theme'
+  import { additionalLinkTags, additionalMetaTags } from '@/config/language'
   import { properties, configurations } from '@/config/ga'
 
   registerSW()

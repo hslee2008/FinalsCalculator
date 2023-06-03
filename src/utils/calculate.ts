@@ -1,21 +1,21 @@
 import { roundPercent } from './numbers'
 
 function TableCalculation(
-  hasMidterm: any,
+  hasMid: any,
   percent: number,
   projects: number,
-  midterm_score: number,
+  mid_score: number,
   hasDecimalScore: boolean,
   callback: () => void
 ): string[] {
   const finals = ['0', '0', '0', '0']
-  const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
+  const projectsFull = hasMid ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
 
   // If there is no midterm, simply subtract the values taken from projects
   // If there is a midterm, subtract by adding weights
-  if (hasMidterm) {
-    subtracted -= percent - (midterm_score / 100) * percent
+  if (hasMid) {
+    subtracted -= percent - (mid_score / 100) * percent
   }
 
   // By order of alphabets (A, B, C, D), calculate the necessary grades
@@ -33,19 +33,19 @@ function TableCalculation(
 }
 
 function CalculateFinalsScore(
-  hasMidterm: any,
+  hasMid: any,
   percent: number,
   projects: number,
-  midterm_score: number,
+  mid_score: number,
   finals_score: number
 ): number {
-  const projectsFull = hasMidterm ? 100 - percent * 2 : 100 - percent
+  const projectsFull = hasMid ? 100 - percent * 2 : 100 - percent
   let subtracted = -(projectsFull - projects)
 
   // If there is no midterm, simply subtract the values taken from projects
   // If there is a midterm, subtract by adding weights
-  if (hasMidterm) {
-    subtracted -= percent - (midterm_score / 100) * percent
+  if (hasMid) {
+    subtracted -= percent - (mid_score / 100) * percent
   }
 
   subtracted -= percent - (finals_score / 100) * percent
@@ -54,3 +54,4 @@ function CalculateFinalsScore(
 }
 
 export { CalculateFinalsScore, TableCalculation }
+

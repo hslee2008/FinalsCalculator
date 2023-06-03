@@ -6,42 +6,46 @@
 
   export let finals = [0, 0, 0, 0, 0]
   export let percent = 25
-  export let midterm_score = 100
+  export let mid_score = 100
   export let projects = 100 - percent * 2
-  export let hasMidterm = true
+  export let hasMid = true
 
   let rows
   let finals_score
   let finals_input_grade
-  let finals_invalid
+  let finals_invalid = false
   let with_finals_grade = translated('input_finals')
 
   const gradeList = ['A', 'B', 'C', 'D', 'E']
 
   $: {
     if (finals_score || finals_score === 0) {
+      // Calculate finals score if it is not null
       const calculated = CalculateFinalsScore(
-        hasMidterm,
+        hasMid,
         percent,
         projects,
-        midterm_score,
+        mid_score,
         finals_score
       )
       finals_input_grade = percentToGrade(calculated)
 
+      // Display finals score in helper text format
       with_finals_grade = `${
         Math.round(calculated * 100) / 100
       } (${finals_input_grade})`
     } else {
+      // Input is empty
       with_finals_grade = translated('input_finals')
     }
   }
 
+  // Score must be between 0 and 100
   $: finals_invalid = finals_score > 100 || finals_score < 0
 
   $: rows = finals.map((grade, index) => {
-    // Index 0 is A, 1 is B, etc.
-    // A: 65, B: 66, etc.
+    // Index 0 is A, 1 is B, 2 is C, 3 is D, 4 is E
+    // A: 65, B: 66, C: 67, D: 68, E: 69
     const LetterGrade = String.fromCharCode(65 + index)
 
     return {
@@ -52,27 +56,22 @@
   })
 
   const viewTransition = () => {
+    const shouldTransition = finals_invalid || finals_score === null
+
+    // View Transition for smooth transition
     document.startViewTransition(() => {
       document.querySelector(`.${finals_input_grade}`).classList.add('bordered')
-      gradeList
-        .filter(grade => grade !== finals_input_grade)
-        .forEach(grade => {
-          document.querySelector(`.${grade}`).classList.remove('bordered')
-        })
 
-      if (finals_score === null) {
-        gradeList.forEach(grade => {
+      gradeList
+        .filter(grade => grade !== finals_input_grade || shouldTransition)
+        .forEach(grade =>
           document.querySelector(`.${grade}`).classList.remove('bordered')
-        })
-      }
+        )
     })
   }
 </script>
 
-<div
-  class="bx--data-table-container"
-  style="margin-top: 25px; margin-bottom: 5px"
->
+<div class="bx--data-table-container table">
   <table class="bx--data-table">
     <thead>
       <tr>
@@ -84,11 +83,12 @@
         </th>
       </tr>
     </thead>
+
     <tbody aria-live="polite">
-      {#each ['A', 'B', 'C', 'D'] as grade, i}
+      {#each ['A', 'B', 'C', 'D'] as grade, index}
       <tr class="{grade}">
         <td>{grade}</td>
-        <td>{rows[i].lowest}</td>
+        <td>{rows[index].lowest}</td>
       </tr>
       {/each}
       <tr class="E">
@@ -97,6 +97,7 @@
       </tr>
     </tbody>
   </table>
+
   <NumberInput
     bind:value="{finals_score}"
     helperText="{with_finals_grade}"
@@ -108,6 +109,6 @@
     class="finals-input"
     hideSteppers
     allowEmpty
-    on:keydown="{viewTransition}"
+    on:keyup="{viewTransition}"
   ></NumberInput>
 </div>

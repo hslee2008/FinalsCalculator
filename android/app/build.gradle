@@ -32,7 +32,7 @@ def twaManifest = [
     navigationDividerColor: '#FFFFFF', // The navbar divider color.
     navigationDividerColorDark: '#FFFFFF', // The dark navbar divider color.
     backgroundColor: '#FFFFFF', // The color used for the splash screen background.
-    enableNotifications: true, // Set to true to enable notification delegation.
+    enableNotifications: false, // Set to true to enable notification delegation.
     // Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
     // - short_name: Shorter string used if |name| is too long.
@@ -46,7 +46,7 @@ def twaManifest = [
     // 'customtabs' and 'webview'.
     fallbackType: 'customtabs',
     enableSiteSettingsShortcut: 'true',
-    orientation: 'any',
+    orientation: 'portrait',
 ]
 
 android {
@@ -55,8 +55,8 @@ android {
         applicationId "app.web.finalscalcu.twa"
         minSdkVersion 19
         targetSdkVersion 31
-        versionCode 8
-        versionName "8"
+        versionCode 9
+        versionName "9"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
