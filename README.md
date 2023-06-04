@@ -3,8 +3,6 @@
 <h2>Finals Calculator (finalscalcu)</h2>
 </div>
 
-<br  />
-
 Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.
 
 ## Features
@@ -32,3 +30,9 @@ Finals Calculator is a simple app that calculates your final score in a class. I
 - https://play.google.com/store/apps/details?id=app.web.finalscalcu.twa
 
 - https://dev.to/hyunseunglee2008/make-a-final-term-calculator-3k06
+
+## More info
+
+![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hslee2008/finalscalculator?style=for-the-badge)
+![Lines of code](https://img.shields.io/tokei/lines/github/hslee2008/finalscalculator?style=for-the-badge)
+
