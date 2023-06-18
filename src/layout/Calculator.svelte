@@ -20,30 +20,36 @@
   import InputMidterm from '@/components/Input/Midterm.svelte'
 
   /* Saved */
-  const savedMidtermPercent = parseInt(localStorage.getItem('midterm_percent'))
-  const savedNoMidtermPercent = parseInt(
-    localStorage.getItem('no_midterm_percent')
-  )
+  const savedMidPer = parseInt(localStorage.getItem('midterm_percent'))
+  const savedNoMidPer = parseInt(localStorage.getItem('no_midterm_percent'))
+
+  /* LocalStorage Initialization */
+  if (!localStorage.getItem('hasMid')) {
+    localStorage.setItem('hasMid', true)
+  }
 
   /* Variable Initialization */
   let opened = false
-  let hasMid = true
-  let selected = $t('midterm_is')
+  let hasMid = localStorage.getItem('hasMid') === 'true'
+  let selected = hasMid ? $t('with_midterm') : $t('no_midterm')
 
   /*
     The default percentage:
     - If Midterm, 25% for midterm, 50% for projects
     - If No Midterm, 50% for midterm, 50% for projects
   */
-  let percent = savedMidtermPercent || 25
+  let percent = (hasMid ? savedMidPer : savedNoMidPer) || (hasMid ? 25 : 50)
   let mid_score = 100
-  let projects = 100 - percent * 2
+  let projects = hasMid ? 100 - percent * 2 : 100 - percent
   let hasDecimalScore = false
 
   let finals = [0, 0, 0, 0, 0]
 
-  $: hasMid = selected === $t('midterm_is')
+  $: hasMid = selected === $t('with_midterm')
 
+  /*
+    Prioritization: LocalStorage > URL > Default
+  */
   onMount(() => {
     const url = new URL(window.location)
     const searchParams = url.searchParams
@@ -59,17 +65,18 @@
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
     if (hasMid) {
-      selected = $t('midterm_is')
-      percent = savedMidtermPercent || 25
+      selected = $t('with_midterm')
+      percent = savedMidPer || 25
       mid_score = 100
       projects = 100 - percent * 2
     } else {
-      selected = $t('midterm_is_not')
-      percent = savedNoMidtermPercent || 50
+      selected = $t('no_midterm')
+      percent = savedNoMidPer || 50
       mid_score = 0
       projects = 100 - percent
     }
 
+    localStorage.setItem('hasMid', hasMid)
     Event('Midterm Changed', {
       midterm: hasMid
     })
@@ -78,6 +85,15 @@
   // For testing
   const ProgrammaticallyChange = () => {
     hasMid = !hasMid
+    ChangeMidtermStatus()
+  }
+
+  const yesMid = () => {
+    hasMid = true
+    ChangeMidtermStatus()
+  }
+  const noMid = () => {
+    hasMid = false
     ChangeMidtermStatus()
   }
 
@@ -119,18 +135,17 @@
   }
 
   // Dialog functions
-  const close = () => {
-    opened = false
-    Event('Close', {})
-  }
+  const close = () => (opened = false)
   const open = () => (opened = true)
 </script>
 
 <button data-testid="switch-mid" on:click="{ProgrammaticallyChange}"></button>
+<button data-testid="yes-mid" on:click="{yesMid}"></button>
+<button data-testid="no-mid" on:click="{noMid}"></button>
 
 <Select on:change="{ChangeMidtermStatus}" bind:selected class="mb20">
-  <SelectItem value="{$t('midterm_is')}"></SelectItem>
-  <SelectItem value="{$t('midterm_is_not')}"></SelectItem>
+  <SelectItem value="{$t('with_midterm')}"></SelectItem>
+  <SelectItem value="{$t('no_midterm')}"></SelectItem>
 </Select>
 
 <Header></Header>
@@ -158,13 +173,12 @@
       bind:hasMid
     ></Table>
 
-    <div class="mb20">
-      <Checkbox
-        on:change="{onChangeDecimal}"
-        bind:checked="{hasDecimalScore}"
-        labelText="{$t('has_decimal_score')}"
-      ></Checkbox>
-    </div>
+    <Checkbox
+      on:change="{onChangeDecimal}"
+      bind:checked="{hasDecimalScore}"
+      labelText="{$t('decimal_score')}"
+      class="mb20"
+    ></Checkbox>
 
     <button on:click="{close}" id="close" class="main-btn mb50">
       {$t('close')}

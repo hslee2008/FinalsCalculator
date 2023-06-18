@@ -34,7 +34,7 @@
 <div class="mb20">
   <NumberInput
     bind:value="{percent}"
-    label="{invalid ? (hasMid ? $t('inval_per') : $t('inval_per_midterm')) : labelText}"
+    label="{invalid ? (hasMid ? $t('inval_mid') : $t('inval_no_mid')) : labelText}"
     warn="{invalid}"
     on:keyup="{UpdateProjects}"
     on:change="{FieldChanged}"

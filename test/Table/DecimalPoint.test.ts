@@ -7,6 +7,7 @@ describe('CheckBox Decimal Point', () => {
   beforeEach(() => render(Calculator))
 
   test('[CheckBox 1] Test Checkbox', async () => {
+    await fireEvent.click(screen.getByTestId('yes-mid'))
     await fireEvent.click(screen.getByText('Calculate'))
 
     const checkbox = screen.getByLabelText('Decimal Score')
@@ -18,6 +19,8 @@ describe('CheckBox Decimal Point', () => {
   })
 
   test('[CheckBox 2] Test with 35%', async () => {
+    await fireEvent.click(screen.getByTestId('yes-mid'))
+
     const weight = screen.getByLabelText(
       'Midterm and Finals each weight (25, 30, 35)'
     )
@@ -38,7 +41,7 @@ describe('CheckBox Decimal Point', () => {
   })
 
   test('[CheckBox 3] Test without Midterm, 60 (max)', async () => {
-    const switchMidterm = screen.getByTestId('switch-mid')
+    const switchMidterm = screen.getByTestId('no-mid')
     await fireEvent.click(switchMidterm)
 
     const midtermWeight = screen.getByLabelText('Midterm weight (50, 60)')

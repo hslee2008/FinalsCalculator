@@ -7,6 +7,9 @@ describe('Finals Field', () => {
   beforeEach(() => render(Calculator))
 
   test('[Finals 1] Finals Basic Values', async () => {
+    await fireEvent.click(screen.getByTestId('yes-mid'))
+    await fireEvent.click(screen.getByText('Calculate'))
+
     const finalsScore = screen.getByLabelText('Input Finals Score')
 
     await fireEvent.input(finalsScore, { target: { value: '100' } })

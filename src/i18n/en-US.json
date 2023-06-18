@@ -15,17 +15,17 @@
   "each": "Midterm and Finals each",
 
   "midterm": "Midterm",
-  "midterm_is": "With midterm",
-  "midterm_is_not": "Without midterm",
+  "with_midterm": "With midterm",
+  "no_midterm": "Without midterm",
   "mid_score": "Midterm Score",
   "eval": "Performance Evaluation",
   "calculate": "Calculate",
   "result": "Result",
   "close": "Close",
 
-  "inval_per": "25 or 30 or 35",
-  "inval_per_midterm": "50 or 60",
+  "inval_mid": "25 or 30 or 35",
+  "inval_no_mid": "50 or 60",
   "input_finals": "Input Finals Score",
 
-  "has_decimal_score": "Decimal Score"
+  "decimal_score": "Decimal Score"
 }

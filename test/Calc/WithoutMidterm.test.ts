@@ -12,6 +12,7 @@ describe('Calculator Component', () => {
   })
 
   test('Calculate Button', async () => {
+    await fireEvent.click(screen.getByTestId('no-mid'))
     await fireEvent.click(screen.getByText('Calculate'))
 
     expect(screen.getByText('79%')).toBeInTheDocument()
@@ -21,6 +22,7 @@ describe('Calculator Component', () => {
   })
 
   test('Alter performance evaluation', async () => {
+    await fireEvent.click(screen.getByTestId('no-mid'))
     const performEval = screen.getByLabelText(
       'Performance Evaluation'
     )
@@ -34,6 +36,7 @@ describe('Calculator Component', () => {
   })
 
   test('Alter weight', async () => {
+    await fireEvent.click(screen.getByTestId('no-mid'))
     const midtermWeight = screen.getByLabelText('Midterm weight (50, 60)')
     await fireEvent.input(midtermWeight, { target: { value: '60' } })
 

@@ -7,6 +7,10 @@ const translations = {
   'ko-KR': ko
 }
 
+/*
+  Prioritization: Development (ko-KR) > Browser > URL
+*/
+
 const searchParams = new URLSearchParams(window.location.search)
 let currentLocale = navigator.language || 'ko-KR'
 if (currentLocale === 'ko') currentLocale = 'ko-KR'

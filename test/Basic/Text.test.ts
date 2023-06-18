@@ -14,7 +14,9 @@ describe('Basic Rendering', () => {
     expect(screen.getByText('@Hyunseung')).toBeInTheDocument()
   })
 
-  test('[Text 1] Shows Proper Text - With Midterm', () => {
+  test('[Text 1] Shows Proper Text - With Midterm', async () => {
+    await fireEvent.click(screen.getByTestId('yes-mid'))
+    
     expect(
       screen.getByText('Midterm and Finals each weight (25, 30, 35)')
     ).toBeInTheDocument()
@@ -23,8 +25,7 @@ describe('Basic Rendering', () => {
   })
 
   test('[Text 2] Shows Proper Text - Without Midterm', async () => {
-    const switchMidterm = screen.getByTestId('switch-mid')
-    await fireEvent.click(switchMidterm)
+    await fireEvent.click(screen.getByTestId('no-mid'))
 
     expect(screen.getByText('Midterm weight (50, 60)')).toBeInTheDocument()
     expect(screen.getByText('Performance Evaluation')).toBeInTheDocument()
