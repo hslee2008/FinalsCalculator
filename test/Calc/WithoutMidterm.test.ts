@@ -1,15 +1,10 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '@/layout/Calculator.svelte'
+import Calculator from '@/components/Calculator.svelte'
 
 describe('Calculator Component', () => {
-  beforeEach(async () => {
-    render(Calculator)
-
-    const switchMidterm = screen.getByTestId('switch-mid')
-    await fireEvent.click(switchMidterm)
-  })
+  beforeEach(async () => render(Calculator))
 
   test('Calculate Button', async () => {
     await fireEvent.click(screen.getByTestId('no-mid'))
@@ -23,9 +18,7 @@ describe('Calculator Component', () => {
 
   test('Alter performance evaluation', async () => {
     await fireEvent.click(screen.getByTestId('no-mid'))
-    const performEval = screen.getByLabelText(
-      'Performance Evaluation'
-    )
+    const performEval = screen.getByLabelText('Performance Evaluation')
     await fireEvent.input(performEval, { target: { value: '40' } })
 
     await fireEvent.click(screen.getByText('Calculate'))

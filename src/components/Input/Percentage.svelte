@@ -38,6 +38,7 @@
     warn="{invalid}"
     on:keyup="{UpdateProjects}"
     on:change="{FieldChanged}"
+    size="xl"
     hideSteppers
   ></NumberInput>
 </div>

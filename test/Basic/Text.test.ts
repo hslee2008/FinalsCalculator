@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '@/layout/Calculator.svelte'
+import Calculator from '@/components/Calculator.svelte'
 
 describe('Basic Rendering', () => {
   beforeEach(() => render(Calculator))
@@ -16,7 +16,7 @@ describe('Basic Rendering', () => {
 
   test('[Text 1] Shows Proper Text - With Midterm', async () => {
     await fireEvent.click(screen.getByTestId('yes-mid'))
-    
+
     expect(
       screen.getByText('Midterm and Finals each weight (25, 30, 35)')
     ).toBeInTheDocument()

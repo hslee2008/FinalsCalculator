@@ -25,7 +25,7 @@
     on:change="{FieldChanged}"
     label="{invalid ? '0 ~ 100' : $t('mid_score')}"
     warn="{invalid}"
-    hideSteppers
+    size="xl"
     min="0"
     max="100"
   ></NumberInput>

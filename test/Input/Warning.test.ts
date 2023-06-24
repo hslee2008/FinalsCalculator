@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '@/layout/Calculator.svelte'
+import Calculator from '@/components/Calculator.svelte'
 
 describe('Warning of Incorrect Values', () => {
   beforeEach(() => render(Calculator))

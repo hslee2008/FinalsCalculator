@@ -2,7 +2,7 @@
   import { onMount } from 'svelte'
   import { MetaTags } from 'svelte-meta-tags'
   import { GoogleAnalytics } from '@beyonk/svelte-google-analytics'
-  import Calculator from '@/layout/Calculator.svelte'
+  import Calculator from '@/components/Calculator.svelte'
   import { registerSW } from '@/utils/register-sw'
   import { SetUser } from '@/utils/analytics'
   import { initializeFirebasePerformance } from '@/utils/firebase'

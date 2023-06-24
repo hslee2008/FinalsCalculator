@@ -13,11 +13,11 @@
   import { TableCalculation } from '@/utils/calculate'
   import { Event } from '@/utils/analytics'
 
-  import Header from '@/components/Header.svelte'
-  import Table from '@/components/Table.svelte'
-  import InputPercentage from '@/components/Input/Percentage.svelte'
-  import InputProjects from '@/components/Input/Projects.svelte'
-  import InputMidterm from '@/components/Input/Midterm.svelte'
+  import Header from './Header.svelte'
+  import Table from './Table.svelte'
+  import InputPercentage from './Input/Percentage.svelte'
+  import InputProjects from './Input/Projects.svelte'
+  import InputMidterm from './Input/Midterm.svelte'
 
   /* Saved */
   const savedMidPer = parseInt(localStorage.getItem('midterm_percent'))
@@ -83,11 +83,6 @@
   }
 
   // For testing
-  const ProgrammaticallyChange = () => {
-    hasMid = !hasMid
-    ChangeMidtermStatus()
-  }
-
   const yesMid = () => {
     hasMid = true
     ChangeMidtermStatus()
@@ -139,11 +134,10 @@
   const open = () => (opened = true)
 </script>
 
-<button data-testid="switch-mid" on:click="{ProgrammaticallyChange}"></button>
 <button data-testid="yes-mid" on:click="{yesMid}"></button>
 <button data-testid="no-mid" on:click="{noMid}"></button>
 
-<Select on:change="{ChangeMidtermStatus}" bind:selected class="mb20">
+<Select on:change="{ChangeMidtermStatus}" bind:selected size="xl" class="mb20">
   <SelectItem value="{$t('with_midterm')}"></SelectItem>
   <SelectItem value="{$t('no_midterm')}"></SelectItem>
 </Select>
@@ -156,7 +150,7 @@
 {/if}
 <InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
 
-<button on:click="{calculate}" class="main-btn">{$t('calculate')}</button>
+<button on:click="{calculate}" class="main-btn mt10">{$t('calculate')}</button>
 
 <Modal
   bind:open="{opened}"
@@ -177,10 +171,10 @@
       on:change="{onChangeDecimal}"
       bind:checked="{hasDecimalScore}"
       labelText="{$t('decimal_score')}"
-      class="mb20"
+      class="mb10 mt25"
     ></Checkbox>
 
-    <button on:click="{close}" id="close" class="main-btn mb50">
+    <button on:click="{close}" id="close" class="main-btn mt10 mb25">
       {$t('close')}
     </button>
   </ModalBody>

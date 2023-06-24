@@ -35,10 +35,10 @@
   <NumberInput
     bind:value="{projects}"
     on:change="{FieldChanged}"
-    hideSteppers
     {min}
     {max}
     warn="{invalid}"
     label="{invalid ? `${min} ~ ${max}` : $t('eval')}"
+    size="xl"
   ></NumberInput>
 </div>
