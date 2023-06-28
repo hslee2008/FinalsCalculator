@@ -16,7 +16,7 @@
     href="https://github.com/hslee2008"
     rel="noreferrer"
     target="_blank"
-    on:click|once="{ClickedLink}"
+    on:click="{ClickedLink}"
   >
     @{$t('name')}
   </a>

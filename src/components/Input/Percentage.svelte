@@ -24,7 +24,7 @@
   })`
 
   const FieldChanged = () => {
-    Event('Field Changed', {
+    Event('Percentage Field Changed', {
       field: 'Percentage',
       value: percent
     })

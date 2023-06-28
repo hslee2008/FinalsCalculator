@@ -12,7 +12,7 @@
     mid_score > 100 || mid_score < 0 || mid_score === null
 
   const FieldChanged = () => {
-    Event('Field Changed', {
+    Event('Midterm Field Changed', {
       field: 'Midterm Score',
       value: mid_score
     })

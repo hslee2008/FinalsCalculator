@@ -24,7 +24,7 @@
   $: max = hasMid ? 100 - percent * 2 : 100 - percent
 
   const FieldChanged = () => {
-    Event('Field Changed', {
+    Event('Projects Field Changed', {
       field: 'Projects',
       value: projects
     })
