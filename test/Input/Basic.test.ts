@@ -9,7 +9,7 @@ describe('Proper Input', () => {
   test('[Input 1] Changes Value', async () => {
     await fireEvent.click(screen.getByTestId('yes-mid'))
     const percentage = screen.getByLabelText(
-      'Midterm and Finals each weight (25, 30, 35)'
+      'Midterm and Finals weight (25, 30, 35)'
     )
     await fireEvent.input(percentage, { target: { value: '25' } })
     expect(percentage).toHaveValue(25)

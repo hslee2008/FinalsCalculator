@@ -5,6 +5,8 @@
 
 Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.
 
+It is a app that is mostly used by students in Korea, and it is available on the Google Play Store.
+
 ## Features
 
 - Calculate your final score based on your desired score
@@ -23,6 +25,12 @@ Finals Calculator is a simple app that calculates your final score in a class. I
 - Svelte
 - Carbon Components Svelte
 
+## Users
+
+- 1000+ users on Google Play Store
+- 250+ Daily users on Web
+- 25k+ Calculates per month
+
 ## Links
 
 - https://finalscalcu.web.app
@@ -35,4 +43,3 @@ Finals Calculator is a simple app that calculates your final score in a class. I
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hslee2008/finalscalculator?style=for-the-badge)
 ![Lines of code](https://img.shields.io/tokei/lines/github/hslee2008/finalscalculator?style=for-the-badge)
-

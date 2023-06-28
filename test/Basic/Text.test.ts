@@ -8,7 +8,7 @@ describe('Basic Rendering', () => {
 
   test('[Header 1] Shows Proper Heading', () => {
     expect(screen.getByText('Finals Calculator')).toBeInTheDocument()
-    expect(screen.getByText('Developed by')).toBeInTheDocument()
+    expect(screen.getByText('By')).toBeInTheDocument()
     expect(screen.getByText('MIT License')).toBeInTheDocument()
     expect(screen.getByText('Calculate')).toBeInTheDocument()
     expect(screen.getByText('@Hyunseung')).toBeInTheDocument()
@@ -18,7 +18,7 @@ describe('Basic Rendering', () => {
     await fireEvent.click(screen.getByTestId('yes-mid'))
 
     expect(
-      screen.getByText('Midterm and Finals each weight (25, 30, 35)')
+      screen.getByText('Midterm and Finals weight (25, 30, 35)')
     ).toBeInTheDocument()
     expect(screen.getByText('Midterm Score')).toBeInTheDocument()
     expect(screen.getByText('Performance Evaluation')).toBeInTheDocument()

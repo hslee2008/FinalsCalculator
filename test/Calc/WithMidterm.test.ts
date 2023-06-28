@@ -38,7 +38,7 @@ describe('Calculator Component', () => {
   test('Alter weight', async () => {
     await fireEvent.click(screen.getByTestId('yes-mid'))
     const weight = screen.getByLabelText(
-      'Midterm and Finals each weight (25, 30, 35)'
+      'Midterm and Finals weight (25, 30, 35)'
     )
     await fireEvent.input(weight, { target: { value: '35' } })
 
