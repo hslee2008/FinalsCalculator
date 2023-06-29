@@ -1,35 +1,27 @@
 <script>
   /* Imports */
-  import {
-    Select,
-    SelectItem,
-    Modal,
-    ModalBody,
-    Checkbox
-  } from 'carbon-components-svelte'
-  import { onMount } from 'svelte'
+  import { Modal, ModalBody, Checkbox } from 'carbon-components-svelte'
 
   import { t } from '@/i18n/i18n'
   import { TableCalculation } from '@/utils/calculate'
   import { Event } from '@/utils/analytics'
 
-  import Header from './Header.svelte'
-  import Table from './Table.svelte'
-  import InputPercentage from './Input/Percentage.svelte'
-  import InputProjects from './Input/Projects.svelte'
-  import InputMidterm from './Input/Midterm.svelte'
+  import Header from '@/components/Header.svelte'
+  import Table from '@/components/Table.svelte'
+  import MidtermSwitcher from '@/components/Input/MidtermSwitcher.svelte'
+  import InputPercentage from '@/components/Input/Percentage.svelte'
+  import InputProjects from '@/components/Input/Projects.svelte'
+  import InputMidterm from '@/components/Input/Midterm.svelte'
 
   /* Saved */
   const savedMidPer = parseInt(localStorage.getItem('midterm_percent'))
   const savedNoMidPer = parseInt(localStorage.getItem('no_midterm_percent'))
 
   /* LocalStorage Initialization */
-  if (!localStorage.getItem('hasMid')) {
-    localStorage.setItem('hasMid', true)
-  }
+  if (!localStorage.getItem('hasMid')) localStorage.setItem('hasMid', true)
 
   /* Variable Initialization */
-  let opened = false
+  let table_opened = false
   let hasMid = localStorage.getItem('hasMid') === 'true'
   let selected = hasMid ? $t('with_midterm') : $t('no_midterm')
 
@@ -41,25 +33,11 @@
   let percent = (hasMid ? savedMidPer : savedNoMidPer) || (hasMid ? 25 : 50)
   let mid_score = 100
   let projects = hasMid ? 100 - percent * 2 : 100 - percent
-  let hasDecimalScore = false
+  let hasDecimalScore = localStorage.getItem('hasDecimalScore') === 'true'
 
   let finals = [0, 0, 0, 0, 0]
 
   $: hasMid = selected === $t('with_midterm')
-
-  /*
-    Prioritization: LocalStorage > URL > Default
-  */
-  onMount(() => {
-    const url = new URL(window.location)
-    const searchParams = url.searchParams
-
-    // For PWA shortcuts
-    if (searchParams.get('midterm')) {
-      hasMid = searchParams.get('midterm') === 'true'
-      ChangeMidtermStatus()
-    }
-  })
 
   /* Functions */
   const ChangeMidtermStatus = () => {
@@ -82,16 +60,6 @@
     })
   }
 
-  // For testing
-  const yesMid = () => {
-    hasMid = true
-    ChangeMidtermStatus()
-  }
-  const noMid = () => {
-    hasMid = false
-    ChangeMidtermStatus()
-  }
-
   // Only calculate
   const CalculateTable = () => {
     finals = TableCalculation(
@@ -100,7 +68,7 @@
       projects,
       mid_score,
       hasDecimalScore,
-      open
+      table_open
     )
   }
 
@@ -112,6 +80,7 @@
 
   // Automatically update table when decimal is changed
   const onChangeDecimal = () => {
+    localStorage.setItem('hasDecimalScore', hasDecimalScore)
     CalculateTable()
     Event('Decimal Changed', {
       decimal: hasDecimalScore
@@ -130,19 +99,30 @@
   }
 
   // Dialog functions
-  const close = () => (opened = false)
-  const open = () => (opened = true)
+  const table_close = () => (table_opened = false)
+  const table_open = () => (table_opened = true)
+
+  // Checkbox functions
+  const decimal_true = () => (hasDecimalScore = true)
+  const decimal_false = () => (hasDecimalScore = false)
 </script>
 
-<button data-testid="yes-mid" on:click="{yesMid}"></button>
-<button data-testid="no-mid" on:click="{noMid}"></button>
+<!-- Testing -->
+<button data-testid="yes-decimal" on:click="{decimal_true}"></button>
+<button data-testid="no-decimal" on:click="{decimal_false}"></button>
 
-<Select on:change="{ChangeMidtermStatus}" bind:selected size="xl" class="mb20">
-  <SelectItem value="{$t('with_midterm')}"></SelectItem>
-  <SelectItem value="{$t('no_midterm')}"></SelectItem>
-</Select>
+<!-- Top Part of the page -->
+<div class="flex align-center">
+  <MidtermSwitcher
+    bind:hasMid
+    bind:selected
+    {ChangeMidtermStatus}
+  ></MidtermSwitcher>
+</div>
 
 <Header></Header>
+
+<!-- Inputs -->
 
 <InputPercentage bind:hasMid bind:percent {UpdateProjects}></InputPercentage>
 {#if hasMid}
@@ -152,8 +132,9 @@
 
 <button on:click="{calculate}" class="main-btn mt10">{$t('calculate')}</button>
 
+<!-- Table Modal -->
 <Modal
-  bind:open="{opened}"
+  bind:open="{table_opened}"
   modalHeading="{$t('result')}"
   passiveModal
   selectorPrimaryFocus=".bx--modal-content"
@@ -174,7 +155,7 @@
       class="mb10 mt25"
     ></Checkbox>
 
-    <button on:click="{close}" id="close" class="main-btn mt10 mb25">
+    <button on:click="{table_close}" id="close" class="main-btn mt10 mb25">
       {$t('close')}
     </button>
   </ModalBody>

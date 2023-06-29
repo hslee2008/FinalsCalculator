@@ -1,6 +1,5 @@
 <script>
   import { NumberInput } from 'carbon-components-svelte'
-  import { p20, p20_m } from '@/utils/numbers'
   import { t } from '@/i18n/i18n'
   import { Event } from '@/utils/analytics'
 
@@ -16,18 +15,16 @@
     Out of 100, projects are the left over percentage of midterm and finals
     Usually, they have basic grade, which is mostly 20%
   */
-  $: invalid = projects < 0
+  $: invalid =
+    projects < 0 ||
+    (hasMid ? projects > 100 - percent * 2 : projects > 100 - percent)
 
   $: if (hasMid) {
-    min = p20_m(percent)
+    min = 0
     max = 100 - percent * 2
-
-    invalid ||= projects < p20_m(percent) || projects > 100 - percent * 2
   } else {
-    min = p20(percent)
+    min = 0
     max = 100 - percent
-
-    invalid ||= projects < p20(percent) || projects > 100 - percent
   }
 
   const FieldChanged = () => {

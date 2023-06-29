@@ -17,15 +17,28 @@
   "midterm": "중간",
   "with_midterm": "중간 있는 과목",
   "no_midterm": "중간 없는 과목",
-  "mid_score": "중간 점수",
-  "eval": "수행평가 점수",
   "calculate": "계산하기",
   "result": "결과 확인하기",
   "close": "닫기",
+
+  "mid_score": "중간 점수",
+  "finals_score": "기말 점수",
+
+  "eval": "수행평가 점수",
+  "eval_minused": "수행평가 감점 점수 (-)",
+
+  "use_minus_projects": "수행평가 감점 입력",
+  "use_score_projects": "수행평가 점수 입력",
+  "project": "수행평가",
 
   "inval_mid": "25 또는 30 또는 35",
   "inval_no_mid": "50 또는 60",
   "input_finals": "기말고사 점수 입력",
 
-  "decimal_score": "소수점 점수"
+  "decimal_score": "소수점 점수",
+
+  "total_score": "총점",
+
+  "expected_finals_score": "예상 기말 점수",
+  "finals_grade": "기말 등급 확인"
 }

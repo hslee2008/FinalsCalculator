@@ -1,0 +1,28 @@
+<script>
+  import { Select, SelectItem } from 'carbon-components-svelte'
+  import { t } from '@/i18n/i18n'
+
+  export let hasMid
+  export let selected
+  export let ChangeMidtermStatus
+
+
+  // For testing
+  const yesMid = () => {
+    hasMid = true
+    ChangeMidtermStatus()
+  }
+  const noMid = () => {
+    hasMid = false
+    ChangeMidtermStatus()
+  }
+
+</script>
+
+<button data-testid="yes-mid" on:click="{yesMid}"></button>
+<button data-testid="no-mid" on:click="{noMid}"></button>
+
+<Select on:change="{ChangeMidtermStatus}" bind:selected size="xl" class="mb20">
+  <SelectItem value="{$t('with_midterm')}"></SelectItem>
+  <SelectItem value="{$t('no_midterm')}"></SelectItem>
+</Select>

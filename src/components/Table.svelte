@@ -103,12 +103,13 @@
     helperText="{with_finals_grade}"
     label="{$t('input_finals')}"
     hideLabel
-    hideSteppers="{finals_score === null}"
+    hideSteppers
     warn="{finals_invalid}"
     warnText="0 ~ 100"
     size="xl"
     allowEmpty
     on:keyup="{viewTransition}"
     class="finals-input"
+    placeholder="{$t('input_finals')}"
   ></NumberInput>
 </div>

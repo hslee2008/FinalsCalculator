@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '@/components/Calculator.svelte'
+import Calculator from '@/components/Calculator/Finals.svelte'
 
 describe('Warning of Incorrect Values', () => {
   beforeEach(() => render(Calculator))
@@ -25,7 +25,7 @@ describe('Warning of Incorrect Values', () => {
   test('[Warn 3] Alter Performance Evaluation Field', async () => {
     const pe = screen.getByLabelText('Performance Evaluation')
     await fireEvent.input(pe, { target: { value: '51' } })
-    expect(screen.getByText('10 ~ 50')).toBeInTheDocument()
+    expect(screen.getByText('0 ~ 50')).toBeInTheDocument()
   })
 
   test('[Warn 4] Alter Finals Field', async () => {

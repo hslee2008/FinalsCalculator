@@ -1,7 +1,7 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '@/components/Calculator.svelte'
+import Calculator from '@/components/Calculator/Finals.svelte'
 
 describe('Calculator Component', () => {
   beforeEach(() => render(Calculator))
@@ -42,7 +42,7 @@ describe('Calculator Component', () => {
     )
     await fireEvent.input(weight, { target: { value: '35' } })
 
-    const performEval = screen.getByLabelText('6 ~ 30')
+    const performEval = screen.getByLabelText('0 ~ 30')
     await fireEvent.input(performEval, { target: { value: '30' } })
 
     await fireEvent.click(screen.getByText('Calculate'))

@@ -31,18 +31,8 @@ const roundPercent = (
   return Math.ceil(score).toFixed(0)
 }
 
-const TwentyPercentWithMidterm = (percent: number): number => {
-  return Math.floor((100 - percent * 2) * 0.2)
-}
-
-const TwentyPercentWithoutMidterm = (percent: number): number => {
-  return Math.floor((100 - percent) * 0.2)
-}
-
 export {
   percentToString,
   percentToGrade,
-  roundPercent,
-  TwentyPercentWithMidterm as p20_m,
-  TwentyPercentWithoutMidterm as p20
+  roundPercent
 }

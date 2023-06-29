@@ -18,8 +18,12 @@
 }
 
 .bordered {
-  box-shadow: -2.5px 0px 0px 0px #5c62fe !important;
+  border: 2px solid red !important;
   border-radius: 10%;
+}
+
+.bordered, p {
+  font-size: 17px;
 }
 
 .grade-row {
@@ -41,4 +45,11 @@
 .table {
   margin-top: 25px;
   margin-bottom: 5px;
+}
+
+.cog {
+  background-color: #F4F4F4;
+  border-bottom: 1px solid #8d8d8d;
+  margin-bottom: 12px;
+  border-radius: 0px !important
 }

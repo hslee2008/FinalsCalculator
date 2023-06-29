@@ -1,17 +1,13 @@
 import '@testing-library/jest-dom'
 import { fireEvent, render, screen } from '@testing-library/svelte'
 // @ts-ignore
-import Calculator from '@/components/Calculator.svelte'
+import Calculator from '@/components/Calculator/Finals.svelte'
 
 describe('Basic Rendering', () => {
   beforeEach(() => render(Calculator))
 
   test('[Header 1] Shows Proper Heading', () => {
     expect(screen.getByText('Finals Calculator')).toBeInTheDocument()
-    expect(screen.getByText('By')).toBeInTheDocument()
-    expect(screen.getByText('MIT License')).toBeInTheDocument()
-    expect(screen.getByText('Calculate')).toBeInTheDocument()
-    expect(screen.getByText('@Hyunseung')).toBeInTheDocument()
   })
 
   test('[Text 1] Shows Proper Text - With Midterm', async () => {

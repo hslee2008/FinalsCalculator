@@ -17,15 +17,28 @@
   "midterm": "Midterm",
   "with_midterm": "With midterm",
   "no_midterm": "Without midterm",
-  "mid_score": "Midterm Score",
-  "eval": "Performance Evaluation",
   "calculate": "Calculate",
   "result": "Result",
   "close": "Close",
+
+  "mid_score": "Midterm Score",
+  "finals_score": "Finals Score",
+
+  "eval": "Performance Evaluation",
+  "eval_minused": "Performance Evaluation Minus Points (-)",
+
+  "use_minus_projects": "Use minus points for projects",
+  "use_score_projects": "Use score points for projects",
+  "project": "Project",
 
   "inval_mid": "25 or 30 or 35",
   "inval_no_mid": "50 or 60",
   "input_finals": "Input Finals Score",
 
-  "decimal_score": "Decimal Score"
+  "decimal_score": "Decimal Score",
+
+  "total_score": "Total Score",
+
+  "expected_finals_score": "Expected Finals Score",
+  "finals_grade": "Finals Grade"
 }
