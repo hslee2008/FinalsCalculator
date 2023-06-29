@@ -16,12 +16,19 @@
     Out of 100, projects are the left over percentage of midterm and finals
     Usually, they have basic grade, which is mostly 20%
   */
-  $: invalid =
-    projects < 0 ||
-    (hasMid ? projects < p20_m(percent) : projects < p20(percent)) ||
-    (hasMid ? projects > 100 - percent * 2 : projects > 100 - percent)
-  $: min = hasMid ? p20_m(percent) : p20(percent)
-  $: max = hasMid ? 100 - percent * 2 : 100 - percent
+  $: invalid = projects < 0
+
+  $: if (hasMid) {
+    min = p20_m(percent)
+    max = 100 - percent * 2
+
+    invalid ||= projects < p20_m(percent) || projects > 100 - percent * 2
+  } else {
+    min = p20(percent)
+    max = 100 - percent
+
+    invalid ||= projects < p20(percent) || projects > 100 - percent
+  }
 
   const FieldChanged = () => {
     Event('Projects Field Changed', {

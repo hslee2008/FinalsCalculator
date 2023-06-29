@@ -30,3 +30,10 @@
   margin-top: 10px !important;
 }
 
+.flex {
+  display: flex;
+}
+
+.align-bottom {
+  align-items: flex-end;
+}

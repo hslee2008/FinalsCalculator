@@ -7,16 +7,16 @@
   export let UpdateProjects
   export let hasMid
 
-  let invalid = false
+  let valid = true
   let labelText
 
   /*
     Korean Middle School education system usually have
     30, 35, 25 or 50, 60 as the weight of midterm and final exam
   */
-  $: invalid = !(hasMid
+  $: valid = hasMid
     ? percent === 30 || percent === 35 || percent === 25
-    : percent === 50 || percent === 60)
+    : percent === 50 || percent === 60
 
   // Example "중간과 기말 각 비율 (25, 30, 35)"
   $: labelText = `${hasMid ? $t('each') : $t('midterm')} ${$t('weight')} (${
@@ -34,9 +34,9 @@
 <div class="mb20">
   <NumberInput
     bind:value="{percent}"
-    label="{invalid ? (hasMid ? $t('inval_mid') : $t('inval_no_mid')) : labelText}"
-    warn="{invalid}"
-    on:keyup="{UpdateProjects}"
+    label="{!valid ? (hasMid ? $t('inval_mid') : $t('inval_no_mid')) : labelText}"
+    warn="{!valid}"
+    on:keyup="{valid && UpdateProjects}"
     on:change="{FieldChanged}"
     size="xl"
     hideSteppers

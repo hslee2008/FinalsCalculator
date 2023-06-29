@@ -37,6 +37,7 @@
     "word-wrap": "^1.2.3"
   },
   "dependencies": {
+    "carbon-icons-svelte": "^11.4.0",
     "firebase": "^9.23.0"
   }
 }
