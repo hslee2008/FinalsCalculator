@@ -3,7 +3,8 @@
   import { Modal, ModalBody } from 'carbon-components-svelte'
 
   import { t } from '@/i18n/i18n'
-  import { CalculateFinalsScore, returnGrade } from '@/utils/calculate'
+  import { CalculateFinalsScore } from '@/utils/calculate'
+  import { percentToGrade } from '@/utils/numbers'
   import { Event } from '@/utils/analytics'
 
   import Header from '@/components/Header.svelte'
@@ -118,7 +119,7 @@
         </tr>
         <tr>
           <td>{$t('grade')}</td>
-          <td>{returnGrade(total_score)}</td>
+          <td>{percentToGrade(total_score)}</td>
         </tr>
       </tbody>
     </table>

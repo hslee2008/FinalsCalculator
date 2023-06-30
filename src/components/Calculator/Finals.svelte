@@ -14,9 +14,12 @@
   import InputMidterm from '@/components/Input/Midterm.svelte'
 
   /* Saved */
-  const savedMidPer = parseInt(localStorage.getItem('midterm_percent'))
-  const savedNoMidPer = parseInt(localStorage.getItem('no_midterm_percent'))
+  let savedMidPer
+  let savedNoMidPer
 
+  $: savedMidPer = parseInt(localStorage.getItem('midterm_percent'))
+  $: savedNoMidPer = parseInt(localStorage.getItem('no_midterm_percent'))
+  
   /* LocalStorage Initialization */
   if (!localStorage.getItem('hasMid')) localStorage.setItem('hasMid', true)
 
@@ -123,7 +126,6 @@
 <Header></Header>
 
 <!-- Inputs -->
-
 <InputPercentage bind:hasMid bind:percent {UpdateProjects}></InputPercentage>
 {#if hasMid}
 <InputMidterm bind:mid_score></InputMidterm>

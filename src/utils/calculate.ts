@@ -53,12 +53,4 @@ function CalculateFinalsScore(
   return 100 + subtracted
 }
 
-function returnGrade(totalScore: number) {
-  if (totalScore >= 89.5) return 'A'
-  else if (totalScore >= 79.5) return 'B'
-  else if (totalScore >= 69.5) return 'C'
-  else if (totalScore >= 59.5) return 'D'
-  else return 'E'
-}
-
-export { CalculateFinalsScore, TableCalculation, returnGrade }
+export { CalculateFinalsScore, TableCalculation }
