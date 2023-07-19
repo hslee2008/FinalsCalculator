@@ -40,7 +40,7 @@ describe('CheckBox Decimal Point', () => {
     const noMid = screen.getByTestId('no-mid')
     await fireEvent.click(noMid)
 
-    const midtermWeight = screen.getByLabelText('Midterm weight (50, 60)')
+    const midtermWeight = screen.getByLabelText('Finals weight (50, 60)')
     await fireEvent.input(midtermWeight, { target: { value: '60' } })
 
     const performEval = screen.getByLabelText('0 ~ 40')

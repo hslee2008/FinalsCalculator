@@ -2,7 +2,7 @@
   /* Imports */
   import { Modal, ModalBody } from 'carbon-components-svelte'
 
-  import { t } from '@/i18n/i18n'
+  import { _ } from '@/i18n/i18n'
   import { CalculateFinalsScore } from '@/utils/calculate'
   import { percentToGrade } from '@/utils/numbers'
   import { Event } from '@/utils/analytics'
@@ -24,7 +24,7 @@
   /* Variable Initialization */
   let table_opened = false
   let hasMid = localStorage.getItem('hasMid') === 'true'
-  let selected = hasMid ? $t('with_midterm') : $t('no_midterm')
+  let selected = hasMid ? $_('with_midterm') : $_('no_midterm')
 
   /*
     The default percentage:
@@ -37,7 +37,7 @@
   let total_score = 100
   let projects = hasMid ? 100 - percent * 2 : 100 - percent
 
-  $: hasMid = selected === $t('with_midterm')
+  $: hasMid = selected === $_('with_midterm')
   $: total_score = CalculateFinalsScore(
     hasMid,
     percent,
@@ -50,12 +50,12 @@
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
     if (hasMid) {
-      selected = $t('with_midterm')
+      selected = $_('with_midterm')
       percent = savedMidPer || 25
       mid_score = 100
       projects = 100 - percent * 2
     } else {
-      selected = $t('no_midterm')
+      selected = $_('no_midterm')
       percent = savedNoMidPer || 50
       mid_score = 0
       projects = 100 - percent
@@ -101,12 +101,12 @@
 <InputFinals bind:finals_score></InputFinals>
 <InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
 
-<button on:click="{table_open}" class="main-btn mt10">{$t('calculate')}</button>
+<button on:click="{table_open}" class="main-btn mt10">{$_('calculate')}</button>
 
 <!-- Table Modal -->
 <Modal
   bind:open="{table_opened}"
-  modalHeading="{$t('result')}"
+  modalHeading="{$_('result')}"
   passiveModal
   selectorPrimaryFocus=".bx--modal-content"
 >
@@ -114,18 +114,18 @@
     <table class="bx--data-table">
       <tbody>
         <tr>
-          <td class="grade-row">{$t('total_score')}</td>
+          <td class="grade-row">{$_('total_score')}</td>
           <td>{total_score}</td>
         </tr>
         <tr>
-          <td>{$t('grade')}</td>
+          <td>{$_('grade')}</td>
           <td>{percentToGrade(total_score)}</td>
         </tr>
       </tbody>
     </table>
 
     <button on:click="{table_close}" id="close" class="main-btn mt25 mb25">
-      {$t('close')}
+      {$_('close')}
     </button>
   </ModalBody>
 </Modal>

@@ -11,7 +11,7 @@
   import { SetUser } from '@/utils/analytics'
   import { initializeFirebasePerformance } from '@/utils/firebase'
 
-  import { t, currentLocale } from '@/i18n/i18n'
+  import { _, currentLocale } from '@/i18n/i18n'
 
   import { additionalLinkTags, additionalMetaTags } from '@/config/language'
   import { properties, configurations } from '@/config/ga'
@@ -25,8 +25,8 @@
 
 <GoogleAnalytics {properties} {configurations}></GoogleAnalytics>
 <MetaTags
-  title="{$t('app_title')}"
-  description="{$t('app_description')}"
+  title="{$_('title')}"
+  description="{$_('description')}"
   {additionalMetaTags}
   {additionalLinkTags}
 ></MetaTags>
@@ -34,8 +34,8 @@
 <main>
   <Tabs>
     <TabList>
-      <Tab>{$t("expected_finals_score")}</Tab>
-      <Tab>{$t("finals_grade")}</Tab>
+      <Tab>{$_("expected_finals_score")}</Tab>
+      <Tab>{$_("finals_grade")}</Tab>
     </TabList>
 
     <TabPanel>

@@ -1,6 +1,6 @@
 <script>
   import { NumberInput } from 'carbon-components-svelte'
-  import { t } from '@/i18n/i18n'
+  import { _ } from '@/i18n/i18n'
   import { Event } from '@/utils/analytics'
 
   export let projects
@@ -42,7 +42,7 @@
     {min}
     {max}
     warn="{invalid}"
-    label="{invalid ? `${min} ~ ${max}` : $t('eval')}"
+    label="{invalid ? `${min} ~ ${max}` : $_('eval')}"
     size="xl"
   ></NumberInput>
 </div>

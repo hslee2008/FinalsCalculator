@@ -23,7 +23,7 @@ describe('Basic Rendering', () => {
   test('[Text 2] Shows Proper Text - Without Midterm', async () => {
     await fireEvent.click(screen.getByTestId('no-mid'))
 
-    expect(screen.getByText('Midterm weight (50, 60)')).toBeInTheDocument()
+    expect(screen.getByText('Finals weight (50, 60)')).toBeInTheDocument()
     expect(screen.getByText('Performance Evaluation')).toBeInTheDocument()
   })
 })

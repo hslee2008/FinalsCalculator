@@ -2,7 +2,7 @@
   /* Imports */
   import { Modal, ModalBody, Checkbox } from 'carbon-components-svelte'
 
-  import { t } from '@/i18n/i18n'
+  import { _ } from '@/i18n/i18n'
   import { TableCalculation } from '@/utils/calculate'
   import { Event } from '@/utils/analytics'
 
@@ -19,14 +19,14 @@
 
   $: savedMidPer = parseInt(localStorage.getItem('midterm_percent'))
   $: savedNoMidPer = parseInt(localStorage.getItem('no_midterm_percent'))
-  
+
   /* LocalStorage Initialization */
   if (!localStorage.getItem('hasMid')) localStorage.setItem('hasMid', true)
 
   /* Variable Initialization */
   let table_opened = false
   let hasMid = localStorage.getItem('hasMid') === 'true'
-  let selected = hasMid ? $t('with_midterm') : $t('no_midterm')
+  let selected = hasMid ? $_('with_midterm') : $_('no_midterm')
 
   /*
     The default percentage:
@@ -40,18 +40,18 @@
 
   let finals = [0, 0, 0, 0, 0]
 
-  $: hasMid = selected === $t('with_midterm')
+  $: hasMid = selected === $_('with_midterm')
 
   /* Functions */
   const ChangeMidtermStatus = () => {
     // Initialize the numbers for each midterm
     if (hasMid) {
-      selected = $t('with_midterm')
+      selected = $_('with_midterm')
       percent = savedMidPer || 25
       mid_score = 100
       projects = 100 - percent * 2
     } else {
-      selected = $t('no_midterm')
+      selected = $_('no_midterm')
       percent = savedNoMidPer || 50
       mid_score = 0
       projects = 100 - percent
@@ -132,12 +132,12 @@
 {/if}
 <InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
 
-<button on:click="{calculate}" class="main-btn mt10">{$t('calculate')}</button>
+<button on:click="{calculate}" class="main-btn mt10">{$_('calculate')}</button>
 
 <!-- Table Modal -->
 <Modal
   bind:open="{table_opened}"
-  modalHeading="{$t('result')}"
+  modalHeading="{$_('result')}"
   passiveModal
   selectorPrimaryFocus=".bx--modal-content"
 >
@@ -153,12 +153,12 @@
     <Checkbox
       on:change="{onChangeDecimal}"
       bind:checked="{hasDecimalScore}"
-      labelText="{$t('decimal_score')}"
+      labelText="{$_('decimal_score')}"
       class="mb10 mt25"
     ></Checkbox>
 
     <button on:click="{table_close}" id="close" class="main-btn mt10 mb25">
-      {$t('close')}
+      {$_('close')}
     </button>
   </ModalBody>
 </Modal>

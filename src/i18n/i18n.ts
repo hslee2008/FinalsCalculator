@@ -2,7 +2,7 @@ import { derived, writable } from 'svelte/store'
 import en from './translation/en-US.json'
 import ko from './translation/ko-KR.json'
 
-const translations = {
+const translations: any = {
   'en-US': en,
   'ko-KR': ko
 }
@@ -20,11 +20,7 @@ currentLocale = searchParams.get('lang') || currentLocale
 const locale = writable(currentLocale)
 const locales = Object.keys(translations)
 
-function translate(
-  locale: string,
-  key: string | number,
-  vars: { [x: string]: any }
-) {
+function translate(locale: string, key: string, vars: { [x: string]: any }) {
   if (!translations[locale]) locale = 'en-US'
 
   let text = translations[locale][key]
@@ -37,14 +33,42 @@ function translate(
   return text
 }
 
-const t = derived(
+function translateMultiple(
+  locale: string,
+  key: string,
+  vars: { [x: string]: any }
+) {
+  const keys = key.split(' ')
+  const translated = keys.map(key => translate(locale, key, vars))
+  return translated.join(' ')
+}
+
+const _ = derived(
   locale,
   $locale =>
-    (key: string | number, vars = {}) =>
+    (key: string, vars = {}) =>
       translate($locale, key, vars)
 )
 
-const translated = (key: string | number, vars = {}) =>
+const __ = derived(
+  locale,
+  $locale =>
+    (keys: string, vars = {}) =>
+      translateMultiple($locale, keys, vars)
+)
+
+const translateJS = (key: string, vars = {}) =>
   translate(currentLocale, key, vars)
 
-export { currentLocale, locale, locales, t, translated }
+const translateMultipleJS = (keys: string, vars = {}) =>
+  translateMultiple(currentLocale, keys, vars)
+
+export {
+  currentLocale,
+  locale,
+  locales,
+  _,
+  __,
+  translateJS,
+  translateMultipleJS
+}

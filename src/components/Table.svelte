@@ -1,6 +1,6 @@
 <script>
   import { NumberInput } from 'carbon-components-svelte'
-  import { t, translated } from '@/i18n/i18n'
+  import { _, translateJS } from '@/i18n/i18n'
   import { percentToString, percentToGrade } from '@/utils/numbers'
   import { CalculateFinalsScore } from '@/utils/calculate'
 
@@ -14,7 +14,7 @@
   let finals_score
   let finals_input_grade
   let finals_invalid = false
-  let with_finals_grade = translated('input_finals')
+  let with_finals_grade = translateJS('input_finals')
 
   const gradeList = ['A', 'B', 'C', 'D', 'E']
 
@@ -36,7 +36,7 @@
       } (${finals_input_grade})`
     } else {
       // Input is empty
-      with_finals_grade = translated('input_finals')
+      with_finals_grade = translateJS('input_finals')
     }
   }
 
@@ -76,10 +76,10 @@
     <thead>
       <tr>
         <th scope="col" data-header="grade" class="grade-row">
-          <div class="bx--table-header-label">{$t('grade')}</div>
+          <div class="bx--table-header-label">{$_('grade')}</div>
         </th>
         <th scope="col" data-header="lowest">
-          <div class="bx--table-header-label">{$t('lowest')}</div>
+          <div class="bx--table-header-label">{$_('lowest')}</div>
         </th>
       </tr>
     </thead>
@@ -93,7 +93,7 @@
       {/each}
       <tr class="E">
         <td>E</td>
-        <td>{$t("secured")}</td>
+        <td>{$_("secured")}</td>
       </tr>
     </tbody>
   </table>
@@ -101,7 +101,7 @@
   <NumberInput
     bind:value="{finals_score}"
     helperText="{with_finals_grade}"
-    label="{$t('input_finals')}"
+    label="{$_('input_finals')}"
     hideLabel
     hideSteppers
     warn="{finals_invalid}"
@@ -110,6 +110,6 @@
     allowEmpty
     on:keyup="{viewTransition}"
     class="finals-input"
-    placeholder="{$t('input_finals')}"
+    placeholder="{$_('input_finals')}"
   ></NumberInput>
 </div>

@@ -1,6 +1,6 @@
 <script>
   import { Select, SelectItem } from 'carbon-components-svelte'
-  import { t } from '@/i18n/i18n'
+  import { _ } from '@/i18n/i18n'
 
   export let hasMid
   export let selected
@@ -23,6 +23,6 @@
 <button data-testid="no-mid" on:click="{noMid}"></button>
 
 <Select on:change="{ChangeMidtermStatus}" bind:selected size="xl" class="mb20">
-  <SelectItem value="{$t('with_midterm')}"></SelectItem>
-  <SelectItem value="{$t('no_midterm')}"></SelectItem>
+  <SelectItem value="{$_('with_midterm')}"></SelectItem>
+  <SelectItem value="{$_('no_midterm')}"></SelectItem>
 </Select>

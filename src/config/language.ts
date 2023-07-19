@@ -1,25 +1,25 @@
-import { currentLocale, translated } from '../i18n/i18n'
+import { currentLocale, translateJS } from '../i18n/i18n'
 
 const additionalMetaTags = [
   {
     name: 'apple-mobile-web-app-title',
-    content: translated('app_title')
+    content: translateJS('title')
   },
   {
     name: 'subject',
-    content: translated('app_subject')
+    content: translateJS('subject')
   },
   {
     name: 'author',
-    content: translated('name')
+    content: translateJS('name')
   },
   {
     name: 'owner',
-    content: translated('name')
+    content: translateJS('name')
   },
   {
     name: 'copyright',
-    content: translated('name')
+    content: translateJS('name')
   },
   {
     name: 'language',
@@ -34,3 +34,4 @@ const additionalLinkTags = [
 ]
 
 export { additionalLinkTags, additionalMetaTags }
+

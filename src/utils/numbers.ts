@@ -1,10 +1,10 @@
-import { translated } from '../i18n/i18n'
+import { translateJS } from '../i18n/i18n'
 
 const percentToString = (percent: number): string => {
-  if (percent <= 0) return translated('secured')
-  if (percent > 100) return translated('impossible')
+  if (percent <= 0) return translateJS('secured')
+  if (percent > 100) return translateJS('impossible')
 
-  return `${percent}${translated('score')}`
+  return `${percent}${translateJS('score')}`
 }
 
 const percentToGrade = (percent: number): string => {
@@ -36,3 +36,4 @@ export {
   percentToGrade,
   roundPercent
 }
+

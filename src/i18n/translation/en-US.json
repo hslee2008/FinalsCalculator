@@ -1,9 +1,12 @@
 {
-  "developer": "By",
+  "title": "Finals Calculator",
   "name": "Hyunseung",
-  "app_title": "Finals Calculator",
-  "app_description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.",
-  "app_subject": "Grade, Calculator, A",
+  "description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well.",
+  "subject": "Grade, Calculator, A",
+
+  "midterm": "Midterm",
+  "finals": "Finals",
+  "_score": "Score",
 
   "secured": "secured",
   "score": "%",
@@ -13,28 +16,18 @@
 
   "weight": "weight",
   "each": "Midterm and Finals",
-
-  "midterm": "Midterm",
   "with_midterm": "With midterm",
   "no_midterm": "Without midterm",
   "calculate": "Calculate",
   "result": "Result",
   "close": "Close",
 
-  "mid_score": "Midterm Score",
-  "finals_score": "Finals Score",
-
   "eval": "Performance Evaluation",
-  "eval_minused": "Performance Evaluation Minus Points (-)",
-
-  "use_minus_projects": "Use minus points for projects",
-  "use_score_projects": "Use score points for projects",
-  "project": "Project",
 
   "inval_mid": "25 or 30 or 35",
   "inval_no_mid": "50 or 60",
-  "input_finals": "Input Finals Score",
 
+  "input_finals": "Input Finals Score",
   "decimal_score": "Decimal Score",
 
   "total_score": "Total Score",
