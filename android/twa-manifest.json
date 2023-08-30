@@ -5,6 +5,7 @@
   "launcherName": "기말 계산기",
   "display": "standalone",
   "themeColor": "#FFFFFF",
+  "themeColorDark": "#000000",
   "navigationColor": "#FFFFFF",
   "navigationColorDark": "#FFFFFF",
   "navigationDividerColor": "#FFFFFF",
@@ -16,11 +17,11 @@
   "maskableIconUrl": "https://finalscalcu.web.app/images/maskable_icon.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "C:\\Users\\USER\\Desktop\\Folder\\Code\\FinalsCalculator\\android\\android.keystore",
+    "path": "/workspace/FinalsCalculator/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "9",
-  "appVersionCode": 9,
+  "appVersionName": "10",
+  "appVersionCode": 10,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://finalscalcu.web.app/manifest/manifest-ko-KR.json",
@@ -61,5 +62,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "9"
+  "appVersion": "10"
 }
