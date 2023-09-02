@@ -14,7 +14,7 @@
   let finals_score
   let finals_input_grade
   let finals_invalid = false
-  let with_finals_grade = translateJS('input_finals')
+  let with_finals_grade = translateJS('input_finals_helper')
 
   const gradeList = ['A', 'B', 'C', 'D', 'E']
 
@@ -36,7 +36,7 @@
       } (${finals_input_grade})`
     } else {
       // Input is empty
-      with_finals_grade = translateJS('input_finals')
+      with_finals_grade = translateJS('input_finals_helper')
     }
   }
 
@@ -101,7 +101,7 @@
   <NumberInput
     bind:value="{finals_score}"
     helperText="{with_finals_grade}"
-    label="{$_('input_finals')}"
+    label="{$_('input_finals_holder')}"
     hideLabel
     hideSteppers
     warn="{finals_invalid}"
@@ -110,6 +110,6 @@
     allowEmpty
     on:keyup="{viewTransition}"
     class="finals-input"
-    placeholder="{$_('input_finals')}"
+    placeholder="{$_('input_finals_holder')}"
   ></NumberInput>
 </div>

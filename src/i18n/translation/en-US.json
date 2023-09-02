@@ -27,7 +27,8 @@
   "inval_mid": "25 or 30 or 35",
   "inval_no_mid": "50 or 60",
 
-  "input_finals": "Input Finals Score",
+  "input_finals_holder": "Input Finals Score",
+  "input_finals_helper": "Input Finals Score to get the overall score",
   "decimal_score": "Decimal Score",
 
   "total_score": "Total Score",

@@ -28,7 +28,8 @@
   "inval_mid": "25 또는 30 또는 35",
   "inval_no_mid": "50 또는 60",
 
-  "input_finals": "기말고사 점수 입력",
+  "input_finals_holder": "기말고사 점수 입력",
+  "input_finals_helper": "기말고사 점수를 입력해 총점수를 확인하세요",
   "decimal_score": "소수점 점수",
 
   "total_score": "총점",
