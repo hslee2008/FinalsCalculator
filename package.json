@@ -17,7 +17,7 @@
     "build:android": "cd android && bubblewrap build",
     "lint": "eslint . --ext .ts,.js,.svelte",
     "firebase-hosting-build": "yarn && yarn test && yarn lint && yarn build",
-    "prepare": "yarn install && npm install -g npm-check-updates",
+    "prep": "yarn install && npm install -g npm-check-updates",
     "go": "yarn prepare && yarn dev"
   },
   "devDependencies": {
