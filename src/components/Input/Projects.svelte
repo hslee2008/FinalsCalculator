@@ -44,5 +44,6 @@
     warn="{invalid}"
     label="{invalid ? `${min} ~ ${max}` : $_('eval')}"
     size="xl"
+    translateWithId="{(id) => $_(`ID${id}`)}"
   ></NumberInput>
 </div>

@@ -1,6 +1,6 @@
 <script>
   import { NumberInput } from 'carbon-components-svelte'
-  import { __ } from '@/i18n/i18n'
+  import { _, __ } from '@/i18n/i18n'
   import { Event } from '@/utils/analytics'
 
   export let mid_score
@@ -27,5 +27,6 @@
     size="xl"
     min="0"
     max="100"
+    translateWithId="{(id) => $_(`ID${id}`)}"
   ></NumberInput>
 </div>

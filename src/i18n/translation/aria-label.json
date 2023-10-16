@@ -1,0 +1,12 @@
+{
+  "en-US": {
+    "ALmodal": "Finals Calculator Table",
+    "IDincrement": "increment",
+    "IDdecrement": "decrement"
+  },
+  "ko-KR": {
+    "ALmodal": "기말고사 최소 점수 결과 테이블",
+    "IDincrement": "증가",
+    "IDdecrement": "감소"
+  }
+}

@@ -1,10 +1,17 @@
 import { derived, writable } from 'svelte/store'
 import en from './translation/en-US.json'
 import ko from './translation/ko-KR.json'
+import ariaLabel from './translation/aria-label.json'
 
 const translations: any = {
-  'en-US': en,
-  'ko-KR': ko
+  'en-US': {
+    ...en,
+    ...ariaLabel["en-US"]
+  },
+  'ko-KR': {
+    ...ko,
+    ...ariaLabel["ko-KR"]
+  }
 }
 
 /*

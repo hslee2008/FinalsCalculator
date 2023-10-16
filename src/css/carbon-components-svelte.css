@@ -49,8 +49,6 @@
   }
 }
 
-/* Tooltip */
-.bx--assistive-text,
-.cog::before {
-  display: none !important;
+.bx--number__control-btn::before, .bx--number__control-btn::after {
+  background-color: transparent !important;
 }

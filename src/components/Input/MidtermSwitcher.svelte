@@ -22,7 +22,7 @@
 <button data-testid="yes-mid" on:click="{yesMid}"></button>
 <button data-testid="no-mid" on:click="{noMid}"></button>
 
-<Select on:change="{ChangeMidtermStatus}" bind:selected size="xl" class="mb20">
+<Select on:change="{ChangeMidtermStatus}" bind:selected  class="mb20">
   <SelectItem value="{$_('with_midterm')}"></SelectItem>
   <SelectItem value="{$_('no_midterm')}"></SelectItem>
 </Select>

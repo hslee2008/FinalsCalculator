@@ -105,10 +105,12 @@
 
 <!-- Table Modal -->
 <Modal
-  bind:open="{table_opened}"
+bind:open="{table_opened}"
   modalHeading="{$_('result')}"
-  passiveModal
+  modalAriaLabel="{$_('ALmodal')}"
+  iconDescription="close modal"
   selectorPrimaryFocus=".bx--modal-content"
+  passiveModal
 >
   <ModalBody>
     <table class="bx--data-table">
