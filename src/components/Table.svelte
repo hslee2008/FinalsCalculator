@@ -107,8 +107,6 @@
     hideLabel
     warn={finals_invalid}
     warnText="0 ~ 100"
-    min="{0}"
-    max="{100}"
     translateWithId="{(id) => $_(`ID${id}`)}"
     size="xl"
     allowEmpty
