@@ -42,4 +42,5 @@ It is a app that is mostly used by students in Korea, and it is available on the
 ## More info
 
 ![GitHub code size in bytes](https://img.shields.io/github/languages/code-size/hslee2008/finalscalculator?style=for-the-badge)
-![Lines of code](https://img.shields.io/tokei/lines/github/hslee2008/finalscalculator?style=for-the-badge)
+![GitHub repo file count (file type)](https://img.shields.io/github/directory-file-count/hslee2008/FinalsCalculator?style=for-the-badge)
+
