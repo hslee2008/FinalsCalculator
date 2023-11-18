@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { Modal } from "carbon-components-svelte";
+  import { Event } from '@/utils/analytics'
 
   let showSurvey = false;
 
@@ -15,7 +16,12 @@
     setCookie("surveyResponded", "true", 7);
 
     if (response === "yes") {
+      Event("Yes Survey", {});
       window.open("https://docs.google.com/forms/d/e/1FAIpQLSe5VcJlaD1irR_ptuADyoOKxZJsxuZgf8BNFcE06UcP5SaqyQ/viewform", "_blank");
+    }
+
+    if (response === "no") {
+      Event("No Survey", {});
     }
 
     showSurvey = false;
