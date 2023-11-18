@@ -1,6 +1,6 @@
 <script>
   import { onMount } from "svelte";
-  import { Modal, ModalBody } from "carbon-components-svelte";
+  import { Modal } from "carbon-components-svelte";
 
   let showSurvey = false;
 
