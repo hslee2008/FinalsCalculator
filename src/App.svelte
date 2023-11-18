@@ -6,6 +6,7 @@
 
   import Finals from '@/components/Calculator/Finals.svelte'
   import Grade from '@/components/Calculator/Grade.svelte'
+  import Survey from '@/components/Survey.svelte'
 
   import { registerSW } from '@/utils/register-sw'
   import { SetUser } from '@/utils/analytics'
@@ -32,6 +33,8 @@
 ></MetaTags>
 
 <main>
+  <Survey></Survey>
+
   <Tabs>
     <TabList>
       <Tab>{$_("expected_finals_score")}</Tab>
