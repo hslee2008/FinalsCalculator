@@ -53,10 +53,14 @@
   primaryButtonText="예"
   secondaryButtonText="아니요"
   selectorPrimaryFocus=".bx--modal-content"
+  on:close={() => handleResponse("no")}
+  size="sm"
   on:click:button--primary={() => handleResponse("yes")}
   on:click:button--secondary={() => handleResponse("no")}
 >
   <div style="margin: 5px; margin-bottom: 30px;">
-    <h2>설문조사에 참여하시겠습니까?</h2>
+    <h4>설문조사에 참여하시겠습니까?</h4>
+    <br />
+    <p>"아니요"를 누르거나 창을 닫으면 다시는 이 메시지를 보지 않게 됩니다.</p>
   </div>
 </Modal>
