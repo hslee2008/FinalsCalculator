@@ -1,7 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { Modal } from "carbon-components-svelte";
-  import { Event } from '@/utils/analytics'
+  import { Event } from "@/utils/analytics";
 
   let showSurvey = false;
 
@@ -17,7 +17,10 @@
 
     if (response === "yes") {
       Event("Yes Survey", {});
-      window.open("https://docs.google.com/forms/d/e/1FAIpQLSe5VcJlaD1irR_ptuADyoOKxZJsxuZgf8BNFcE06UcP5SaqyQ/viewform", "_blank");
+      window.open(
+        "https://docs.google.com/forms/d/e/1FAIpQLSe5VcJlaD1irR_ptuADyoOKxZJsxuZgf8BNFcE06UcP5SaqyQ/viewform",
+        "_blank"
+      );
     }
 
     if (response === "no") {
@@ -51,16 +54,21 @@
   modalHeading="Survey"
   iconDescription="close modal"
   primaryButtonText="예"
-  secondaryButtonText="아니요"
+  secondaryButtons={[{ text: "아니요" }, { text: "나중에" }]}
   selectorPrimaryFocus=".bx--modal-content"
   on:close={() => handleResponse("no")}
   size="sm"
   on:click:button--primary={() => handleResponse("yes")}
-  on:click:button--secondary={() => handleResponse("no")}
+  on:click:button--secondary={({ detail }) => {
+    if (detail.text === "아니요") {
+      handleResponse("no");
+    } else if (detail.text === "나중에") {
+      showSurvey = false;
+    }
+  }}
 >
   <div style="margin: 5px; margin-bottom: 30px;">
     <h4>설문조사에 참여하시겠습니까?</h4>
-    <br />
     <p>"아니요"를 누르거나 창을 닫으면 다시는 이 메시지를 보지 않게 됩니다.</p>
   </div>
 </Modal>
