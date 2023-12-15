@@ -5,11 +5,11 @@ import "@/css/element.css";
 import "@/css/header.css";
 import "@/css/test.css";
 import "@/css/carbon-components-svelte.css";
-// @ts-ignore
-import App from "@/App.svelte";
+import App from "./App.svelte";
 
+const targetElement = document.getElementById("app");
 const app = new App({
-  target: document.querySelector("#app"),
+  target: targetElement ? targetElement : document.body,
 });
 
 export default app;

@@ -1,45 +1,31 @@
 {
   "name": "finalscalculator",
-  "description": "Finals Calculator is a simple app that calculates your final score in a class. It is designed to be used in the Korean education system, but it can be used in other education systems as well",
-  "version": "23.3",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hslee2008/finalscalcu.git"
-  },
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "vitest run .",
-    "test:watch": "vitest .",
-    "update": "yarn upgrade && ncu -u && yarn",
-    "build:android": "cd android && bubblewrap build",
-    "lint": "eslint . --ext .ts,.js,.svelte",
-    "firebase-hosting-build": "yarn && yarn test && yarn lint && yarn build",
-    "prep": "yarn install && npm install -g npm-check-updates",
-    "go": "yarn prepare && yarn dev"
+    "preview": "vite preview",
+    "test": "vitest run",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@bubblewrap/cli": "^1.21.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.1",
     "@testing-library/jest-dom": "^6.1.5",
     "@testing-library/svelte": "^4.0.5",
-    "@types/jest": "^29.5.11",
-    "@typescript-eslint/parser": "^6.14.0",
-    "carbon-components-svelte": "^0.82.4",
-    "carbon-preprocess-svelte": "^0.10.0",
-    "eslint": ">=8.55.0",
-    "eslint-plugin-testing-library": "^6.2.0",
+    "@tsconfig/svelte": "^5.0.2",
     "jsdom": "^23.0.1",
     "svelte": "^4.2.8",
-    "svelte-eslint-parser": "^0.33.1",
+    "svelte-check": "^3.6.2",
+    "tslib": "^2.6.2",
+    "typescript": "^5.2.2",
     "vite": "^5.0.9",
     "vitest": "^1.0.4"
   },
   "dependencies": {
     "@beyonk/svelte-google-analytics": "^2.6.4",
-    "@types/istanbul-lib-coverage": "^2.0.6",
+    "carbon-components-svelte": "^0.82.4",
     "firebase": "^10.7.1",
     "svelte-meta-tags": "^3.1.0",
     "svelte-tabs": "^1.1.0"

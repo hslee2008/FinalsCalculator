@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from "svelte";
   import { MetaTags } from "svelte-meta-tags";
   import { Tabs, Tab, TabList, TabPanel } from "svelte-tabs";
