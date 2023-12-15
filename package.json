@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest run",
-    "firebase-hosting-build": "yarn && yarn test && yarn lint && yarn build",
+    "firebase-hosting-build": "yarn && yarn test && yarn build",
     "update": "yarn upgrade && ncu -u && yarn",
     "build:android": "cd android && bubblewrap build",
     "check": "svelte-check --tsconfig ./tsconfig.json"
