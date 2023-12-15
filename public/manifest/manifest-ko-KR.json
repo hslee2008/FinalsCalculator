@@ -24,6 +24,11 @@
       "type": "image/png"
     },
     {
+      "src": "/images/96x96.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    },
+    {
       "src": "/images/128x128.png",
       "sizes": "128x128",
       "type": "image/png"
@@ -62,7 +67,9 @@
   "background_color": "#FFFFFF",
   "theme_color": "#FFFFFF",
   "orientation": "any",
-  "categories": ["education"],
+  "categories": [
+    "education"
+  ],
   "prefer_related_applications": true,
   "related_applications": [
     {
@@ -77,14 +84,75 @@
       "short_name": "중간 있는 과목",
       "description": "중간고사가 있는 과목을 계산합니다.",
       "url": "/?lang=ko-KR&midterm=true",
-      "icons": [{ "src": "/images/96x96.png" }]
+      "icons": [
+        {
+          "src": "/images/96x96.png",
+          "sizes": "96x96"
+        }
+      ]
     },
     {
       "name": "중간 없는 과목",
       "short_name": "중간고사 없는 과목",
       "description": "중간고사가 없는 과목을 계산합니다.",
       "url": "/?lang=ko-KR&midterm=false",
-      "icons": [{ "src": "/images/96x96.png" }]
+      "icons": [
+        {
+          "src": "/images/96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot/ipad.png",
+      "sizes": "1024x500",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Ipad Screen"
+    },
+    {
+      "src": "/screenshot/ipad-1.png",
+      "sizes": "1024x500",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Ipad Screen"
+    },
+    {
+      "src": "/screenshot/ipad-2.png",
+      "sizes": "1024x500",
+      "type": "image/webp",
+      "form_factor": "wide",
+      "label": "Ipad Screen"
+    },
+    {
+      "src": "/screenshot/phone-0.png",
+      "sizes": "628x1024",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Phone Screen"
+    },
+    {
+      "src": "/screenshot/phone-1.png",
+      "sizes": "628x1024",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Phone Screen"
+    },
+    {
+      "src": "/screenshot/phone-2.png",
+      "sizes": "628x1024",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Phone Screen"
+    },
+    {
+      "src": "/screenshot/phone-3.png",
+      "sizes": "628x1024",
+      "type": "image/webp",
+      "form_factor": "narrow",
+      "label": "Phone Screen"
     }
   ]
 }
