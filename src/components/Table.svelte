@@ -1,18 +1,18 @@
-<script>
+<script lang="ts">
   import { NumberInput } from "carbon-components-svelte";
   import { _, translateJS } from "@/i18n/i18n";
   import { percentToString, percentToGrade } from "@/utils/numbers";
   import { CalculateFinalsScore } from "@/utils/calculate";
 
-  export let finals = [0, 0, 0, 0, 0];
-  export let percent = 25;
-  export let mid_score = 100;
-  export let projects = 100 - percent * 2;
-  export let hasMid = true;
+  export let finals: [number, number, number, number, number] = [0, 0, 0, 0, 0];
+  export let percent: number = 25;
+  export let mid_score: number = 100;
+  export let projects: number = 100 - percent * 2;
+  export let hasMid: boolean = true;
 
-  let rows;
-  let finals_score;
-  let finals_input_grade;
+  let rows: { id: string; grade: string; lowest: string }[] = [];
+  let finals_score: number;
+  let finals_input_grade: number;
   let finals_invalid = false;
   let with_finals_grade = translateJS("input_finals_helper");
 
@@ -58,16 +58,17 @@
   const viewTransition = () => {
     const shouldTransition = finals_invalid || finals_score === null;
 
-    // View Transition for smooth transition
     document.startViewTransition(() => {
       document
         .querySelector(`.${finals_input_grade}`)
-        .classList.add("bordered");
+        ?.classList.add("bordered");
 
       gradeList
-        .filter((grade) => grade !== finals_input_grade || shouldTransition)
+        .filter(
+          (grade) => grade !== finals_input_grade.toString() || shouldTransition
+        )
         .forEach((grade) =>
-          document.querySelector(`.${grade}`).classList.remove("bordered")
+          document.querySelector(`.${grade}`)?.classList.remove("bordered")
         );
     });
   };

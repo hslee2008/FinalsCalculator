@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /* Imports */
   import { Modal, ModalBody } from "carbon-components-svelte";
 
@@ -15,11 +15,11 @@
   import InputFinals from "@/components/Input/Finals.svelte";
 
   /* Saved */
-  const savedMidPer = parseInt(localStorage.getItem("midterm_percent"));
-  const savedNoMidPer = parseInt(localStorage.getItem("no_midterm_percent"));
+  const savedMidPer = parseInt(localStorage.getItem("midterm_percent")!);
+  const savedNoMidPer = parseInt(localStorage.getItem("no_midterm_percent")!);
 
   /* LocalStorage Initialization */
-  if (!localStorage.getItem("hasMid")) localStorage.setItem("hasMid", true);
+  if (!localStorage.getItem("hasMid")) localStorage.setItem("hasMid", "true");
 
   /* Variable Initialization */
   let table_opened = false;
@@ -61,7 +61,7 @@
       projects = 100 - percent;
     }
 
-    localStorage.setItem("hasMid", hasMid);
+    localStorage.setItem("hasMid", hasMid.toString());
     Event("Midterm Changed", {
       midterm: hasMid,
     });
@@ -71,10 +71,10 @@
   const UpdateProjects = () => {
     if (hasMid) {
       projects = 100 - percent * 2;
-      localStorage.setItem("midterm_percent", percent);
+      localStorage.setItem("midterm_percent", percent.toString());
     } else {
       projects = 100 - percent;
-      localStorage.setItem("no_midterm_percent", percent);
+      localStorage.setItem("no_midterm_percent", percent.toString());
     }
   };
 

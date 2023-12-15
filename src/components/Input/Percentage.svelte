@@ -1,15 +1,15 @@
-<script>
+<script lang="ts">
   import { NumberInput } from "carbon-components-svelte";
   import { _ } from "@/i18n/i18n";
   import { Event } from "@/utils/analytics";
 
-  export let percent;
-  export let UpdateProjects;
-  export let hasMid;
+  export let percent: number;
+  export let UpdateProjects: (e: KeyboardEvent) => void;
+  export let hasMid: boolean;
 
   let valid = true;
-  let labelText;
-  let invalidLabelText;
+  let labelText: string;
+  let invalidLabelText: string;
 
   /*
     Korean Middle School education system usually have
@@ -38,7 +38,7 @@
     bind:value={percent}
     label={valid ? labelText : invalidLabelText}
     warn={!valid}
-    on:keyup={valid && UpdateProjects}
+    on:keyup={valid ? UpdateProjects : () => {}}
     on:change={FieldChanged}
     hideSteppers
   ></NumberInput>

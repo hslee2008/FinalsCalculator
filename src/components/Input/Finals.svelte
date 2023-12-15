@@ -1,9 +1,9 @@
-<script>
+<script lang="ts">
   import { NumberInput } from "carbon-components-svelte";
   import { __ } from "@/i18n/i18n";
   import { Event } from "@/utils/analytics";
 
-  export let finals_score;
+  export let finals_score: number;
 
   let invalid = false;
 
@@ -24,7 +24,7 @@
     label={invalid ? "0 ~ 100" : $__("finals_score")}
     warn={invalid}
     size="xl"
-    min="0"
-    max="100"
+    min={0}
+    max={100}
   ></NumberInput>
 </div>

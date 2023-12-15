@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   /* Imports */
   import { Modal, ModalBody, Checkbox } from "carbon-components-svelte";
 
@@ -14,14 +14,11 @@
   import InputMidterm from "@/components/Input/Midterm.svelte";
 
   /* Saved */
-  let savedMidPer;
-  let savedNoMidPer;
-
-  $: savedMidPer = parseInt(localStorage.getItem("midterm_percent"));
-  $: savedNoMidPer = parseInt(localStorage.getItem("no_midterm_percent"));
+  const savedMidPer = parseInt(localStorage.getItem("midterm_percent")!);
+  const savedNoMidPer = parseInt(localStorage.getItem("no_midterm_percent")!);
 
   /* LocalStorage Initialization */
-  if (!localStorage.getItem("hasMid")) localStorage.setItem("hasMid", true);
+  if (!localStorage.getItem("hasMid")) localStorage.setItem("hasMid", "true");
 
   /* Variable Initialization */
   let table_opened = false;
@@ -57,7 +54,7 @@
       projects = 100 - percent;
     }
 
-    localStorage.setItem("hasMid", hasMid);
+    localStorage.setItem("hasMid", hasMid.toString());
     Event("Midterm Changed", {
       midterm: hasMid,
     });
@@ -83,7 +80,7 @@
 
   // Automatically update table when decimal is changed
   const onChangeDecimal = () => {
-    localStorage.setItem("hasDecimalScore", hasDecimalScore);
+    localStorage.setItem("hasDecimalScore", hasDecimalScore.toString());
     CalculateTable();
     Event("Decimal Changed", {
       decimal: hasDecimalScore,
@@ -94,10 +91,10 @@
   const UpdateProjects = () => {
     if (hasMid) {
       projects = 100 - percent * 2;
-      localStorage.setItem("midterm_percent", percent);
+      localStorage.setItem("midterm_percent", percent.toString());
     } else {
       projects = 100 - percent;
-      localStorage.setItem("no_midterm_percent", percent);
+      localStorage.setItem("no_midterm_percent", percent.toString());
     }
   };
 

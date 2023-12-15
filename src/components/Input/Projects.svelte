@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { NumberInput } from "carbon-components-svelte";
   import { _ } from "@/i18n/i18n";
   import { Event } from "@/utils/analytics";
 
-  export let projects;
-  export let hasMid;
-  export let percent;
+  export let projects: number;
+  export let hasMid: boolean;
+  export let percent: number;
 
   let invalid = false;
   let min = 0;

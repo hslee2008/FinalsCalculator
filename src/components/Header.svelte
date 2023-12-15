@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { _ } from "@/i18n/i18n";
 </script>
 
