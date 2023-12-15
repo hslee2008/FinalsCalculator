@@ -27,9 +27,9 @@ It is a app that is mostly used by students in Korea, and it is available on the
 
 ## Users
 
-- 1500+ users on Google Play Store
-- 250+ Daily users on Web
-- 25k+ Calculates per month
+- 5000+ users on Google Play Store
+- 400+ Daily users on Web when school is in test season
+- 30k+ Calculates per month
 
 ## Links
 
