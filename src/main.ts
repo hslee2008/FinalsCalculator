@@ -1,15 +1,15 @@
-import 'carbon-components-svelte/css/white.css'
-import '@/css/layout.css'
-import '@/css/utility.css'
-import '@/css/element.css'
-import '@/css/header.css'
-import '@/css/test.css'
-import '@/css/carbon-components-svelte.css'
+import "carbon-components-svelte/css/white.css";
+import "@/css/layout.css";
+import "@/css/utility.css";
+import "@/css/element.css";
+import "@/css/header.css";
+import "@/css/test.css";
+import "@/css/carbon-components-svelte.css";
 // @ts-ignore
-import App from '@/App.svelte'
+import App from "@/App.svelte";
 
 const app = new App({
-  target: document.querySelector('#app')
-})
+  target: document.querySelector("#app"),
+});
 
-export default app
+export default app;

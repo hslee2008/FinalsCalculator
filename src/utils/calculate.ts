@@ -1,4 +1,4 @@
-import { roundPercent } from './numbers'
+import { roundPercent } from "./numbers";
 
 function TableCalculation(
   hasMid: any,
@@ -8,14 +8,14 @@ function TableCalculation(
   hasDecimalScore: boolean,
   callback: () => void
 ): string[] {
-  const finals = ['0', '0', '0', '0']
-  const projectsFull = hasMid ? 100 - percent * 2 : 100 - percent
-  let subtracted = -(projectsFull - projects)
+  const finals = ["0", "0", "0", "0"];
+  const projectsFull = hasMid ? 100 - percent * 2 : 100 - percent;
+  let subtracted = -(projectsFull - projects);
 
   // If there is no midterm, simply subtract the values taken from projects
   // If there is a midterm, subtract by adding weights
   if (hasMid) {
-    subtracted -= percent - (mid_score / 100) * percent
+    subtracted -= percent - (mid_score / 100) * percent;
   }
 
   // By order of alphabets (A, B, C, D), calculate the necessary grades
@@ -24,12 +24,12 @@ function TableCalculation(
       percent,
       10.5 + subtracted + i * 10,
       hasDecimalScore
-    )
+    );
 
   // callback after calculation
-  callback()
+  callback();
 
-  return finals
+  return finals;
 }
 
 function CalculateFinalsScore(
@@ -39,18 +39,18 @@ function CalculateFinalsScore(
   mid_score: number,
   finals_score: number
 ): number {
-  const projectsFull = hasMid ? 100 - percent * 2 : 100 - percent
-  let subtracted = -(projectsFull - projects)
+  const projectsFull = hasMid ? 100 - percent * 2 : 100 - percent;
+  let subtracted = -(projectsFull - projects);
 
   // If there is no midterm, simply subtract the values taken from projects
   // If there is a midterm, subtract by adding weights
   if (hasMid) {
-    subtracted -= percent - (mid_score / 100) * percent
+    subtracted -= percent - (mid_score / 100) * percent;
   }
 
-  subtracted -= percent - (finals_score / 100) * percent
+  subtracted -= percent - (finals_score / 100) * percent;
 
-  return 100 + subtracted
+  return 100 + subtracted;
 }
 
-export { CalculateFinalsScore, TableCalculation }
+export { CalculateFinalsScore, TableCalculation };

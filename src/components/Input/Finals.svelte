@@ -1,28 +1,28 @@
 <script>
-  import { NumberInput } from 'carbon-components-svelte'
-  import { __ } from '@/i18n/i18n'
-  import { Event } from '@/utils/analytics'
+  import { NumberInput } from "carbon-components-svelte";
+  import { __ } from "@/i18n/i18n";
+  import { Event } from "@/utils/analytics";
 
-  export let finals_score
+  export let finals_score;
 
-  let invalid = false
+  let invalid = false;
 
   // Score must be between 0 and 100
-  $: invalid = finals_score > 100 || finals_score < 0 || finals_score === null
+  $: invalid = finals_score > 100 || finals_score < 0 || finals_score === null;
 
   const FieldChanged = () => {
-    Event('Finals Score Field Changed', {
-      value: finals_score
-    })
-  }
+    Event("Finals Score Field Changed", {
+      value: finals_score,
+    });
+  };
 </script>
 
 <div class="mb20">
   <NumberInput
-    bind:value="{finals_score}"
-    on:change="{FieldChanged}"
-    label="{invalid ? '0 ~ 100' : $__('finals _score')}"
-    warn="{invalid}"
+    bind:value={finals_score}
+    on:change={FieldChanged}
+    label={invalid ? "0 ~ 100" : $__("finals_score")}
+    warn={invalid}
     size="xl"
     min="0"
     max="100"

@@ -1,5 +1,5 @@
-import { optimizeImports } from 'carbon-preprocess-svelte'
+import { optimizeImports } from "carbon-preprocess-svelte";
 
 export default {
-  preprocess: [optimizeImports()]
-}
+  preprocess: [optimizeImports()],
+};

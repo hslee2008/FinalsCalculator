@@ -1,37 +1,36 @@
-import { currentLocale, translateJS } from '../i18n/i18n'
+import { currentLocale, translateJS } from "../i18n/i18n";
 
 const additionalMetaTags = [
   {
-    name: 'apple-mobile-web-app-title',
-    content: translateJS('title')
+    name: "apple-mobile-web-app-title",
+    content: translateJS("title"),
   },
   {
-    name: 'subject',
-    content: translateJS('subject')
+    name: "subject",
+    content: translateJS("subject"),
   },
   {
-    name: 'author',
-    content: translateJS('name')
+    name: "author",
+    content: translateJS("name"),
   },
   {
-    name: 'owner',
-    content: translateJS('name')
+    name: "owner",
+    content: translateJS("name"),
   },
   {
-    name: 'copyright',
-    content: translateJS('name')
+    name: "copyright",
+    content: translateJS("name"),
   },
   {
-    name: 'language',
-    content: currentLocale
-  }
-]
+    name: "language",
+    content: currentLocale,
+  },
+];
 const additionalLinkTags = [
   {
-    rel: 'manifest',
-    href: `/manifest/manifest-${currentLocale}.json`
-  }
-]
+    rel: "manifest",
+    href: `/manifest/manifest-${currentLocale}.json`,
+  },
+];
 
-export { additionalLinkTags, additionalMetaTags }
-
+export { additionalLinkTags, additionalMetaTags };

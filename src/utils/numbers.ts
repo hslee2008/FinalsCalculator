@@ -1,39 +1,34 @@
-import { translateJS } from '../i18n/i18n'
+import { translateJS } from "../i18n/i18n";
 
 const percentToString = (percent: number): string => {
-  if (percent <= 0) return translateJS('secured')
-  if (percent > 100) return translateJS('impossible')
+  if (percent <= 0) return translateJS("secured");
+  if (percent > 100) return translateJS("impossible");
 
-  return `${percent}${translateJS('score')}`
-}
+  return `${percent}${translateJS("score")}`;
+};
 
 const percentToGrade = (percent: number): string => {
-  if (percent >= 89.5) return 'A'
-  if (percent >= 79.5) return 'B'
-  if (percent >= 69.5) return 'C'
-  if (percent >= 59.5) return 'D'
+  if (percent >= 89.5) return "A";
+  if (percent >= 79.5) return "B";
+  if (percent >= 69.5) return "C";
+  if (percent >= 59.5) return "D";
 
-  return 'E'
-}
+  return "E";
+};
 
 const roundPercent = (
   percent: number,
   subtracted: number,
   hasDecimalScore: boolean
 ): string => {
-  const score = 100 * ((percent - subtracted) / percent)
+  const score = 100 * ((percent - subtracted) / percent);
 
   if (hasDecimalScore) {
     // Round up to nearest 0.5
-    return (Math.ceil(score * 2) / 2).toFixed(1)
+    return (Math.ceil(score * 2) / 2).toFixed(1);
   }
 
-  return Math.ceil(score).toFixed(0)
-}
+  return Math.ceil(score).toFixed(0);
+};
 
-export {
-  percentToString,
-  percentToGrade,
-  roundPercent
-}
-
+export { percentToString, percentToGrade, roundPercent };

@@ -3,21 +3,21 @@ module.exports = {
     node: true,
     browser: true,
     commonjs: true,
-    es6: true
+    es6: true,
   },
-  extends: ['eslint:recommended'],
+  extends: ["eslint:recommended"],
   overrides: [
     {
-      files: ['*.svelte'],
-      parser: 'svelte-eslint-parser'
+      files: ["*.svelte"],
+      parser: "svelte-eslint-parser",
     },
     {
-      files: ['*.ts'],
-      parser: '@typescript-eslint/parser'
-    }
+      files: ["*.ts"],
+      parser: "@typescript-eslint/parser",
+    },
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module'
-  }
-}
+    ecmaVersion: "latest",
+    sourceType: "module",
+  },
+};

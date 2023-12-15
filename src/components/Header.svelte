@@ -1,5 +1,5 @@
 <script>
-  import { _ } from '@/i18n/i18n'
+  import { _ } from "@/i18n/i18n";
 </script>
 
-<h1 class="mb25">{$_('title')}</h1>
+<h1 class="mb25">{$_("title")}</h1>

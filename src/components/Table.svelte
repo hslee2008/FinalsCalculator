@@ -107,7 +107,7 @@
     hideLabel
     warn={finals_invalid}
     warnText="0 ~ 100"
-    translateWithId="{(id) => $_(`ID${id}`)}"
+    translateWithId={(id) => $_(`ID${id}`)}
     size="xl"
     allowEmpty
     on:keyup={viewTransition}
