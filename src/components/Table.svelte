@@ -89,12 +89,12 @@
 
     <tbody aria-live="polite">
       {#each ["A", "B", "C", "D"] as grade, index}
-        <tr class={grade}>
+        <tr class={grade} data-testid={grade}>
           <td>{grade}</td>
           <td>{rows[index].lowest}</td>
         </tr>
       {/each}
-      <tr class="E">
+      <tr class="E" data-testid="E">
         <td>E</td>
         <td>{$_("secured")}</td>
       </tr>

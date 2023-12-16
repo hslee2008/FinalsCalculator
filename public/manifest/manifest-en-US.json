@@ -107,49 +107,49 @@
   "screenshots": [
     {
       "src": "/screenshot/ipad.png",
-      "sizes": "2048x100",
+      "sizes": "1024x500",
       "type": "image/webp",
       "form_factor": "wide",
       "label": "Ipad Screen"
     },
     {
       "src": "/screenshot/ipad-1.png",
-      "sizes": "2048x100",
+      "sizes": "1024x500",
       "type": "image/webp",
       "form_factor": "wide",
       "label": "Ipad Screen"
     },
     {
       "src": "/screenshot/ipad-2.png",
-      "sizes": "2048x100",
+      "sizes": "1024x500",
       "type": "image/webp",
       "form_factor": "wide",
       "label": "Ipad Screen"
     },
     {
       "src": "/screenshot/phone-0.png",
-      "sizes": "2048x100",
+      "sizes": "628x1024",
       "type": "image/webp",
       "form_factor": "narrow",
       "label": "Phone Screen"
     },
     {
       "src": "/screenshot/phone-1.png",
-      "sizes": "2048x100",
+      "sizes": "628x1024",
       "type": "image/webp",
       "form_factor": "narrow",
       "label": "Phone Screen"
     },
     {
       "src": "/screenshot/phone-2.png",
-      "sizes": "2048x100",
+      "sizes": "628x1024",
       "type": "image/webp",
       "form_factor": "narrow",
       "label": "Phone Screen"
     },
     {
       "src": "/screenshot/phone-3.png",
-      "sizes": "2048x100",
+      "sizes": "628x1024",
       "type": "image/webp",
       "form_factor": "narrow",
       "label": "Phone Screen"
