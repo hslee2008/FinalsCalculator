@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/svelte";
-import Calculator from "@/components/Calculator/Finals.svelte";
+import Calculator from "@/lib/Finals.svelte";
 import FinalsField from "./data/FinalsField.json";
 import { expect } from "vitest";
 

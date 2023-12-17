@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen, cleanup } from "@testing-library/svelte";
-import Calculator from "@/components/Calculator/Finals.svelte";
+import Calculator from "@/lib/Finals.svelte";
 
 beforeEach(() => render(Calculator));
 

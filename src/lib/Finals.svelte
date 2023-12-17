@@ -6,12 +6,13 @@
   import { TableCalculation } from "@/utils/calculate";
   import { Event } from "@/utils/analytics";
 
-  import Header from "@/components/Header.svelte";
-  import Table from "@/components/Table.svelte";
-  import MidtermSwitcher from "@/components/Input/MidtermSwitcher.svelte";
-  import InputPercentage from "@/components/Input/Percentage.svelte";
-  import InputProjects from "@/components/Input/Projects.svelte";
-  import InputMidterm from "@/components/Input/Midterm.svelte";
+  import {
+    Table,
+    MidtermSwitcher,
+    Percentage,
+    Projects,
+    Midterm,
+  } from "@/components/";
 
   /* Saved */
   const savedMidPer = parseInt(localStorage.getItem("midterm_percent")!);
@@ -117,14 +118,14 @@
   ></MidtermSwitcher>
 </div>
 
-<Header></Header>
+<h1 class="mb25">{$_("title")}</h1>
 
 <!-- Inputs -->
-<InputPercentage bind:hasMid bind:percent {UpdateProjects}></InputPercentage>
+<Percentage bind:hasMid bind:percent {UpdateProjects}></Percentage>
 {#if hasMid}
-  <InputMidterm bind:mid_score></InputMidterm>
+  <Midterm bind:mid_score></Midterm>
 {/if}
-<InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
+<Projects bind:projects bind:percent bind:hasMid></Projects>
 
 <button on:click={calculate} class="btn mt10">{$_("calculate")}</button>
 

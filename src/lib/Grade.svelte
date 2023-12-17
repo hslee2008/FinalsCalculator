@@ -7,7 +7,6 @@
   import { percentToGrade } from "@/utils/numbers";
   import { Event } from "@/utils/analytics";
 
-  import Header from "@/components/Header.svelte";
   import MidtermSwitcher from "@/components/Input/MidtermSwitcher.svelte";
   import InputPercentage from "@/components/Input/Percentage.svelte";
   import InputProjects from "@/components/Input/Projects.svelte";
@@ -87,7 +86,7 @@
 <MidtermSwitcher bind:hasMid bind:selected {ChangeMidtermStatus}
 ></MidtermSwitcher>
 
-<Header></Header>
+<h1 class="mb25">{$_("title2")}</h1>
 
 <!-- Inputs -->
 
@@ -113,7 +112,11 @@
     <table class="bx--data-table">
       <tbody>
         <tr>
-          <td class="grade-row">{$_("total_score")}</td>
+          <td>{$_("written_total_score")}</td>
+          <td>{Math.round(total_score)}</td>
+        </tr>
+        <tr>
+          <td>{$_("actual_total_score")}</td>
           <td>{total_score}</td>
         </tr>
         <tr>

@@ -1,39 +1,34 @@
 {
   "title": "기말고사 계산기",
+  "title2": "총 점수 계산기",
   "name": "이현승",
   "description": "기말고사 계산기는 한국의 교육 시스템에서 사용되는 간단한 앱입니다. 기말고사 점수를 계산해주는 앱입니다.",
   "subject": "기말고사, 지필고사, 계산기, 학점",
-
   "midterm": "중간",
   "finals": "기말",
   "_score": "점수",
-
+  "finals_score": "기말고사 점수",
   "secured": "확보",
   "score": "점",
   "impossible": "불가능",
   "grade": "학점",
   "lowest": "최저 점수",
-
+  "tooltip": "100점 중 중간과 기말이 차지하는 비율",
   "weight": "비율",
   "each": "중간과 기말 각",
-
   "with_midterm": "중간 있는 과목",
   "no_midterm": "중간 없는 과목",
   "calculate": "계산하기",
   "result": "결과 확인하기",
   "close": "닫기",
-
   "eval": "수행평가 점수",
-
   "inval_mid": "25 또는 30 또는 35",
   "inval_no_mid": "50 또는 60",
-
   "input_finals_holder": "기말고사 점수 입력",
   "input_finals_helper": "기말고사 점수를 입력해 총점수를 확인하세요",
   "decimal_score": "소수점 점수",
-
-  "total_score": "총점",
-
+  "written_total_score": "생기부에 적히는 총점",
+  "actual_total_score": "실제 총점",
   "expected_finals_score": "예상 기말 점수",
-  "finals_grade": "기말 등급 확인"
+  "total_grade": "총점 계산"
 }

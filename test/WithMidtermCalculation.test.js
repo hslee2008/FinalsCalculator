@@ -1,6 +1,6 @@
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/svelte";
-import Calculator from "@/components/Calculator/Finals.svelte";
+import Calculator from "@/lib/Finals.svelte";
 import WithMidterm from "./data/WithMidterm.json";
 
 beforeEach(() => render(Calculator));
@@ -8,13 +8,10 @@ beforeEach(() => render(Calculator));
 test.each(WithMidterm.datas)(
   "Calculate %i percentage, %i midterm, %i performance evaluation",
   async (percentage, midterm, performanceEvaluation, expected) => {
-    const weight = screen.getByLabelText(
-      "Midterm and Finals weight (25, 30, 35)"
-    );
     const midtermScore = screen.getByLabelText("Midterm Score");
     const performEval = screen.getByLabelText("Performance Evaluation");
 
-    await fireEvent.input(weight, { target: { value: percentage.toString() } });
+    await fireEvent.click(screen.getByText(`${percentage}%`));
     await fireEvent.input(midtermScore, {
       target: { value: midterm.toString() },
     });

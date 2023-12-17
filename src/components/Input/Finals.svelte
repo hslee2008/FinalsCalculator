@@ -1,6 +1,6 @@
 <script lang="ts">
   import { NumberInput } from "carbon-components-svelte";
-  import { __ } from "@/i18n/i18n";
+  import { _ } from "@/i18n/i18n";
   import { Event } from "@/utils/analytics";
 
   export let finals_score: number;
@@ -21,7 +21,7 @@
   <NumberInput
     bind:value={finals_score}
     on:change={FieldChanged}
-    label={invalid ? "0 ~ 100" : $__("finals_score")}
+    label={invalid ? "0 ~ 100" : $_("finals_score")}
     warn={invalid}
     size="xl"
     min={0}

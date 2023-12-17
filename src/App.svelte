@@ -35,7 +35,7 @@
   <Tabs>
     <TabList>
       <Tab>{$_("expected_finals_score")}</Tab>
-      <Tab>{$_("finals_grade")}</Tab>
+      <Tab>{$_("total_grade")}</Tab>
     </TabList>
 
     <TabPanel>
