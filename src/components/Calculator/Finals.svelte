@@ -75,7 +75,7 @@
   // Calculate with event
   const calculate = () => {
     CalculateTable();
-    Event("Calculate Button", {});
+    Event("Calculate Button");
   };
 
   // Automatically update table when decimal is changed

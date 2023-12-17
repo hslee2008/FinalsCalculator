@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import { MetaTags } from "svelte-meta-tags";
   import { Tabs, Tab, TabList, TabPanel } from "svelte-tabs";
-  import { GoogleAnalytics } from "@beyonk/svelte-google-analytics";
+  import { GoogleAnalytics } from "hyunseung-svelte-google-analytics";
 
   import Finals from "@/components/Calculator/Finals.svelte";
   import Grade from "@/components/Calculator/Grade.svelte";

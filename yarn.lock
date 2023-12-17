@@ -57,13 +57,6 @@
   resolved "https://registry.yarnpkg.com/@beyonk/async-script-loader/-/async-script-loader-2.3.0.tgz#60868bff547f2122488f58b3b31b6bcde9a13dce"
   integrity sha512-/vbDM5j8OHmtnWLx87sef0T/jGWVvZV6ILm3QFLpfRwSg0KmhQoAZnOT4XSaUL/EjOC9eMzgX5qtS2jztKzY2A==
 
-"@beyonk/svelte-google-analytics@^2.6.4":
-  version "2.6.4"
-  resolved "https://registry.yarnpkg.com/@beyonk/svelte-google-analytics/-/svelte-google-analytics-2.6.4.tgz#b4458d14cd749d9169b9251a24f2e8260c3bcd7c"
-  integrity sha512-m2P1fs36qObCLtIZ9edLC62RHLrGVknaKuE4uEBQk5+Jfy1apa7DOIT0Jq1PvScyrndV62FvyjUUrWwrXjYbmw==
-  dependencies:
-    "@beyonk/async-script-loader" "^2.2.2"
-
 "@bubblewrap/cli@^1.21.0":
   version "1.21.0"
   resolved "https://registry.yarnpkg.com/@bubblewrap/cli/-/cli-1.21.0.tgz#99f03f02ff275976fe89bbc8b14a6a608a9e4e8e"
@@ -3168,6 +3161,13 @@ humanize-ms@^1.2.1:
   integrity sha512-Fl70vYtsAFb/C06PTS9dZBo7ihau+Tu/DNCk/OyHhea07S+aeMWpFFkUaXRa8fI+ScZbEI8dfSxwY7gxZ9SAVQ==
   dependencies:
     ms "^2.0.0"
+
+hyunseung-svelte-google-analytics@^2.6.4:
+  version "2.6.4"
+  resolved "https://registry.yarnpkg.com/hyunseung-svelte-google-analytics/-/hyunseung-svelte-google-analytics-2.6.4.tgz#809c8243b34bf9dfa41270d68cfe1cdc435c2876"
+  integrity sha512-0uFsKRPIntOW74Jkhqz3dbu8j72piIMx4w/UwUgrfhN1MVveqwztQwA/z2Xz2GNnqUe/B3UfYelqimrtZpjD8g==
+  dependencies:
+    "@beyonk/async-script-loader" "^2.2.2"
 
 iconv-lite@0.6.3, iconv-lite@^0.6.2:
   version "0.6.3"

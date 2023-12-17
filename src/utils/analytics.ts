@@ -1,6 +1,6 @@
-import { ga } from "@beyonk/svelte-google-analytics";
+import { ga } from "hyunseung-svelte-google-analytics";
 
-function Event(event_name: any, object: any) {
+function Event(event_name: any, object: any | undefined = undefined) {
   ga.addEvent(event_name, object);
 }
 
@@ -15,7 +15,7 @@ function GetUserPlatform(): string {
 }
 
 function SetUser() {
-  Event(GetUserPlatform(), {});
+  Event(GetUserPlatform());
 }
 
 export { Event, SetUser, GetUserPlatform };

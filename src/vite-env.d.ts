@@ -2,7 +2,7 @@
 /// <reference types="vite/client" />
 
 declare module "svelte-tabs";
-declare module "@beyonk/svelte-google-analytics";
+declare module "hyunseung-svelte-google-analytics";
 
 declare module "*.svelte";
 declare module "@/utils/*";
