@@ -1,6 +1,6 @@
-[data-testid='yes-mid'],
-[data-testid='no-mid'],
-[data-testid='yes-decimal'],
-[data-testid='no-decimal'] {
+[data-testid="yes-mid"],
+[data-testid="no-mid"],
+[data-testid="yes-decimal"],
+[data-testid="no-decimal"] {
   display: none;
 }

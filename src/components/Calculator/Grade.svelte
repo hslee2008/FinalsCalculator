@@ -98,7 +98,7 @@
 <InputFinals bind:finals_score></InputFinals>
 <InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
 
-<button on:click={table_open} class="main-btn mt10">{$_("calculate")}</button>
+<button on:click={table_open} class="btn mt10">{$_("calculate")}</button>
 
 <!-- Table Modal -->
 <Modal
@@ -123,7 +123,7 @@
       </tbody>
     </table>
 
-    <button on:click={table_close} id="close" class="main-btn mt25 mb25">
+    <button on:click={table_close} id="close" class="btn mt25 mb25">
       {$_("close")}
     </button>
   </ModalBody>

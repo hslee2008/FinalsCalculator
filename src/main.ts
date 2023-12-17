@@ -4,7 +4,7 @@ import "@/css/utility.css";
 import "@/css/element.css";
 import "@/css/header.css";
 import "@/css/test.css";
-import "@/css/carbon-components-svelte.css";
+import "@/css/3rd party.css";
 import App from "./App.svelte";
 
 const targetElement = document.getElementById("app");

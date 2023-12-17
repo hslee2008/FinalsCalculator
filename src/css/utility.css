@@ -10,10 +10,6 @@
   margin-bottom: 20px !important;
 }
 
-.mt20 {
-  margin-top: 20px !important;
-}
-
 .mb10 {
   margin-bottom: 10px !important;
 }
@@ -28,12 +24,4 @@
 
 .align-center {
   align-items: center;
-}
-
-.justify-center {
-  justify-content: center;
-}
-
-.svelte-tabs__tab-list {
-  border-bottom: none !important;
 }

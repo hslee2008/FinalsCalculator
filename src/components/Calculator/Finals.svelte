@@ -126,7 +126,7 @@
 {/if}
 <InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
 
-<button on:click={calculate} class="main-btn mt10">{$_("calculate")}</button>
+<button on:click={calculate} class="btn mt10">{$_("calculate")}</button>
 
 <!-- Table Modal -->
 <Modal
@@ -148,7 +148,7 @@
       class="mb10 mt25"
     ></Checkbox>
 
-    <button on:click={table_close} id="close" class="main-btn mt10 mb25">
+    <button on:click={table_close} id="close" class="btn mt10 mb25">
       {$_("close")}
     </button>
   </ModalBody>

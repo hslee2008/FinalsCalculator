@@ -1,4 +1,4 @@
-.main-btn {
+.btn {
   color: #5c62fe;
   background: transparent;
   border: 2px solid #5c62fe;
@@ -9,8 +9,8 @@
   font-size: 16px;
 }
 
-.main-btn:hover,
-.main-btn:focus {
+.btn:hover,
+.btn:focus {
   color: white;
   background: #5c62fe;
   transition-duration: 0.3s;
@@ -19,7 +19,6 @@
 
 .bordered {
   border: 2px solid red !important;
-  border-radius: 10%;
 }
 
 .grade-row {
@@ -41,11 +40,4 @@
 .table {
   margin-top: 25px;
   margin-bottom: 5px;
-}
-
-.cog {
-  background-color: #F4F4F4;
-  border-bottom: 1px solid #8d8d8d;
-  margin-bottom: 12px;
-  border-radius: 0px !important
 }
