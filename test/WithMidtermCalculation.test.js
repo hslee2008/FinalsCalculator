@@ -11,7 +11,7 @@ test.each(WithMidterm.datas)(
     const midtermScore = screen.getByLabelText("Midterm Score");
     const performEval = screen.getByLabelText("Performance Evaluation");
 
-    await fireEvent.click(screen.getByText(`${percentage}%`));
+    await fireEvent.click(screen.getByText(percentage));
     await fireEvent.input(midtermScore, {
       target: { value: midterm.toString() },
     });

@@ -18,7 +18,7 @@ describe("CheckBox Decimal Point", () => {
   test("[CheckBox 2] Test with 35%", async () => {
     await fireEvent.click(screen.getByTestId("yes-mid"));
 
-    await fireEvent.click(screen.getByText("35%"));
+    await fireEvent.click(screen.getByText("35"));
 
     const performEval = screen.getByLabelText("0 ~ 30");
     await fireEvent.input(performEval, { target: { value: "30" } });
@@ -36,7 +36,7 @@ describe("CheckBox Decimal Point", () => {
     const noMid = screen.getByTestId("no-mid");
     await fireEvent.click(noMid);
 
-    await fireEvent.click(screen.getByText("60%"));
+    await fireEvent.click(screen.getByText("60"));
 
     const performEval = screen.getByLabelText("0 ~ 40");
     await fireEvent.input(performEval, { target: { value: "40" } });

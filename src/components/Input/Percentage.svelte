@@ -1,9 +1,5 @@
 <script lang="ts">
-  import {
-    RadioButtonGroup,
-    RadioButton,
-    Tooltip,
-  } from "carbon-components-svelte";
+  import { RadioButtonGroup, RadioButton } from "carbon-components-svelte";
   import { _ } from "@/i18n/i18n";
   import { Event } from "@/utils/analytics";
 
@@ -14,7 +10,7 @@
   let labelText = "";
 
   $: labelText = `${hasMid ? $_("each") : $_("finals")} ${$_("weight")} (${
-    hasMid ? "25, 30, 35" : "50, 60"
+    hasMid ? "25, 30, 35, 40" : "40, 50, 60"
   })`;
 
   const FieldChanged = () => {
@@ -27,21 +23,18 @@
 </script>
 
 <div class="mb20 flex" style="justify-content: center">
-  <RadioButtonGroup bind:selected={percent} on:change={FieldChanged}>
-    <div slot="legendText" style:display="flex">
-      {labelText}
-      <Tooltip>
-        <p>{$_("tooltip")}</p>
-      </Tooltip>
-    </div>
-
+  <RadioButtonGroup legendText={
+    labelText
+  } bind:selected={percent} on:change={FieldChanged}>
     {#if hasMid}
-    <RadioButton labelText="25%" value={25} />
-    <RadioButton labelText="30%" value={30} />
-    <RadioButton labelText="35%" value={35} />
+      <RadioButton labelText="25" value={25} />
+      <RadioButton labelText="30" value={30} />
+      <RadioButton labelText="35" value={35} />
+      <RadioButton labelText="40" value={40} />
     {:else}
-    <RadioButton labelText="50%" value={50} />
-    <RadioButton labelText="60%" value={60} />
+      <RadioButton labelText="40" value={40} />
+      <RadioButton labelText="50" value={50} />
+      <RadioButton labelText="60" value={60} />
     {/if}
   </RadioButtonGroup>
 </div>

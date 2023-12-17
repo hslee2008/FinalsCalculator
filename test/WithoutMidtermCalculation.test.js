@@ -11,7 +11,7 @@ test.each(WithoutMidterm.datas)(
     await fireEvent.click(screen.getByTestId("no-mid"));
     const performEval = screen.getByLabelText("Performance Evaluation");
 
-    await fireEvent.click(screen.getByText(`${percentage}%`));
+    await fireEvent.click(screen.getByText(percentage));
     await fireEvent.input(performEval, {
       target: { value: performanceEvaluation.toString() },
     });
