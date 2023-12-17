@@ -1,7 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import { MetaTags } from "svelte-meta-tags";
-  import { Tabs, Tab, TabList, TabPanel } from "svelte-tabs";
+  import { Tabs, Tab, TabList, TabPanel } from "hyunseung-svelte-tabs";
   import { GoogleAnalytics } from "hyunseung-svelte-google-analytics";
 
   import Finals from "@/components/Calculator/Finals.svelte";
