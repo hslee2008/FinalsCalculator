@@ -4,8 +4,8 @@
   import { Tabs, Tab, TabList, TabPanel } from "hyunseung-svelte-tabs";
   import { GoogleAnalytics } from "hyunseung-svelte-google-analytics";
 
-  import Finals from "@/components/Calculator/Finals.svelte";
-  import Grade from "@/components/Calculator/Grade.svelte";
+  import Finals from "@/lib/Finals.svelte";
+  import Grade from "@/lib/Grade.svelte";
 
   import { registerSW } from "@/utils/register-sw";
   import { SetUser } from "@/utils/analytics";
