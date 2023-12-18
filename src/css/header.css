@@ -15,12 +15,6 @@ h1 {
   }
 }
 
-@media (max-width: 350px) {
-  h1 {
-    font-size: 2rem;
-  }
-}
-
 @media (max-width: 320px) {
   h1 {
     font-size: 1.75rem;
