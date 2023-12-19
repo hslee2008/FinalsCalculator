@@ -12,7 +12,7 @@ test("[Text 1] Shows Proper Text - With Midterm", async () => {
   await fireEvent.click(screen.getByTestId("yes-mid"));
 
   expect(
-    screen.getByText("Midterm and Finals weight (25, 30, 35, 40)")
+    screen.getByText("Midterm and Finals each weight")
   ).toBeInTheDocument();
   expect(screen.getByText("Midterm Score")).toBeInTheDocument();
   expect(screen.getByText("Performance Evaluation")).toBeInTheDocument();
@@ -21,7 +21,7 @@ test("[Text 1] Shows Proper Text - With Midterm", async () => {
 test("[Text 2] Shows Proper Text - Without Midterm", async () => {
   await fireEvent.click(screen.getByTestId("no-mid"));
 
-  expect(screen.getByText("Finals weight (40, 50, 60)")).toBeInTheDocument();
+  expect(screen.getByText("Finals weight")).toBeInTheDocument();
   expect(screen.getByText("Performance Evaluation")).toBeInTheDocument();
 });
 

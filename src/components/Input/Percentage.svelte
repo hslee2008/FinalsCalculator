@@ -9,9 +9,7 @@
 
   let labelText = "";
 
-  $: labelText = `${hasMid ? $_("each") : $_("finals")} ${$_("weight")} (${
-    hasMid ? "25, 30, 35, 40" : "40, 50, 60"
-  })`;
+  $: labelText = hasMid ? $_("each") : $_("finals") + " " + $_("weight");
 
   const FieldChanged = () => {
     UpdateProjects();
@@ -23,9 +21,12 @@
 </script>
 
 <div class="mb20 flex" style="justify-content: center">
-  <RadioButtonGroup legendText={
-    labelText
-  } bind:selected={percent} on:change={FieldChanged}>
+  <RadioButtonGroup
+    required
+    legendText={labelText}
+    bind:selected={percent}
+    on:change={FieldChanged}
+  >
     {#if hasMid}
       <RadioButton labelText="25" value={25} />
       <RadioButton labelText="30" value={30} />
