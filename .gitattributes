@@ -1,3 +1,6 @@
 # Exclude files from language detection
-privacy-policy.html linguist-vendored
 android/** linguist-vendored
+data/** linguist-vendored
+.github/** linguist-vendored
+.vscode/** linguist-vendored
+public/** linguist-vendored
