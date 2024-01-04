@@ -2,6 +2,24 @@
   "name": "기말고사 계산기",
   "short_name": "기말 계산기",
   "description": "중학교 내신 계산기",
+  "id": "/?lang=ko-KR",
+  "start_url": "/?lang=ko-KR",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#FFFFFF",
+  "orientation": "portrait",
+  "display_override": ["window-controls-overlay"],
+  "edge_side_panel": {
+    "preferred_width": 352
+  },
+  "launch_handler": {
+    "client_mode": "auto"
+  },
+  "dir": "ltr",
+  "lang": "ko",
+  "scope_extensions": [{ "origin": "https://finalscalcu.firebaseapp.com" }],
+  "categories": ["education", "kids", "productivity", "utilities"],
   "icons": [
     {
       "src": "/images/24x24.png",
@@ -57,18 +75,14 @@
       "src": "/images/maskable_icon.png",
       "sizes": "512x512",
       "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "id": "/?lang=ko-KR",
-  "start_url": "/?lang=ko-KR",
-  "scope": "/",
-  "display": "standalone",
-  "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF",
-  "orientation": "any",
-  "categories": [
-    "education"
   ],
   "prefer_related_applications": true,
   "related_applications": [
