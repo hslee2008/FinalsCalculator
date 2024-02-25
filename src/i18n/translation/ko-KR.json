@@ -27,5 +27,6 @@
   "written_total_score": "생기부에 적히는 총점",
   "actual_total_score": "실제 총점",
   "expected_finals_score": "예상 기말 점수",
-  "total_grade": "총점 계산"
+  "total_grade": "총점 계산",
+  "offline": "오프라인"
 }

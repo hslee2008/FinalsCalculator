@@ -20,7 +20,14 @@
   SetUser();
   initializeFirebasePerformance();
 
-  onMount(() => (document.documentElement.lang = currentLocale));
+  let isOnline = true;
+
+  onMount(() => {
+    document.documentElement.lang = currentLocale;
+
+    window.addEventListener("offline", () => (isOnline = false));
+    window.addEventListener("online", () => (isOnline = true));
+  });
 </script>
 
 <GoogleAnalytics {properties} {configurations}></GoogleAnalytics>
@@ -31,19 +38,30 @@
   {additionalLinkTags}
 ></MetaTags>
 
-<main>
-  <Tabs>
-    <TabList>
-      <Tab>{$_("expected_finals_score")}</Tab>
-      <Tab>{$_("total_grade")}</Tab>
-    </TabList>
+<img
+  src="/icon.png"
+  alt="logo"
+  width="100px"
+  style={isOnline ? "display: none" : "display: initial; margin-bottom: 20px;"}
+/>
 
-    <TabPanel>
-      <Finals></Finals>
-    </TabPanel>
+{#if isOnline}
+  <main>
+    <Tabs>
+      <TabList>
+        <Tab>{$_("expected_finals_score")}</Tab>
+        <Tab>{$_("total_grade")}</Tab>
+      </TabList>
 
-    <TabPanel>
-      <Grade></Grade>
-    </TabPanel>
-  </Tabs>
-</main>
+      <TabPanel>
+        <Finals></Finals>
+      </TabPanel>
+
+      <TabPanel>
+        <Grade></Grade>
+      </TabPanel>
+    </Tabs>
+  </main>
+{:else}
+  <h1>{$_("offline")}</h1>
+{/if}

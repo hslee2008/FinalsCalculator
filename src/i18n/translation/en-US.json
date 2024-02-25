@@ -27,5 +27,6 @@
   "written_total_score": "Score written (report card)",
   "actual_total_score": "Actual Total Score",
   "expected_finals_score": "Expected Finals Score",
-  "total_grade": "Total Grade"
+  "total_grade": "Total Grade",
+  "offline": "offline"
 }
