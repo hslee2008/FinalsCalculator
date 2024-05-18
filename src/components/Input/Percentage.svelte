@@ -28,6 +28,7 @@
     on:change={FieldChanged}
   >
     {#if hasMid}
+      <RadioButton labelText="20" value={20} />
       <RadioButton labelText="25" value={25} />
       <RadioButton labelText="30" value={30} />
       <RadioButton labelText="35" value={35} />
