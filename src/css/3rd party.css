@@ -55,9 +55,3 @@
 .bx--number__control-btn::after {
   background-color: transparent !important;
 }
-
-/* Svelte-Tabs */
-
-.svelte-tabs__tab-list {
-  border-bottom: none !important;
-}

@@ -32,7 +32,6 @@
     "carbon-components-svelte": "^0.85.0",
     "firebase": "^10.12.3",
     "hyunseung-svelte-google-analytics": "^2.6.4",
-    "hyunseung-svelte-tabs": "^1.2.0",
     "svelte-meta-tags": "^3.1.2"
   }
 }
