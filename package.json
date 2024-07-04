@@ -16,23 +16,23 @@
   },
   "devDependencies": {
     "@bubblewrap/cli": "^1.21.0",
-    "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "@testing-library/jest-dom": "^6.4.2",
-    "@testing-library/svelte": "^4.1.0",
-    "@tsconfig/svelte": "^5.0.2",
-    "jsdom": "^24.0.0",
-    "npm-check-updates": "^16.14.17",
-    "svelte": "^4.2.12",
-    "svelte-check": "^3.6.7",
-    "tslib": "^2.6.2",
-    "vite": "^5.1.6",
-    "vitest": "^1.4.0"
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
+    "@testing-library/jest-dom": "^6.4.6",
+    "@testing-library/svelte": "^5.2.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "jsdom": "^24.1.0",
+    "npm-check-updates": "^16.14.20",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.8.4",
+    "tslib": "^2.6.3",
+    "vite": "^5.3.3",
+    "vitest": "^1.6.0"
   },
   "dependencies": {
-    "carbon-components-svelte": "^0.84.1",
-    "firebase": "^10.9.0",
+    "carbon-components-svelte": "^0.85.0",
+    "firebase": "^10.12.3",
     "hyunseung-svelte-google-analytics": "^2.6.4",
     "hyunseung-svelte-tabs": "^1.2.0",
-    "svelte-meta-tags": "^3.1.1"
+    "svelte-meta-tags": "^3.1.2"
   }
 }

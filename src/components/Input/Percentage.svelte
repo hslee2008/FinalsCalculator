@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { RadioButtonGroup, RadioButton } from "carbon-components-svelte";
+  import { NumberInput } from "carbon-components-svelte";
   import { _ } from "@/i18n/i18n";
   import { Event } from "@/utils/analytics";
 
@@ -21,22 +21,13 @@
 </script>
 
 <div class="mb20 flex" style="justify-content: center">
-  <RadioButtonGroup
-    required
-    legendText={labelText}
-    bind:selected={percent}
+  <NumberInput
+    label={labelText}
+    bind:value={percent}
     on:change={FieldChanged}
-  >
-    {#if hasMid}
-      <RadioButton labelText="20" value={20} />
-      <RadioButton labelText="25" value={25} />
-      <RadioButton labelText="30" value={30} />
-      <RadioButton labelText="35" value={35} />
-      <RadioButton labelText="40" value={40} />
-    {:else}
-      <RadioButton labelText="40" value={40} />
-      <RadioButton labelText="50" value={50} />
-      <RadioButton labelText="60" value={60} />
-    {/if}
-  </RadioButtonGroup>
+    size="xl"
+    step={5}
+    max={hasMid ? 45 : 95}
+    min={5}
+  />
 </div>
