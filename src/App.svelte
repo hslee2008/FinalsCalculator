@@ -3,6 +3,7 @@
   import { MetaTags } from "svelte-meta-tags";
   import { Tabs, Tab, TabList, TabPanel } from "hyunseung-svelte-tabs";
   import { GoogleAnalytics } from "hyunseung-svelte-google-analytics";
+  import { ContentSwitcher, Switch } from "carbon-components-svelte";
 
   import Finals from "@/lib/Finals.svelte";
   import Grade from "@/lib/Grade.svelte";
@@ -21,6 +22,7 @@
   initializeFirebasePerformance();
 
   let isOnline = true;
+  let selectedIndex = 0;
 
   onMount(() => {
     document.documentElement.lang = currentLocale;
@@ -47,20 +49,18 @@
 
 {#if isOnline}
   <main>
-    <Tabs>
-      <TabList>
-        <Tab>{$_("expected_finals_score")}</Tab>
-        <Tab>{$_("total_grade")}</Tab>
-      </TabList>
+    <ContentSwitcher bind:selectedIndex>
+      <Switch text={$_("expected_finals_score")} />
+      <Switch text={$_("total_grade")} />
+    </ContentSwitcher>
 
-      <TabPanel>
-        <Finals></Finals>
-      </TabPanel>
+    <br />
 
-      <TabPanel>
-        <Grade></Grade>
-      </TabPanel>
-    </Tabs>
+    {#if selectedIndex === 0}
+      <Finals></Finals>
+    {:else if selectedIndex === 1}
+      <Grade></Grade>
+    {/if}
   </main>
 {:else}
   <h1>{$_("offline")}</h1>
