@@ -86,7 +86,9 @@
 <MidtermSwitcher bind:hasMid bind:selected {ChangeMidtermStatus}
 ></MidtermSwitcher>
 
-<h1 class="mb25">{$_("title2")}</h1>
+<div id="dynamic-div">
+  <h1 class="mb25">{$_("title2")}</h1>
+</div>
 
 <!-- Inputs -->
 

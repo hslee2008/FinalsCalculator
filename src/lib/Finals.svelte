@@ -118,7 +118,9 @@
   ></MidtermSwitcher>
 </div>
 
-<h1 class="mb25">{$_("title")}</h1>
+<div id="dynamic-div">
+  <h1 class="mb25">{$_("title")}</h1>
+</div>
 
 <!-- Inputs -->
 <Percentage bind:hasMid bind:percent {UpdateProjects}></Percentage>

@@ -2,6 +2,7 @@ body {
   margin: 0;
   place-items: center;
   min-width: 300px;
+  margin-top: 20px;
 }
 
 @media screen and (min-width: 500px) {

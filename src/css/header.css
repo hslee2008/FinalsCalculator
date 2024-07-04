@@ -3,20 +3,12 @@ h1 {
   line-height: 1.1;
 }
 
-@media (max-width: 440px) {
+@media screen and (max-width: 500px) {
   h1 {
-    font-size: 2.5rem;
+    font-size: 10.2vw;
   }
-}
 
-@media (max-width: 380px) {
-  h1 {
-    font-size: 2.25rem;
-  }
-}
-
-@media (max-width: 320px) {
-  h1 {
-    font-size: 1.75rem;
+  #dynamic-div {
+    width: 100%;
   }
 }
