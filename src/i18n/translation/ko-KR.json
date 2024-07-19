@@ -1,6 +1,6 @@
 {
   "title": "기말고사 계산기",
-  "title2": "총 점수 계산기",
+  "title2": "총점 계산기",
   "name": "이현승",
   "description": "기말고사 계산기는 한국의 교육 시스템에서 사용되는 간단한 앱입니다. 기말고사 점수를 계산해주는 앱입니다.",
   "subject": "기말고사, 지필고사, 계산기, 학점",
@@ -24,8 +24,8 @@
   "input_finals_holder": "기말고사 점수 입력",
   "input_finals_helper": "기말고사 점수를 입력해 총점수를 확인하세요",
   "decimal_score": "소수점 점수",
-  "written_total_score": "생기부에 적히는 총점",
-  "actual_total_score": "실제 총점",
+  "written_total_score": "원점수",
+  "actual_total_score": "합계",
   "expected_finals_score": "예상 기말 점수",
   "total_grade": "총점 계산",
   "offline": "오프라인"

@@ -20,8 +20,8 @@
     "path": "/workspace/FinalsCalculator/android/android.keystore",
     "alias": "android"
   },
-  "appVersionName": "10",
-  "appVersionCode": 10,
+  "appVersionName": "11",
+  "appVersionCode": 11,
   "shortcuts": [],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://finalscalcu.web.app/manifest/manifest-ko-KR.json",
@@ -38,7 +38,9 @@
   "orientation": "portrait",
   "fingerprints": [
     {
-      "relation": ["delegate_permission/common.handle_all_urls"],
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
       "target": {
         "namespace": "android_app",
         "package_name": "app.web.finalscalcu.twa",
@@ -49,7 +51,9 @@
       }
     },
     {
-      "relation": ["check_validation"],
+      "relation": [
+        "check_validation"
+      ],
       "target": {
         "namespace": "android_app",
         "package_name": "app.web.finalscalcu.twa"
@@ -58,5 +62,5 @@
   ],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "10"
+  "appVersion": "11"
 }
