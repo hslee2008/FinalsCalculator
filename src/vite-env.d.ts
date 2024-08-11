@@ -1,7 +1,6 @@
 /// <reference types="svelte" />
 /// <reference types="vite/client" />
 
-declare module "hyunseung-svelte-tabs";
 declare module "hyunseung-svelte-google-analytics";
 
 declare module "*.svelte";

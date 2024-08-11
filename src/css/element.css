@@ -1,7 +1,7 @@
 .btn {
-  color: #5c62fe;
+  color: black;
   background: transparent;
-  border: 2px solid #5c62fe;
+  border: 2px solid black;
   border-radius: 10px !important;
   padding: 0.4rem 1rem;
   cursor: pointer;
@@ -12,7 +12,7 @@
 .btn:hover,
 .btn:focus {
   color: white;
-  background: #5c62fe;
+  background: black;
   transition-duration: 0.3s;
   outline: none;
 }

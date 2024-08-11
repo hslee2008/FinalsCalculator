@@ -12,25 +12,26 @@
     "firebase-hosting-build": "yarn && yarn test && yarn build",
     "update": "yarn upgrade && ncu -u && yarn",
     "build:android": "cd android && bubblewrap build",
-    "check": "svelte-check --tsconfig ./tsconfig.json"
+    "check": "svelte-check --tsconfig ./tsconfig.json",
+    "deploy": "yarn build && firebase deploy --only hosting"
   },
   "devDependencies": {
-    "@bubblewrap/cli": "^1.21.0",
+    "@bubblewrap/cli": "^1.22.0",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
-    "@testing-library/jest-dom": "^6.4.6",
-    "@testing-library/svelte": "^5.2.0",
+    "@testing-library/jest-dom": "^6.4.8",
+    "@testing-library/svelte": "^5.2.1",
     "@tsconfig/svelte": "^5.0.4",
-    "jsdom": "^24.1.0",
-    "npm-check-updates": "^16.14.20",
+    "jsdom": "^24.1.1",
+    "npm-check-updates": "^17.0.6",
     "svelte": "^4.2.18",
-    "svelte-check": "^3.8.4",
+    "svelte-check": "^3.8.5",
     "tslib": "^2.6.3",
-    "vite": "^5.3.4",
-    "vitest": "^2.0.3"
+    "vite": "^5.4.0",
+    "vitest": "^2.0.5"
   },
   "dependencies": {
-    "carbon-components-svelte": "^0.85.0",
-    "firebase": "^10.12.4",
+    "carbon-components-svelte": "^0.85.1",
+    "firebase": "^10.12.5",
     "hyunseung-svelte-google-analytics": "^2.6.4",
     "svelte-meta-tags": "^3.1.2"
   }
