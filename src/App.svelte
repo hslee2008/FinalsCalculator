@@ -61,6 +61,13 @@
       <Grade></Grade>
     {/if}
   </main>
+
+  <br />
+
+  <div class="ad-container">
+    <iframe src="/ad.html" class="ad-iframe" title="Ad" height="100" width="320" scrolling="no"
+    ></iframe>
+  </div>
 {:else}
   <h1>{$_("offline")}</h1>
 {/if}

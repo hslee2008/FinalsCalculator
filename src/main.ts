@@ -1,4 +1,5 @@
 import "carbon-components-svelte/css/white.css";
+import "@/css/ad.css";
 import "@/css/layout.css";
 import "@/css/utility.css";
 import "@/css/element.css";
