@@ -64,10 +64,18 @@
 
   <br />
 
-  <div class="ad-container">
-    <iframe src="/ad.html" class="ad-iframe" title="Ad" height="100" width="320" scrolling="no"
-    ></iframe>
-  </div>
+  {#if selectedIndex === 0}
+    <div class="ad-container">
+      <iframe
+        src="/ad/320x100.html"
+        class="ad-iframe"
+        title="Ad"
+        height="100"
+        width="320"
+        scrolling="no"
+      ></iframe>
+    </div>
+  {/if}
 {:else}
   <h1>{$_("offline")}</h1>
 {/if}

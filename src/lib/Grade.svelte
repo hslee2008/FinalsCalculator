@@ -131,5 +131,16 @@
     <button on:click={table_close} id="close" class="btn mt25 mb25">
       {$_("close")}
     </button>
+
+    <div class="ad-container">
+      <iframe
+        src="/ad/300x250.html"
+        class="ad-iframe"
+        title="Ad"
+        height="250"
+        width="300"
+        scrolling="no"
+      ></iframe>
+    </div>
   </ModalBody>
 </Modal>

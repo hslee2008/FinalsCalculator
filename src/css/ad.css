@@ -4,3 +4,15 @@
   justify-content: center;
   margin: 5px;
 }
+
+.ad-absolute {
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+  height: 100px;
+}
+
+iframe {
+  background-color: white;
+  outline: none;
+}
