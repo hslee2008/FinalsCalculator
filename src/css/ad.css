@@ -12,6 +12,12 @@
   height: 100px;
 }
 
+@media (min-width: 672px) {
+  .ad-absolute {
+    position: default;
+  }
+}
+
 iframe {
   background-color: white;
   outline: none;

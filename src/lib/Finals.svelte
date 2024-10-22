@@ -155,15 +155,4 @@
       {$_("close")}
     </button>
   </ModalBody>
-
-  <div class="ad-container ad-absolute">
-    <iframe
-      src="/ad/320x100.html"
-      class="ad-iframe"
-      title="Ad"
-      height="100"
-      width="320"
-      scrolling="no"
-    ></iframe>
-  </div>
 </Modal>

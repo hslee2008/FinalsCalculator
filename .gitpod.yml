@@ -1,5 +1,0 @@
-tasks:
-  - name: Setup
-    before: npm i -g npm-check-updates
-    init: yarn install && yarn update
-    command: yarn dev
