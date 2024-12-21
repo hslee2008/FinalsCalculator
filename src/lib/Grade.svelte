@@ -127,13 +127,9 @@
         </tr>
       </tbody>
     </table>
-
-    <button on:click={table_close} id="close" class="btn mt25 mb25">
-      {$_("close")}
-    </button>
   </ModalBody>
 
-  <div class="ad-container">
+  <div class="ad-container" style="margin-top: 25px;">
     <iframe
       src="/ad/300x250.html"
       class="ad-iframe"
@@ -143,4 +139,8 @@
       scrolling="no"
     ></iframe>
   </div>
+
+  <button on:click={table_close} id="close" class="btn mt25 mb25">
+    {$_("close")}
+  </button>
 </Modal>
