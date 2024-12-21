@@ -109,8 +109,8 @@
 </script>
 
 <!-- Testing -->
-<button data-testid="yes-decimal" on:click={decimal_true}></button>
-<button data-testid="no-decimal" on:click={decimal_false}></button>
+<button aria-label="test-yes-decimal" data-testid="yes-decimal" on:click={decimal_true}></button>
+<button aria-label="test-no-decimal" data-testid="no-decimal" on:click={decimal_false}></button>
 
 <!-- Top Part of the page -->
 <div class="flex align-center">

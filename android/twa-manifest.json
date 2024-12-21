@@ -6,23 +6,36 @@
   "display": "standalone",
   "themeColor": "#FFFFFF",
   "themeColorDark": "#000000",
-  "navigationColor": "#FFFFFF",
-  "navigationColorDark": "#FFFFFF",
-  "navigationDividerColor": "#FFFFFF",
-  "navigationDividerColorDark": "#FFFFFF",
+  "navigationColor": "#000000",
+  "navigationColorDark": "#000000",
+  "navigationDividerColor": "#000000",
+  "navigationDividerColorDark": "#000000",
   "backgroundColor": "#FFFFFF",
-  "enableNotifications": false,
+  "enableNotifications": true,
   "startUrl": "/?lang=ko-KR",
   "iconUrl": "https://finalscalcu.web.app/images/1024x1024.png",
   "maskableIconUrl": "https://finalscalcu.web.app/images/maskable_icon.png",
   "splashScreenFadeOutDuration": 300,
   "signingKey": {
-    "path": "/workspace/FinalsCalculator/android/android.keystore",
+    "path": "C:\\Users\\user\\Desktop\\code\\FinalsCalculator\\android\\android.keystore",
     "alias": "android"
   },
-  "appVersionName": "11",
-  "appVersionCode": 11,
-  "shortcuts": [],
+  "appVersionName": "1",
+  "appVersionCode": 1,
+  "shortcuts": [
+    {
+      "name": "중간고사 있는 과목",
+      "shortName": "중간 있는 과목",
+      "url": "https://finalscalcu.web.app/?lang=ko-KR&midterm=true",
+      "chosenIconUrl": "https://finalscalcu.web.app/images/96x96.png"
+    },
+    {
+      "name": "중간 없는 과목",
+      "shortName": "중간고사 없는 과목",
+      "url": "https://finalscalcu.web.app/?lang=ko-KR&midterm=false",
+      "chosenIconUrl": "https://finalscalcu.web.app/images/96x96.png"
+    }
+  ],
   "generatorApp": "bubblewrap-cli",
   "webManifestUrl": "https://finalscalcu.web.app/manifest/manifest-ko-KR.json",
   "fallbackType": "customtabs",
@@ -36,31 +49,8 @@
   "fullScopeUrl": "https://finalscalcu.web.app/",
   "minSdkVersion": 19,
   "orientation": "portrait",
-  "fingerprints": [
-    {
-      "relation": [
-        "delegate_permission/common.handle_all_urls"
-      ],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.web.finalscalcu.twa",
-        "sha256_cert_fingerprints": [
-          "35:4D:78:A7:2F:2A:C8:0F:C0:7B:9B:A4:A7:42:1E:6C:05:86:8C:0E:14:0B:B8:8B:E5:47:BF:76:CD:82:AC:94",
-          "39:77:6A:AE:F1:88:86:E9:81:EE:16:CE:05:ED:37:13:7B:61:F6:04:44:D5:AC:CB:0A:A8:79:08:0D:DD:27:B3"
-        ]
-      }
-    },
-    {
-      "relation": [
-        "check_validation"
-      ],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "app.web.finalscalcu.twa"
-      }
-    }
-  ],
+  "fingerprints": [],
   "additionalTrustedOrigins": [],
   "retainedBundles": [],
-  "appVersion": "11"
+  "appVersion": "1"
 }

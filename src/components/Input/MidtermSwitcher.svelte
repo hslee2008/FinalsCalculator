@@ -17,8 +17,8 @@
   };
 </script>
 
-<button data-testid="yes-mid" on:click={yesMid}></button>
-<button data-testid="no-mid" on:click={noMid}></button>
+<button aria-label="test-yes-mid" data-testid="yes-mid" on:click={yesMid}></button>
+<button aria-label="test-no-mid" data-testid="no-mid" on:click={noMid}></button>
 
 <Select on:change={ChangeMidtermStatus} bind:selected class="mb20">
   <SelectItem value={$_("with_midterm")}></SelectItem>

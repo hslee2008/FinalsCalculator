@@ -1,0 +1,8 @@
+app/web/finalscalcu/twa/DelegationService.java
+ app.web.finalscalcu.twa.DelegationService
+app/web/finalscalcu/twa/Application.java
+ app.web.finalscalcu.twa.Application
+app/web/finalscalcu/twa/LauncherActivity.java
+ app.web.finalscalcu.twa.LauncherActivity
+app/web/finalscalcu/twa/BuildConfig.java
+ app.web.finalscalcu.twa.BuildConfig

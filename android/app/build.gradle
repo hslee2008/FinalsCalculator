@@ -28,18 +28,18 @@ def twaManifest = [
     launcherName: '기말 계산기', // The name shown on the Android Launcher.
     themeColor: '#FFFFFF', // The color used for the status bar.
     themeColorDark: '#000000', // The color used for the dark status bar.
-    navigationColor: '#FFFFFF', // The color used for the navigation bar.
-    navigationColorDark: '#FFFFFF', // The color used for the dark navbar.
-    navigationDividerColor: '#FFFFFF', // The navbar divider color.
-    navigationDividerColorDark: '#FFFFFF', // The dark navbar divider color.
+    navigationColor: '#000000', // The color used for the navigation bar.
+    navigationColorDark: '#000000', // The color used for the dark navbar.
+    navigationDividerColor: '#000000', // The navbar divider color.
+    navigationDividerColorDark: '#000000', // The dark navbar divider color.
     backgroundColor: '#FFFFFF', // The color used for the splash screen background.
-    enableNotifications: false, // Set to true to enable notification delegation.
+    enableNotifications: true, // Set to true to enable notification delegation.
     // Every shortcut must include the following fields:
     // - name: String that will show up in the shortcut.
     // - short_name: Shorter string used if |name| is too long.
     // - url: Absolute path of the URL to launch the app with (e.g '/create').
     // - icon: Name of the resource in the drawable folder to use as an icon.
-    shortcuts: [],
+    shortcuts: [[name:'중간고사 있는 과목', short_name:'중간 있는 과목', url:'https://finalscalcu.web.app/?lang=ko-KR&midterm=true', icon:'shortcut_0'],[name:'중간 없는 과목', short_name:'중간고사 없는 과목', url:'https://finalscalcu.web.app/?lang=ko-KR&midterm=false', icon:'shortcut_1']],
     // The duration of fade out animation in milliseconds to be played when removing splash screen.
     splashScreenFadeOutDuration: 300,
     generatorApp: 'bubblewrap-cli', // Application that generated the Android Project
@@ -56,8 +56,8 @@ android {
         applicationId "app.web.finalscalcu.twa"
         minSdkVersion 19
         targetSdkVersion 33
-        versionCode 11
-        versionName "11"
+        versionCode 1
+        versionName "1"
 
         // The name for the application
         resValue "string", "appName", twaManifest.name
