@@ -1,0 +1,16 @@
+{
+  "datas": [
+    [25, 100, 50, [58, 18, "secured", "secured"]],
+    [25, 100, 45, [78, 38, "secured", "secured"]],
+    [25, 100, 40, [98, 58, 18, "secured"]],
+    [25, 100, 20, ["impossible", "impossible", 98, 58]],
+    [25, 100, 0, ["impossible", "impossible", "impossible", "impossible"]],
+
+    [25, 90, 50, [68, 29, "secured", "secured"]],
+    [25, 0, 50, ["impossible", "impossible", 78, 38]],
+
+    [30, 100, 40, [65, 32, "secured", "secured"]],
+    [35, 100, 30, [70, 42, 13, "secured"]],
+    [40, 100, 15, [87, 62, 37, 12]]
+  ]
+}

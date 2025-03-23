@@ -7,22 +7,24 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "firebase-hosting-build": "yarn && yarn build",
+    "test": "vitest run",
+    "test:watch": "vitest run --watch",
+    "firebase-hosting-build": "yarn && yarn test && yarn build",
     "update": "yarn upgrade && ncu -u && yarn",
     "build:android": "cd android && bubblewrap build",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "deploy": "yarn build && firebase deploy --only hosting"
   },
   "devDependencies": {
-    "@bubblewrap/cli": "^1.22.2",
-    "@sveltejs/vite-plugin-svelte": "3.1.1",
+    "@bubblewrap/cli": "^1.22.0",
+    "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@tsconfig/svelte": "^5.0.4",
-    "jsdom": "^25.0.1",
-    "npm-check-updates": "^17.1.12",
-    "svelte": "4.2.19",
-    "svelte-check": "^4.1.1",
-    "tslib": "^2.8.1",
-    "vite": "^6.0.5"
+    "jsdom": "^24.1.1",
+    "npm-check-updates": "^17.0.6",
+    "svelte": "^4.2.18",
+    "svelte-check": "^3.8.5",
+    "tslib": "^2.6.3",
+    "vite": "^5.4.0"
   },
   "dependencies": {
     "carbon-components-svelte": "^0.87.0",

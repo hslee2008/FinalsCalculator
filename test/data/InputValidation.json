@@ -1,0 +1,22 @@
+{
+  "datas": [
+    {
+      "mid": "yes",
+      "label": "Midterm Score",
+      "value": 101,
+      "error": "0 ~ 100"
+    },
+    {
+      "mid": "yes",
+      "label": "Performance Evaluation",
+      "value": 69,
+      "error": "0 ~ 50"
+    },
+    {
+      "mid": "no",
+      "label": "Performance Evaluation",
+      "value": 54,
+      "error": "0 ~ 50"
+    }
+  ]
+}
