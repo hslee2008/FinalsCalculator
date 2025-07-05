@@ -96,8 +96,8 @@
 {#if hasMid}
   <InputMidterm bind:mid_score></InputMidterm>
 {/if}
-<InputFinals bind:finals_score></InputFinals>
 <InputProjects bind:projects bind:percent bind:hasMid></InputProjects>
+<InputFinals bind:finals_score></InputFinals>
 
 <button on:click={table_open} class="btn mt10">{$_("calculate")}</button>
 
@@ -112,6 +112,17 @@
 >
   <ModalBody>
     <table class="bx--data-table">
+      <thead>
+        <tr>
+          <th scope="col" data-header="grade" class="grade-row">
+            <div class="bx--table-header-label">정보</div>
+          </th>
+          <th scope="col" data-header="lowest">
+            <div class="bx--table-header-label">최종 내신</div>
+          </th>
+        </tr>
+      </thead>
+
       <tbody>
         <tr>
           <td>{$_("written_total_score")}</td>
@@ -128,17 +139,6 @@
       </tbody>
     </table>
   </ModalBody>
-
-  <div class="ad-container" style="margin-top: 25px;">
-    <iframe
-      src="/ad/300x250.html"
-      class="ad-iframe"
-      title="Ad"
-      height="250"
-      width="300"
-      scrolling="no"
-    ></iframe>
-  </div>
 
   <button on:click={table_close} id="close" class="btn mt25 mb25">
     {$_("close")}

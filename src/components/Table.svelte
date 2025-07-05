@@ -3,6 +3,7 @@
   import { _, translateJS } from "@/i18n/i18n";
   import { percentToString, percentToGrade } from "@/utils/numbers";
   import { CalculateFinalsScore } from "@/utils/calculate";
+  import { debounce } from 'lodash-es'; 
 
   export let finals: [number, number, number, number, number] = [0, 0, 0, 0, 0];
   export let percent: number = 25;
@@ -72,9 +73,24 @@
         );
     });
   };
+
+  const debouncedViewTransition = debounce(viewTransition, 300);
 </script>
 
 <div class="bx--data-table-container table">
+  <div class="bx--data-table-header">
+    <div style="margin-right: 16px; ">
+      <h4 class="bx--data-table-header__title">기말고사 계산기</h4>
+      <p
+        class="bx--data-table-header__description"
+        style="text-align: justify; margin-top: 5px;"
+      >
+        중학교 성적 산출 시스템은 수행평가와 지필고사(중간, 기말)을 합산해서
+        89.5점을 넘으면 A, 79.5점을 넘으면 B 등으로 계산한다. 다음은 최종적으로
+        A, B, C, D, E를 받기 위해 기말고사에서 필요한 점수이다.
+      </p>
+    </div>
+  </div>
   <table class="bx--data-table">
     <thead>
       <tr>
@@ -89,12 +105,12 @@
 
     <tbody aria-live="polite">
       {#each ["A", "B", "C", "D"] as grade, index}
-        <tr class={grade} data-testid={grade}>
+        <tr class={grade}>
           <td>{grade}</td>
           <td>{rows[index].lowest}</td>
         </tr>
       {/each}
-      <tr class="E" data-testid="E">
+      <tr class="E">
         <td>E</td>
         <td>{$_("secured")}</td>
       </tr>
@@ -112,6 +128,7 @@
     size="xl"
     allowEmpty
     on:keyup={viewTransition}
+    on:change={debouncedViewTransition}
     class="finals-input"
     placeholder={$_("input_finals_holder")}
   />

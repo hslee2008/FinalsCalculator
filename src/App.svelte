@@ -48,7 +48,7 @@
 
 {#if isOnline}
   <main>
-    <ContentSwitcher bind:selectedIndex>
+    <ContentSwitcher bind:selectedIndex size="xl">
       <Switch text={$_("expected_finals_score")} />
       <Switch text={$_("total_grade")} />
     </ContentSwitcher>
@@ -61,21 +61,6 @@
       <Grade></Grade>
     {/if}
   </main>
-
-  <br />
-
-  {#if selectedIndex === 0}
-    <div class="ad-container">
-      <iframe
-        src="/ad/320x100.html"
-        class="ad-iframe"
-        title="Ad"
-        height="100"
-        width="320"
-        scrolling="no"
-      ></iframe>
-    </div>
-  {/if}
 {:else}
   <h1>{$_("offline")}</h1>
 {/if}

@@ -24,8 +24,7 @@ const roundPercent = (
   const score = 100 * ((percent - subtracted) / percent);
 
   if (hasDecimalScore) {
-    // Round up to nearest 0.5
-    return (Math.ceil(score * 2) / 2).toFixed(1);
+    return (Math.ceil(score * 10) / 10).toFixed(1);
   }
 
   return Math.ceil(score).toFixed(0);

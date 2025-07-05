@@ -102,15 +102,7 @@
   // Dialog functions
   const table_close = () => (table_opened = false);
   const table_open = () => (table_opened = true);
-
-  // Checkbox functions
-  const decimal_true = () => (hasDecimalScore = true);
-  const decimal_false = () => (hasDecimalScore = false);
 </script>
-
-<!-- Testing -->
-<button aria-label="test-yes-decimal" data-testid="yes-decimal" on:click={decimal_true}></button>
-<button aria-label="test-no-decimal" data-testid="no-decimal" on:click={decimal_false}></button>
 
 <!-- Top Part of the page -->
 <div class="flex align-center">
@@ -134,7 +126,7 @@
 <!-- Table Modal -->
 <Modal
   bind:open={table_opened}
-  modalHeading={$_("result")}
+  modalHeading={""}
   modalAriaLabel={$_("ALmodal")}
   iconDescription="close modal"
   selectorPrimaryFocus=".bx--modal-content"
@@ -155,15 +147,4 @@
       {$_("close")}
     </button>
   </ModalBody>
-
-  <div class="ad-container ad-absolute">
-    <iframe
-      src="/ad/320x100.html"
-      class="ad-iframe"
-      title="Ad"
-      height="100"
-      width="320"
-      scrolling="no"
-    ></iframe>
-  </div>
 </Modal>
