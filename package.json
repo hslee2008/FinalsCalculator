@@ -14,19 +14,19 @@
     "deploy": "yarn build && firebase deploy --only hosting"
   },
   "devDependencies": {
-    "@bubblewrap/cli": "^1.22.0",
+    "@bubblewrap/cli": "^1.23.0",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "@tsconfig/svelte": "^5.0.4",
-    "jsdom": "^24.1.1",
-    "npm-check-updates": "^17.0.6",
+    "jsdom": "^26.1.0",
+    "npm-check-updates": "^18.0.2",
     "svelte": "^4.2.18",
     "svelte-check": "^3.8.5",
     "tslib": "^2.6.3",
     "vite": "^5.4.0"
   },
   "dependencies": {
-    "carbon-components-svelte": "^0.89.4",
-    "firebase": "^11.1.0",
+    "carbon-components-svelte": "^0.89.6",
+    "firebase": "^12.1.0",
     "hyunseung-svelte-google-analytics": "^2.6.4",
     "lodash-es": "^4.17.21",
     "svelte-meta-tags": "3.1.2"
